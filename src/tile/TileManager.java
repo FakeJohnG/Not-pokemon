@@ -96,16 +96,16 @@ public class TileManager {
             BufferedReader reader =new BufferedReader(new InputStreamReader(is));
             int col=0;
             int row=0;
-            while(col <gamePanel.maxMapCol && row<gamePanel.maxMapRow){
+            while(col <gamePanel.maxWorldCol && row<gamePanel.maxWorldRow){
                 String line= reader.readLine();
 
-                while(col< gamePanel.maxMapCol){
+                while(col< gamePanel.maxWorldCol){
                     String numbers[]= line.split(" ");
                     int num = Integer.parseInt((numbers[col]));
                     mapTileNum[col][row]=num;
                     col++;
                 }
-                if(col == gamePanel.maxMapCol){
+                if(col == gamePanel.maxWorldCol){
                     col=0;
                     row++;
                 }
