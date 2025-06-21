@@ -1,0 +1,2 @@
+Si trabaja desde intellij, debe marcar la carpeta res como "Resources root" para hacerlo haga right click en el archivo 
+y haga click en mark as directoy.
