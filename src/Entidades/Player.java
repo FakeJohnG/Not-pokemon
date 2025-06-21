@@ -11,17 +11,24 @@ import java.io.IOException;
 public class Player extends Entity {
     GamePanel gamePanel;
     Inputs input;
+    public final int screenX;
+    public final int screenY;
+
 
     public Player(GamePanel gamePanel,Inputs input){
         this.gamePanel=gamePanel;
         this.input=input;
+        screenX= gamePanel.screenWidth/2 -(gamePanel.tileSize/2);
+        screenY= gamePanel.screenHeight/2 -(gamePanel.tileSize/2);
+
         setDefautValues();
         getPlayerImage();
     }
     public void setDefautValues(){
-        x=100;
-        y=100;
-        speed=2;
+        //Posicion default de jugador en mapa
+        worldX =7; //gamePanel.tileSize*23;
+        worldY =6;//gamePanel.tileSize*21;
+        speed=5;
         direction="idle";
     }
     public void getPlayerImage(){
@@ -57,20 +64,20 @@ public class Player extends Entity {
     public void update(){
         if(input.upPressed){
             direction="up";
-            y-=speed;
+            worldY -=speed;
         }
         else if(input.downPressed){
             direction="down";
-            y+=speed;
+            worldY +=speed;
 
         }
         else if(input.rightPressed){
             direction="right";
-            x+=speed;
+            worldX +=speed;
 
         } else if (input.leftPressed) {
             direction="left";
-            x-=speed;
+            worldX -=speed;
         }
         else {
             direction="idle";
@@ -85,7 +92,7 @@ public class Player extends Entity {
         }
     }
     public void draw(Graphics2D g2){
-       // g2.setColor(Color.CYAN);
+        // g2.setColor(Color.CYAN);
         //g2.fillRect(x,y,gamePanel.tileSize,gamePanel.tileSize);
         BufferedImage image=null;
         switch(direction){
@@ -105,7 +112,7 @@ public class Player extends Entity {
                 image= idleFrames[frameIndex % idleFrames.length];
                 break;
         }
-        g2.drawImage(image,(int)x,(int)y,gamePanel.tileSize, gamePanel.tileSize, null);
+        g2.drawImage(image,screenX,screenY,gamePanel.tileSize, gamePanel.tileSize, null);
 
     }
 }

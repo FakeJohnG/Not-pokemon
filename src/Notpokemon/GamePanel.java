@@ -4,21 +4,28 @@ import tile.TileManager;
 
 import javax.swing.JPanel;
 import java.awt.*;
-import java.awt.event.KeyListener;
 
 //Esta clase sirve para darle atributos a la ventana.
 public class GamePanel extends JPanel implements Runnable {
-//Atributos
+    //Atributos de la pantalla
     final int originalTileSize=16;
     final int scale=3;
+
     public final int tileSize= originalTileSize*scale;
-   public final int maxScreenColm=16;
-    public final int maxScreenRow=12;
-    public final int screenWidth= tileSize*maxScreenColm;
-    public final int screenHeight= tileSize*maxScreenRow;
+    public final int maxMapCol =16;
+    public final int maxMapRow =12;
+    public final int screenWidth= tileSize* maxMapCol;
+    public final int screenHeight= tileSize* maxMapRow;
+
+    //Ajustes del mapa
+    public final int maxWorldCol=40;
+    public final int maxWorldRow=40;
+    public final int worldWidth= tileSize*maxWorldCol;
+    public final int worldHeight= tileSize*maxWorldRow;
+
     Inputs input= new Inputs();
     Thread gameThread;
-    Player player=new Player(this,input);
+    public Player player=new Player(this,input);
     TileManager tileM=new TileManager(this);
 
     //fps (frames per second)
@@ -33,11 +40,11 @@ public class GamePanel extends JPanel implements Runnable {
         this.setFocusable(true);
     }
     //Estas lineas de abajo se encargan de manejar el gameloop, mejor no las toquen.
-public void startGameThread(){
+    public void startGameThread(){
         //Con esta linea se instancia el thread
         gameThread = new Thread(this);
         gameThread.start();
-}
+    }
     @Override
     public void run() {
         double drawInterval=1000000000/fps;
@@ -49,14 +56,14 @@ public void startGameThread(){
 
             repaint();
             try {
-            double remainingTime =nextDrawTime-System.nanoTime();
-            remainingTime=remainingTime/1000000000;
-            if(remainingTime<0){
-                remainingTime=0;
-            }
+                double remainingTime =nextDrawTime-System.nanoTime();
+                remainingTime=remainingTime/1000000000;
+                if(remainingTime<0){
+                    remainingTime=0;
+                }
 
                 Thread.sleep((long)remainingTime);
-            nextDrawTime+=drawInterval;
+                nextDrawTime+=drawInterval;
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
@@ -78,3 +85,4 @@ public void startGameThread(){
         g2.dispose();
     }
 }
+
