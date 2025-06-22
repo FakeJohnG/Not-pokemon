@@ -1,6 +1,6 @@
 package tile;
 
-package tile;
+
 
 import Notpokemon.GamePanel;
 
