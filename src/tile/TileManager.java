@@ -13,8 +13,8 @@ import java.io.InputStreamReader;
 
 public class TileManager {
     GamePanel gamePanel;
-    Tile[] tile;
-    int mapTileNum[][];
+    public Tile[] tile;
+    public int mapTileNum[][];
 
     public TileManager(GamePanel gamePanel){
         this.gamePanel=gamePanel;
@@ -24,8 +24,8 @@ public class TileManager {
         getTileImage();
         loadMapData("/maps/testMapDataXL.txt");
         //Escribir entre las comillas el mapa que quieras cargar.
-        //OJO, el mapa xl es bastante grande y puede presentar problemas de rendimiento.
-        //mapa"testMapData1" es mejor para ver las texturas
+        //OJO, el mapa xl es más grande y podria presentar problemas de rendimiento.
+
 
     }
     public void getTileImage(){
@@ -47,24 +47,31 @@ public class TileManager {
 
             tile[4]= new Tile();
             tile[4].image= ImageIO.read(getClass().getResourceAsStream("/tiles/grass4.png"));
+            tile[4].collision=true;
 
             tile[5]=new Tile();
             tile[5].image= ImageIO.read(getClass().getResourceAsStream("/tiles/grass5.png"));
+            tile[5].collision=true;
 
             tile[6]=new Tile();
             tile[6].image= ImageIO.read(getClass().getResourceAsStream("/tiles/grass6.png"));
+            tile[6].collision=true;
 
             tile[7]=new Tile();
             tile[7].image= ImageIO.read(getClass().getResourceAsStream("/tiles/grass7.png"));
+            tile[7].collision=true;
 
             tile[8]=new Tile();
             tile[8].image= ImageIO.read(getClass().getResourceAsStream("/tiles/grass8.png"));
 
             tile[9]=new Tile();
             tile[9].image= ImageIO.read(getClass().getResourceAsStream("/tiles/water1.png"));
+            tile[9].collision=true;
 
             tile[10]=new Tile();
             tile[10].image= ImageIO.read(getClass().getResourceAsStream("/tiles/water2.png"));
+            tile[10].collision=true;
+
 
             //partes del puente
             tile[11]=new Tile();
@@ -126,8 +133,13 @@ public class TileManager {
             int worldY=worldRow* gamePanel.tileSize;
             int screenX =worldX-gamePanel.player.worldX + gamePanel.player.screenX;
             int screenY=worldY-gamePanel.player.worldY + gamePanel.player.screenY;
-
-            g2.drawImage(tile[tileNum].image,screenX,screenY, gamePanel.tileSize, gamePanel.tileSize, null);
+            //Mejora de rendimiento?
+            if(worldX + gamePanel.tileSize>gamePanel.player.worldX-gamePanel.player.screenX &&
+                    worldX- gamePanel.tileSize <gamePanel.player.worldX+gamePanel.player.screenX &&
+                    worldY + gamePanel.tileSize>gamePanel.player.worldY- gamePanel.player.screenY &&
+                    worldY - gamePanel.tileSize<gamePanel.player.worldY+ gamePanel.player.screenY){
+                g2.drawImage(tile[tileNum].image,screenX,screenY, gamePanel.tileSize, gamePanel.tileSize, null);
+            }
             worldCol++;
 
 

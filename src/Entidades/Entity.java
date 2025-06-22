@@ -1,5 +1,6 @@
 package Entidades;
 
+import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class Entity {
@@ -9,6 +10,8 @@ public class Entity {
  public int frameCounter = 0;
  public double frameDelay =0.1;
  public String direction;
+ public Rectangle solidBox;
+ public boolean collisionOn=false;
 
  public BufferedImage[] idleFrames;
  public BufferedImage[] upFrames;

@@ -20,14 +20,21 @@ public class Player extends Entity {
         this.input=input;
         screenX= gamePanel.screenWidth/2 -(gamePanel.tileSize/2);
         screenY= gamePanel.screenHeight/2 -(gamePanel.tileSize/2);
+        solidBox = new Rectangle();
+        solidBox.x=8;
+        solidBox.y=16;
+        solidBox.width=32;
+        solidBox.height=32;
 
         setDefautValues();
         getPlayerImage();
     }
     public void setDefautValues(){
         //Posicion default de jugador en mapa
-        worldX =7; //gamePanel.tileSize*23;
-        worldY =6;//gamePanel.tileSize*21;
+        //Valores para mapXL: worldX =gamePanel.tileSize*23;,worldY =gamePanel.tileSize*21;
+        //Valores para mapTest1: worldX =gamePanel.tileSize*7;,worldY =gamePanel.tileSize*7;
+        worldX =gamePanel.tileSize*23;
+        worldY =gamePanel.tileSize*21;
         speed=5;
         direction="idle";
     }
@@ -64,23 +71,34 @@ public class Player extends Entity {
     public void update(){
         if(input.upPressed){
             direction="up";
-            worldY -=speed;
+
         }
         else if(input.downPressed){
             direction="down";
-            worldY +=speed;
+
 
         }
         else if(input.rightPressed){
             direction="right";
-            worldX +=speed;
+
 
         } else if (input.leftPressed) {
             direction="left";
-            worldX -=speed;
+
         }
         else {
             direction="idle";
+        }
+        //Verificar collision
+        collisionOn=false;
+        gamePanel.managerC.checkTile(this);
+        if(collisionOn==false){
+            switch(direction){
+                case"up":worldY -=speed;break;
+                case"down":worldY +=speed;break;
+                case"right":worldX +=speed;break;
+                case"left":worldX -=speed;break;
+            }
         }
         //Sistema para usar los otros frames
         frameCounter++;
