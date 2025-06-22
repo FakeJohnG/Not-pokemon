@@ -24,7 +24,8 @@ public class TileManager {
         getTileImage();
         loadMapData("/maps/testMapDataXL.txt");
         //Escribir entre las comillas el mapa que quieras cargar.
-        //OJO, el mapa xl es bastante grande, para ver texturas mejor usar el mapa testMapData1
+        //OJO, el mapa xl es bastante grande y puede presentar problemas de rendimiento.
+        //mapa"testMapData1" es mejor para ver las texturas
 
     }
     public void getTileImage(){
