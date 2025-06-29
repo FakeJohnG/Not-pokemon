@@ -24,6 +24,7 @@ public class GamePanel extends JPanel implements Runnable {
     public final int worldHeight= tileSize*maxWorldRow;
 
     Inputs input= new Inputs();
+    Sonido sonido= new Sonido();
     Thread gameThread;
     public CollisionManager managerC =new CollisionManager(this);
     public Player player=new Player(this,input);
@@ -39,6 +40,9 @@ public class GamePanel extends JPanel implements Runnable {
         this.setDoubleBuffered(true);
         this.addKeyListener(input);
         this.setFocusable(true);
+    }
+    public void setup(){
+        playMusic(0);
     }
     //Estas lineas de abajo se encargan de manejar el gameloop, mejor no las toquen.
     public void startGameThread(){
@@ -84,6 +88,19 @@ public class GamePanel extends JPanel implements Runnable {
 
 
         g2.dispose();
+    }
+    public void playMusic(int i){
+        sonido.setFile(i);
+        sonido.play();
+        sonido.loop();
+
+    }
+    public void stopMusic(){
+        sonido.stop();
+    }
+    public void playEfectosSonido(int i){
+        //Esto sirvira para los efectos de sonido
+
     }
 }
 
