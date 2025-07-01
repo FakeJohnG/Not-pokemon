@@ -3,7 +3,7 @@ package Entidades;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
-public class Entity {
+public class Entidad {
  public int worldX, worldY;
  public int speed;
  public int frameIndex = 0;
@@ -11,6 +11,7 @@ public class Entity {
  public double frameDelay =0.1;
  public String direction;
  public Rectangle solidBox;
+ public int areaSolidaDefaultX, areaSolidaDefaultY;
  public boolean collisionOn=false;
 
  public BufferedImage[] idleFrames;

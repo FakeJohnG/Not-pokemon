@@ -1,5 +1,6 @@
 package Notpokemon;
 import Entidades.Player;
+import Objetos.ObjetoMadre;
 import tile.TileManager;
 
 import javax.swing.JPanel;
@@ -25,9 +26,12 @@ public class GamePanel extends JPanel implements Runnable {
 
     Inputs input= new Inputs();
     Sonido sonido= new Sonido();
+    Sonido sonidoE= new Sonido();
     Thread gameThread;
     public CollisionManager managerC =new CollisionManager(this);
+    public AssetSetter aSetter = new AssetSetter(this);
     public Player player=new Player(this,input);
+    public ObjetoMadre obj[]=new ObjetoMadre[10];
     TileManager tileM=new TileManager(this);
 
     //fps (frames per second)
@@ -42,6 +46,7 @@ public class GamePanel extends JPanel implements Runnable {
         this.setFocusable(true);
     }
     public void setup(){
+        aSetter.setObjecto();
         playMusic(0);
     }
     //Estas lineas de abajo se encargan de manejar el gameloop, mejor no las toquen.
@@ -84,6 +89,12 @@ public class GamePanel extends JPanel implements Runnable {
         Graphics2D g2=(Graphics2D)g;
         //OJO, Tile manager debe ir primero sino, el personje se dibujara debajo de las tiles.
         tileM.draw(g2);
+        //este dibuja los objetos
+        for(int i=0;i<obj.length;i++){
+            if(obj[i]!=null){
+                obj[i].draw(g2,this);
+            }
+        }
         player.draw(g2);
 
 
@@ -99,7 +110,8 @@ public class GamePanel extends JPanel implements Runnable {
         sonido.stop();
     }
     public void playEfectosSonido(int i){
-        //Esto sirvira para los efectos de sonido
+        sonidoE.setFile(i);
+        sonidoE.play();
 
     }
 }
