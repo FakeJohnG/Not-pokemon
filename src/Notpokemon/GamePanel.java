@@ -24,7 +24,7 @@ public class GamePanel extends JPanel implements Runnable {
     public final int worldWidth= tileSize*maxWorldCol;
     public final int worldHeight= tileSize*maxWorldRow;
 
-    Inputs input= new Inputs();
+    Inputs input= new Inputs(this);
     Sonido sonido= new Sonido();
     Sonido sonidoE= new Sonido();
     Thread gameThread;
@@ -33,6 +33,13 @@ public class GamePanel extends JPanel implements Runnable {
     public Player player=new Player(this,input);
     public ObjetoMadre obj[]=new ObjetoMadre[10];
     TileManager tileM=new TileManager(this);
+    public InterfazUsuario ui=new InterfazUsuario(this);
+    //Estado del juego
+    public int gameState;
+    public final int playState=1;
+    public final int pauseState=2;
+    public final int tituloState=3;
+
 
     //fps (frames per second)
     int fps=24;
@@ -48,6 +55,8 @@ public class GamePanel extends JPanel implements Runnable {
     public void setup(){
         aSetter.setObjecto();
         playMusic(0);
+        //stopMusic(); //para mutear la musica escribir eso
+        gameState=playState;
     }
     //Estas lineas de abajo se encargan de manejar el gameloop, mejor no las toquen.
     public void startGameThread(){
@@ -81,7 +90,14 @@ public class GamePanel extends JPanel implements Runnable {
 
     }
     public void update(){
-        player.update();
+        if(gameState==playState){
+            player.update();
+            sonido.loop();
+        }
+        if(gameState==pauseState){
+            sonido.stop();
+        }
+
     }
     public void paintComponent(Graphics g){
         super.paintComponent(g);
@@ -96,6 +112,8 @@ public class GamePanel extends JPanel implements Runnable {
             }
         }
         player.draw(g2);
+
+        ui.draw(g2);
 
 
         g2.dispose();
