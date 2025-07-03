@@ -20,9 +20,9 @@ public class GamePanel extends JPanel implements Runnable {
 
     //Ajustes del mapa
     public final int maxWorldCol=50;
-    public final int maxWorldRow=50;
-    public final int worldWidth= tileSize*maxWorldCol;
-    public final int worldHeight= tileSize*maxWorldRow;
+    public final int maxWorldFila =50;
+    public final int mapaMax=10;
+    public  int mapaActual=0;
 
     Inputs input= new Inputs(this);
     Sonido sonido= new Sonido();
@@ -31,9 +31,10 @@ public class GamePanel extends JPanel implements Runnable {
     public CollisionManager managerC =new CollisionManager(this);
     public AssetSetter aSetter = new AssetSetter(this);
     public Player player=new Player(this,input);
-    public ObjetoMadre obj[]=new ObjetoMadre[10];
+    public ObjetoMadre obj[][]=new ObjetoMadre[mapaMax][10];
     TileManager tileM=new TileManager(this);
     public InterfazUsuario ui=new InterfazUsuario(this);
+    public AdministradorEventos eventos=new AdministradorEventos(this);
     //Estado del juego
     public int gameState;
     public final int playState=1;
@@ -105,10 +106,9 @@ public class GamePanel extends JPanel implements Runnable {
         Graphics2D g2=(Graphics2D)g;
         //OJO, Tile manager debe ir primero sino, el personje se dibujara debajo de las tiles.
         tileM.draw(g2);
-        //este dibuja los objetos
-        for(int i=0;i<obj.length;i++){
-            if(obj[i]!=null){
-                obj[i].draw(g2,this);
+        for(int i=0;i<obj[1].length;i++){
+            if(obj[mapaActual][i]!=null){
+                obj[mapaActual][i].draw(g2,this);
             }
         }
         player.draw(g2);

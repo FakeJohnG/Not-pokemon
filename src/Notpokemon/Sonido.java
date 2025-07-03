@@ -10,7 +10,10 @@ public class Sonido {
 
     public Sonido(){
         sonidoURL[0]=getClass().getResource("/musica/mundoBeta.wav");
-        sonidoURL[1]=getClass().getResource("/musica/gemGet.wav");
+        sonidoURL[1]=getClass().getResource("/musica/pausa.wav");
+        sonidoURL[2]=getClass().getResource("/musica/gemGet.wav");
+        sonidoURL[3]=getClass().getResource("/musica/bigShot.wav");
+        sonidoURL[4]=getClass().getResource("/musica/cambioMapa.wav");
 
     }
     public void setFile(int i){

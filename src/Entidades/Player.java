@@ -105,6 +105,7 @@ public class Player extends Entidad {
                 case"left":worldX -=speed;break;
             }
         }
+        gamePanel.eventos.checkEvento();
         //Sistema para usar los otros frames
         frameCounter++;
         if (frameCounter > frameDelay) {
@@ -116,12 +117,12 @@ public class Player extends Entidad {
     }
     public void recogerObjeto(int i){
         if(i!=999){
-            String nombreObj=gamePanel.obj[i].nombre;
+            String nombreObj=gamePanel.obj[gamePanel.mapaActual][i].nombre;
             if(nombreObj.equals("Gema")){
 
-                gamePanel.playEfectosSonido(1);
+                gamePanel.playEfectosSonido(2);
                 cantMcguffin++;
-                gamePanel.obj[i]=null;
+                gamePanel.obj[gamePanel.mapaActual][i]=null;
                 System.out.print(cantMcguffin);
 
             }
