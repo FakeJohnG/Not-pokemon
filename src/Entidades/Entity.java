@@ -8,7 +8,7 @@ public class Entity {
  public int speed;
  public int frameIndex = 0;
  public int frameCounter = 0;
- public double frameDelay =0.1;
+ public double frameDelay = 10;
  public String direction;
  public Rectangle solidBox;
  public boolean collisionOn=false;
