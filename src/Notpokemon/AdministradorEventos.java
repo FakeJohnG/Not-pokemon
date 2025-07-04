@@ -33,27 +33,41 @@ public class AdministradorEventos {
 
         }
     }
-    public void checkEvento(){
-        int xDistance=Math.abs(gamePanel.player.worldX-eventoAnteriorX);
-        int yDistance=Math.abs(gamePanel.player.worldY-eventoAnteriorY);
-        int distancia=Math.max(xDistance,yDistance);
-        if(distancia>gamePanel.tileSize){
-            eventoActivo=true;
+    public void checkEvento() {
+        int xDistance = Math.abs(gamePanel.player.worldX - eventoAnteriorX);
+        int yDistance = Math.abs(gamePanel.player.worldY - eventoAnteriorY);
+        int distancia = Math.max(xDistance, yDistance);
+        if (distancia > gamePanel.tileSize) {
+            eventoActivo = true;
 
         }
-        if(eventoActivo==true){
-           //fila
+        if (eventoActivo == true) {
+            //fila
 
-            if(hit(0,19,33,"any")){
+            if (hit(0, 19, 33, "any")) {
                 System.out.println("loading spamton...");
-                teleport(1,7,7);
+                gamePanel.sonidoE.setFile(4);
+                gamePanel.sonidoE.play();
+                teleport(1, 7, 7);
 
-            }
-            else if(hit(1,7,7,"any")){
+            } else if (hit(1, 7, 7, "any")) {
                 System.out.println("Bye bye spamton");
-                teleport(0,19,34);
+                gamePanel.sonidoE.setFile(4);
+                gamePanel.sonidoE.play();
+                teleport(0, 19, 34);
+
+            } else if (hit(0, 21, 12, "any")) {
+                System.out.println("encuentro salvaje?");
+                encuentroSalvaje();
+
+            }else if (hit(0, 20, 12, "any")) {
+                System.out.println("encuentro salvaje?");
+                encuentroSalvaje();
 
             }
+
+
+
         }
     }
 
@@ -111,5 +125,19 @@ public class AdministradorEventos {
 
 
 
+    }
+    public void encuentroSalvaje() {
+        //Esto sirvira para los encuentros salvajes, aun estoy viendo las probabilidades but its a start.
+        int probEncuento = (int) (Math.random() * 225) + 1;
+        System.out.println(probEncuento);
+        if (probEncuento < 65) {
+            System.out.println("Encuentro Salvaje!");
+            eventoActivo=false;
+            gamePanel.sonido.stop();
+            gamePanel.sonido.setFile(5);
+            gamePanel.sonido.play();
+
+
+        }
     }
 }
