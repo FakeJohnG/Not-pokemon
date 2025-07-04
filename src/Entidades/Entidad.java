@@ -8,7 +8,7 @@ public class Entidad {
  public int speed;
  public int frameIndex = 0;
  public int frameCounter = 0;
- public double frameDelay =0.1;
+ public double frameDelay = 5;
  public String direction;
  public Rectangle solidBox;
  public int areaSolidaDefaultX, areaSolidaDefaultY;
