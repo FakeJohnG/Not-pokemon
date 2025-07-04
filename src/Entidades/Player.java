@@ -59,7 +59,7 @@ public class Player extends Entity {
 //Si solo es un frame cuando esta en reposo, okay
             idleFrames = new BufferedImage[1];
             for (int i = 0; i < idleFrames.length; i++) {
-                idleFrames[i] = ImageIO.read(getClass().getResourceAsStream("/player1/Idle" + (i + 1) + "mario.png"));
+                idleFrames[i] = ImageIO.read(getClass().getResourceAsStream("/Entrenador1/Abajo" + (2) + ".png"));
             }
 
 
@@ -75,16 +75,11 @@ public class Player extends Entity {
         }
         else if(input.downPressed){
             direction="down";
-
-
         }
         else if(input.rightPressed){
             direction="right";
-
-
         } else if (input.leftPressed) {
             direction="left";
-
         }
         else {
             direction="idle";

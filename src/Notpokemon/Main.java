@@ -9,7 +9,7 @@ public class Main {
         GamePanel gamepanel= new GamePanel();
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setResizable(false);
-        window.setTitle("Not pokemon BETA");
+        window.setTitle("Pokemon't BETA");
         window.setIconImage(icon.getImage());
         window.add(gamepanel);
         window.pack();
