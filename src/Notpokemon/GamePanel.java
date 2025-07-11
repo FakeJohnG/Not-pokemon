@@ -40,6 +40,7 @@ public class GamePanel extends JPanel implements Runnable {
     public final int playState=1;
     public final int pauseState=2;
     public final int tituloState=3;
+    public int objetivoStatus=0;
 
 
     //fps (frames per second)
@@ -77,7 +78,7 @@ public class GamePanel extends JPanel implements Runnable {
             repaint();
             try {
                 double remainingTime =nextDrawTime-System.nanoTime();
-                remainingTime=remainingTime/1000000000;
+                remainingTime=remainingTime/1_000_000;
                 if(remainingTime<0){
                     remainingTime=0;
                 }

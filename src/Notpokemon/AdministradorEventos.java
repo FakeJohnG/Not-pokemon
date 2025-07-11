@@ -49,6 +49,7 @@ public class AdministradorEventos {
                 gamePanel.sonidoE.setFile(4);
                 gamePanel.sonidoE.play();
                 teleport(1, 7, 7);
+                gamePanel.objetivoStatus=1;
 
             } else if (hit(1, 7, 7, "any")) {
                 System.out.println("Bye bye spamton");
