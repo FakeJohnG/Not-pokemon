@@ -18,6 +18,7 @@ public class Player extends Entidad {
 
 
     public Player(GamePanel gamePanel,Inputs input){
+        super(gamePanel);
         this.gamePanel=gamePanel;
         this.input=input;
         screenX= gamePanel.screenWidth/2 -(gamePanel.tileSize/2);

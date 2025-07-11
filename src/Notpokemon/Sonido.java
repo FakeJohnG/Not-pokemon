@@ -9,7 +9,7 @@ public class Sonido {
     URL sonidoURL[]=new URL[30];
 
     public Sonido(){
-        sonidoURL[0]=getClass().getResource("/musica/mundoBeta.wav");
+        sonidoURL[0]=getClass().getResource("/musica/townTest.wav");
         sonidoURL[1]=getClass().getResource("/musica/pausa.wav");
         sonidoURL[2]=getClass().getResource("/musica/gemGet.wav");
         sonidoURL[3]=getClass().getResource("/musica/bigShot.wav");

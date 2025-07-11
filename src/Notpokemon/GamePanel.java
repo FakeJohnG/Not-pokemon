@@ -1,4 +1,5 @@
 package Notpokemon;
+import Entidades.Entidad;
 import Entidades.Player;
 import Objetos.ObjetoMadre;
 import tile.TileManager;
@@ -32,6 +33,7 @@ public class GamePanel extends JPanel implements Runnable {
     public AssetSetter aSetter = new AssetSetter(this);
     public Player player=new Player(this,input);
     public ObjetoMadre obj[][]=new ObjetoMadre[mapaMax][10];
+    public Entidad npc[][]=new Entidad[mapaMax][10];
     TileManager tileM=new TileManager(this);
     public InterfazUsuario ui=new InterfazUsuario(this);
     public AdministradorEventos eventos=new AdministradorEventos(this);
@@ -56,6 +58,7 @@ public class GamePanel extends JPanel implements Runnable {
     }
     public void setup(){
         aSetter.setObjecto();
+        aSetter.setNpc();
         playMusic(0);
         //stopMusic(); //para mutear la musica escribir eso
         gameState=playState;
@@ -94,6 +97,12 @@ public class GamePanel extends JPanel implements Runnable {
     public void update(){
         if(gameState==playState){
             player.update();
+            //npc
+            for(int i=0;i< npc[1].length;i++){
+                if(npc[mapaActual][i]!=null){
+                    npc[mapaActual][i].update();
+                }
+            }
             sonido.loop();
         }
         if(gameState==pauseState){
@@ -110,6 +119,12 @@ public class GamePanel extends JPanel implements Runnable {
         for(int i=0;i<obj[1].length;i++){
             if(obj[mapaActual][i]!=null){
                 obj[mapaActual][i].draw(g2,this);
+            }
+        }
+        //Dibujo de npc
+        for(int i=0;i<npc[1].length;i++){
+            if(npc[mapaActual][i]!=null){
+                npc[mapaActual][i].draw(g2);
             }
         }
         player.draw(g2);
