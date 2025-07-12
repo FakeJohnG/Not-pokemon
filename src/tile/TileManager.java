@@ -14,17 +14,17 @@ import java.io.InputStreamReader;
 public class TileManager {
     GamePanel gamePanel;
     public Textura[] textura;
-    public int mapTileNum[][];
+    public int mapaTexNum[][][];
 
     public TileManager(GamePanel gamePanel){
         this.gamePanel=gamePanel;
         //Aqui se indica cuantos tiles unicos tenemos,si se añade más incrementar numero.
         textura = new Textura[25];
-        mapTileNum = new int[gamePanel.maxWorldCol][gamePanel.maxWorldRow];
+        mapaTexNum = new int[gamePanel.mapaMax][gamePanel.maxWorldCol][gamePanel.maxWorldFila];
         getTileImage();
-        loadMapData("/maps/testMapDataXL.txt");
-        //Escribir entre las comillas el mapa que quieras cargar.
-        //OJO, el mapa xl es más grande y podria presentar problemas de rendimiento.
+        loadMapData("/maps/testMapDataXL.txt",0);
+        loadMapData("/maps/testMapData1.txt",1);
+
 
 
     }
@@ -99,6 +99,7 @@ public class TileManager {
 
             textura[18]=new Textura();
             textura[18].image= ImageIO.read(getClass().getResourceAsStream("/tiles/tienda3.png"));
+            //Puerta de la tienda! no puede llevar collision
 
 
             textura[19]=new Textura();
@@ -110,15 +111,15 @@ public class TileManager {
 
             textura[21]=new Textura();
             textura[21].image= ImageIO.read(getClass().getResourceAsStream("/tiles/tienda6.png"));
-            //Puerta de la tienda! no puede llevar collision
+
 
             textura[22]=new Textura();
             textura[22].image= ImageIO.read(getClass().getResourceAsStream("/tiles/tienda7.png"));
-            textura[22].collision=true;
+
 
             textura[23]=new Textura();
             textura[23].image= ImageIO.read(getClass().getResourceAsStream("/tiles/tienda8.png"));
-            textura[23].collision=true;
+
 
             textura[24]=new Textura();
             textura[24].image= ImageIO.read(getClass().getResourceAsStream("/tiles/road1.png"));
@@ -132,24 +133,24 @@ public class TileManager {
             e.printStackTrace();
         }
     }
-    public void loadMapData(String mapName){
+    public void loadMapData(String mapName,int numero){
         try{
             InputStream is =getClass().getResourceAsStream(mapName);
             BufferedReader reader =new BufferedReader(new InputStreamReader(is));
             int col=0;
-            int row=0;
-            while(col <gamePanel.maxWorldCol && row<gamePanel.maxWorldRow){
+            int fila=0;
+            while(col <gamePanel.maxWorldCol && fila<gamePanel.maxWorldFila){
                 String line= reader.readLine();
 
                 while(col< gamePanel.maxWorldCol){
                     String numbers[]= line.split(" ");
                     int num = Integer.parseInt((numbers[col]));
-                    mapTileNum[col][row]=num;
+                    mapaTexNum[numero][col][fila]=num;
                     col++;
                 }
                 if(col == gamePanel.maxWorldCol){
                     col=0;
-                    row++;
+                    fila++;
                 }
             }
             reader.close();
@@ -161,8 +162,8 @@ public class TileManager {
         int worldCol =0;
         int worldRow=0;
 
-        while(worldCol<gamePanel.maxWorldCol && worldRow <gamePanel.maxWorldRow){
-            int tileNum =mapTileNum[worldCol][worldRow];
+        while(worldCol<gamePanel.maxWorldCol && worldRow <gamePanel.maxWorldFila){
+            int tileNum = mapaTexNum[gamePanel.mapaActual][worldCol][worldRow];
             int worldX=worldCol*gamePanel.tileSize;
             int worldY=worldRow* gamePanel.tileSize;
             int screenX =worldX-gamePanel.player.worldX + gamePanel.player.screenX;
@@ -174,6 +175,7 @@ public class TileManager {
                     worldY - gamePanel.tileSize<gamePanel.player.worldY+ gamePanel.player.screenY){
                 g2.drawImage(textura[tileNum].image,screenX,screenY, gamePanel.tileSize, gamePanel.tileSize, null);
             }
+
             worldCol++;
 
 

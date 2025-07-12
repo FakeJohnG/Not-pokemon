@@ -18,10 +18,14 @@ public class InterfazUsuario {
         imagenGema= gema.imagen;
     }
     public void draw(Graphics2D g2){
-        g2.setFont(arial_40);
-        g2.setColor(Color.black);
-        g2.drawImage(imagenGema,gamePanel.tileSize/2,gamePanel.tileSize/2,gamePanel.tileSize,gamePanel.tileSize,null);
-        g2.drawString("Gemas X "+gamePanel.player.cantMcguffin,50,50);
+        if(gamePanel.objetivoStatus==1){
+            g2.setFont(arial_40);
+            g2.setColor(Color.black);
+            g2.drawImage(imagenGema,gamePanel.tileSize/2,gamePanel.tileSize/2,gamePanel.tileSize,gamePanel.tileSize,null);
+            g2.drawString("Gemas X "+gamePanel.player.cantMcguffin,50,50);
+
+
+        }
 
 
     }

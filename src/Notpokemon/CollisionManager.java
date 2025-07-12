@@ -6,8 +6,10 @@ public class CollisionManager {
     GamePanel gamePanel;
 
     public CollisionManager(GamePanel gamePanel){
+
         this.gamePanel=gamePanel;
     }
+
     public void checkTile(Entidad entidad){
         int entityLeftWorldX= entidad.worldX+ entidad.solidBox.x;
         int entityRightWorldX= entidad.worldX+ entidad.solidBox.x+ entidad.solidBox.width;
@@ -23,32 +25,32 @@ public class CollisionManager {
         switch(entidad.direction){
             case"up":
                 entityUpRow=(entityUpWorldY- entidad.speed)/gamePanel.tileSize;
-                tileNum1=gamePanel.tileM.mapTileNum[entityLeftCol][entityUpRow];
-                tileNum2=gamePanel.tileM.mapTileNum[entityRightCol][entityUpRow];
+                tileNum1=gamePanel.tileM.mapaTexNum[gamePanel.mapaActual][entityLeftCol][entityUpRow];
+                tileNum2=gamePanel.tileM.mapaTexNum[gamePanel.mapaActual][entityRightCol][entityUpRow];
                 if(gamePanel.tileM.textura[tileNum1].collision==true|| gamePanel.tileM.textura[tileNum2].collision==true){
                     entidad.collisionOn=true;
                 }
                 break;
             case"down":
                 entityDownRow=(entityDownWorldY+ entidad.speed)/gamePanel.tileSize;
-                tileNum1=gamePanel.tileM.mapTileNum[entityLeftCol][entityDownRow];
-                tileNum2=gamePanel.tileM.mapTileNum[entityRightCol][entityDownRow];
+                tileNum1=gamePanel.tileM.mapaTexNum[gamePanel.mapaActual][entityLeftCol][entityDownRow];
+                tileNum2=gamePanel.tileM.mapaTexNum[gamePanel.mapaActual][entityRightCol][entityDownRow];
                 if(gamePanel.tileM.textura[tileNum1].collision==true|| gamePanel.tileM.textura[tileNum2].collision==true){
                     entidad.collisionOn=true;
                 }
                 break;
             case"left":
                 entityLeftCol=(entityLeftWorldX- entidad.speed)/gamePanel.tileSize;
-                tileNum1=gamePanel.tileM.mapTileNum[entityLeftCol][entityUpRow];
-                tileNum2=gamePanel.tileM.mapTileNum[entityLeftCol][entityDownRow];
+                tileNum1=gamePanel.tileM.mapaTexNum[gamePanel.mapaActual][entityLeftCol][entityUpRow];
+                tileNum2=gamePanel.tileM.mapaTexNum[gamePanel.mapaActual][entityLeftCol][entityDownRow];
                 if(gamePanel.tileM.textura[tileNum1].collision==true|| gamePanel.tileM.textura[tileNum2].collision==true){
                     entidad.collisionOn=true;
                 }
                 break;
             case"right":
                 entityRightCol=(entityRightWorldX+ entidad.speed)/gamePanel.tileSize;
-                tileNum1=gamePanel.tileM.mapTileNum[entityRightCol][entityUpRow];
-                tileNum2=gamePanel.tileM.mapTileNum[entityRightCol][entityDownRow];
+                tileNum1=gamePanel.tileM.mapaTexNum[gamePanel.mapaActual][entityRightCol][entityUpRow];
+                tileNum2=gamePanel.tileM.mapaTexNum[gamePanel.mapaActual][entityRightCol][entityDownRow];
                 if(gamePanel.tileM.textura[tileNum1].collision==true|| gamePanel.tileM.textura[tileNum2].collision==true){
                     entidad.collisionOn=true;
                 }
@@ -60,21 +62,21 @@ public class CollisionManager {
     public int checkObjeto(Entidad entidad,boolean player){
         int index=999;
 
-        for(int i=0; i<gamePanel.obj.length;i++){
-            if(gamePanel.obj[i]!=null){
+        for(int i=0; i<gamePanel.obj[1].length;i++){
+            if(gamePanel.obj[gamePanel.mapaActual][i]!=null){
 
                 //Conseguir la posicion de la entidad
                 entidad.solidBox.x= entidad.worldX+entidad.solidBox.x;
                 entidad.solidBox.y= entidad.worldY+entidad.solidBox.y;
                 //Conseguir la posicion del objeto
-                gamePanel.obj[i].solidArea.x=gamePanel.obj[i].worldX+gamePanel.obj[i].solidArea.x;
-                gamePanel.obj[i].solidArea.y=gamePanel.obj[i].worldY+gamePanel.obj[i].solidArea.y;
+                gamePanel.obj[gamePanel.mapaActual][i].solidArea.x=gamePanel.obj[gamePanel.mapaActual][i].worldX+gamePanel.obj[gamePanel.mapaActual][i].solidArea.x;
+                gamePanel.obj[gamePanel.mapaActual][i].solidArea.y=gamePanel.obj[gamePanel.mapaActual][i].worldY+gamePanel.obj[gamePanel.mapaActual][i].solidArea.y;
 
                 switch(entidad.direction){
                     case "up":
                         entidad.solidBox.y-=entidad.speed;
-                        if(entidad.solidBox.intersects(gamePanel.obj[i].solidArea)){
-                            if (gamePanel.obj[i].collision == true) {
+                        if(entidad.solidBox.intersects(gamePanel.obj[gamePanel.mapaActual][i].solidArea)){
+                            if (gamePanel.obj[gamePanel.mapaActual][i].collision == true) {
                                 entidad.collisionOn = true;
                             }if(player==true){
                                 index=i;
@@ -84,8 +86,8 @@ public class CollisionManager {
                         break;
                     case "down":
                         entidad.solidBox.y+=entidad.speed;
-                        if(entidad.solidBox.intersects(gamePanel.obj[i].solidArea)){
-                            if (gamePanel.obj[i].collision == true) {
+                        if(entidad.solidBox.intersects(gamePanel.obj[gamePanel.mapaActual][i].solidArea)){
+                            if (gamePanel.obj[gamePanel.mapaActual][i].collision == true) {
                                 entidad.collisionOn = true;
                             }if(player==true){
                                 index=i;
@@ -96,8 +98,8 @@ public class CollisionManager {
                         break;
                     case "left":
                         entidad.solidBox.x-=entidad.speed;
-                        if(entidad.solidBox.intersects(gamePanel.obj[i].solidArea)){
-                            if (gamePanel.obj[i].collision == true) {
+                        if(entidad.solidBox.intersects(gamePanel.obj[gamePanel.mapaActual][i].solidArea)){
+                            if (gamePanel.obj[gamePanel.mapaActual][i].collision == true) {
                                 entidad.collisionOn = true;
                             }if(player==true){
                                 index=i;
@@ -108,8 +110,8 @@ public class CollisionManager {
                         break;
                     case "right":
                         entidad.solidBox.x+=entidad.speed;
-                        if(entidad.solidBox.intersects(gamePanel.obj[i].solidArea)){
-                            if (gamePanel.obj[i].collision == true) {
+                        if(entidad.solidBox.intersects(gamePanel.obj[gamePanel.mapaActual][i].solidArea)){
+                            if (gamePanel.obj[gamePanel.mapaActual][i].collision == true) {
                                 entidad.collisionOn = true;
                             }if(player==true){
                                 index=i;
@@ -123,8 +125,8 @@ public class CollisionManager {
 
                 entidad.solidBox.x=entidad.areaSolidaDefaultX;
                 entidad.solidBox.y=entidad.areaSolidaDefaultY;
-                gamePanel.obj[i].solidArea.x=gamePanel.obj[i].areaSolidaDefaultX;
-                gamePanel.obj[i].solidArea.y=gamePanel.obj[i].areaSolidaDefaultY;
+                gamePanel.obj[gamePanel.mapaActual][i].solidArea.x=gamePanel.obj[gamePanel.mapaActual][i].areaSolidaDefaultX;
+                gamePanel.obj[gamePanel.mapaActual][i].solidArea.y=gamePanel.obj[gamePanel.mapaActual][i].areaSolidaDefaultY;
             }
         }
 

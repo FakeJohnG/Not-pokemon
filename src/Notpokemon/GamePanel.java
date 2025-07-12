@@ -1,4 +1,5 @@
 package Notpokemon;
+import Entidades.Entidad;
 import Entidades.Player;
 import Objetos.ObjetoMadre;
 import tile.TileManager;
@@ -20,9 +21,9 @@ public class GamePanel extends JPanel implements Runnable {
 
     //Ajustes del mapa
     public final int maxWorldCol=50;
-    public final int maxWorldRow=50;
-    public final int worldWidth= tileSize*maxWorldCol;
-    public final int worldHeight= tileSize*maxWorldRow;
+    public final int maxWorldFila =50;
+    public final int mapaMax=10;
+    public  int mapaActual=0;
 
     Inputs input= new Inputs(this);
     Sonido sonido= new Sonido();
@@ -31,14 +32,17 @@ public class GamePanel extends JPanel implements Runnable {
     public CollisionManager managerC =new CollisionManager(this);
     public AssetSetter aSetter = new AssetSetter(this);
     public Player player=new Player(this,input);
-    public ObjetoMadre obj[]=new ObjetoMadre[10];
+    public ObjetoMadre obj[][]=new ObjetoMadre[mapaMax][10];
+    public Entidad npc[][]=new Entidad[mapaMax][10];
     TileManager tileM=new TileManager(this);
     public InterfazUsuario ui=new InterfazUsuario(this);
+    public AdministradorEventos eventos=new AdministradorEventos(this);
     //Estado del juego
     public int gameState;
     public final int playState=1;
     public final int pauseState=2;
     public final int tituloState=3;
+    public int objetivoStatus=0;
 
 
     //fps (frames per second)
@@ -54,6 +58,7 @@ public class GamePanel extends JPanel implements Runnable {
     }
     public void setup(){
         aSetter.setObjecto();
+        aSetter.setNpc();
         playMusic(0);
         //stopMusic(); //para mutear la musica escribir eso
         gameState=playState;
@@ -76,7 +81,7 @@ public class GamePanel extends JPanel implements Runnable {
             repaint();
             try {
                 double remainingTime =nextDrawTime-System.nanoTime();
-                remainingTime=remainingTime/1000000000;
+                remainingTime=remainingTime/1_000_000;
                 if(remainingTime<0){
                     remainingTime=0;
                 }
@@ -92,6 +97,12 @@ public class GamePanel extends JPanel implements Runnable {
     public void update(){
         if(gameState==playState){
             player.update();
+            //npc
+            for(int i=0;i< npc[1].length;i++){
+                if(npc[mapaActual][i]!=null){
+                    npc[mapaActual][i].update();
+                }
+            }
             sonido.loop();
         }
         if(gameState==pauseState){
@@ -105,10 +116,15 @@ public class GamePanel extends JPanel implements Runnable {
         Graphics2D g2=(Graphics2D)g;
         //OJO, Tile manager debe ir primero sino, el personje se dibujara debajo de las tiles.
         tileM.draw(g2);
-        //este dibuja los objetos
-        for(int i=0;i<obj.length;i++){
-            if(obj[i]!=null){
-                obj[i].draw(g2,this);
+        for(int i=0;i<obj[1].length;i++){
+            if(obj[mapaActual][i]!=null){
+                obj[mapaActual][i].draw(g2,this);
+            }
+        }
+        //Dibujo de npc
+        for(int i=0;i<npc[1].length;i++){
+            if(npc[mapaActual][i]!=null){
+                npc[mapaActual][i].draw(g2);
             }
         }
         player.draw(g2);
