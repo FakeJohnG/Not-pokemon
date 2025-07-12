@@ -8,11 +8,13 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
-public class Player extends Entity {
+public class Player extends Entidad {
     GamePanel gamePanel;
     Inputs input;
     public final int screenX;
     public final int screenY;
+    public int cantMcguffin=0;
+    //Le puse Mcguffin porque no si hacerlos gemas o otra cosa so yea
 
 
     public Player(GamePanel gamePanel,Inputs input){
@@ -87,6 +89,9 @@ public class Player extends Entity {
         //Verificar collision
         collisionOn=false;
         gamePanel.managerC.checkTile(this);
+        int objIndex= gamePanel.managerC.checkObjeto(this,true);
+        recogerObjeto(objIndex);
+
         if(collisionOn==false){
             switch(direction){
                 case"up":worldY -=speed;break;
@@ -102,6 +107,19 @@ public class Player extends Entity {
             frameCounter = 0;
         }else{
             frameIndex=0;
+        }
+    }
+    public void recogerObjeto(int i){
+        if(i!=999){
+            String nombreObj=gamePanel.obj[i].nombre;
+            if(nombreObj.equals("Gema")){
+
+                gamePanel.playEfectosSonido(1);
+                cantMcguffin++;
+                gamePanel.obj[i]=null;
+                System.out.print(cantMcguffin);
+
+            }
         }
     }
     public void draw(Graphics2D g2){

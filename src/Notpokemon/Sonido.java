@@ -10,6 +10,7 @@ public class Sonido {
 
     public Sonido(){
         sonidoURL[0]=getClass().getResource("/musica/mundoBeta.wav");
+        sonidoURL[1]=getClass().getResource("/musica/gemGet.wav");
 
     }
     public void setFile(int i){
@@ -23,6 +24,7 @@ public class Sonido {
 
     }
     public void play(){
+        clip.start();
 
     }
     public void loop(){

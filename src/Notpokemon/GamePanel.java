@@ -1,5 +1,6 @@
 package Notpokemon;
 import Entidades.Player;
+import Objetos.ObjetoMadre;
 import tile.TileManager;
 
 import javax.swing.JPanel;
@@ -23,12 +24,22 @@ public class GamePanel extends JPanel implements Runnable {
     public final int worldWidth= tileSize*maxWorldCol;
     public final int worldHeight= tileSize*maxWorldRow;
 
-    Inputs input= new Inputs();
+    Inputs input= new Inputs(this);
     Sonido sonido= new Sonido();
+    Sonido sonidoE= new Sonido();
     Thread gameThread;
     public CollisionManager managerC =new CollisionManager(this);
+    public AssetSetter aSetter = new AssetSetter(this);
     public Player player=new Player(this,input);
+    public ObjetoMadre obj[]=new ObjetoMadre[10];
     TileManager tileM=new TileManager(this);
+    public InterfazUsuario ui=new InterfazUsuario(this);
+    //Estado del juego
+    public int gameState;
+    public final int playState=1;
+    public final int pauseState=2;
+    public final int tituloState=3;
+
 
     //fps (frames per second)
     int fps=24;
@@ -42,7 +53,10 @@ public class GamePanel extends JPanel implements Runnable {
         this.setFocusable(true);
     }
     public void setup(){
+        aSetter.setObjecto();
         playMusic(0);
+        //stopMusic(); //para mutear la musica escribir eso
+        gameState=playState;
     }
     //Estas lineas de abajo se encargan de manejar el gameloop, mejor no las toquen.
     public void startGameThread(){
@@ -76,7 +90,14 @@ public class GamePanel extends JPanel implements Runnable {
 
     }
     public void update(){
-        player.update();
+        if(gameState==playState){
+            player.update();
+            sonido.loop();
+        }
+        if(gameState==pauseState){
+            sonido.stop();
+        }
+
     }
     public void paintComponent(Graphics g){
         super.paintComponent(g);
@@ -84,7 +105,15 @@ public class GamePanel extends JPanel implements Runnable {
         Graphics2D g2=(Graphics2D)g;
         //OJO, Tile manager debe ir primero sino, el personje se dibujara debajo de las tiles.
         tileM.draw(g2);
+        //este dibuja los objetos
+        for(int i=0;i<obj.length;i++){
+            if(obj[i]!=null){
+                obj[i].draw(g2,this);
+            }
+        }
         player.draw(g2);
+
+        ui.draw(g2);
 
 
         g2.dispose();
@@ -99,7 +128,8 @@ public class GamePanel extends JPanel implements Runnable {
         sonido.stop();
     }
     public void playEfectosSonido(int i){
-        //Esto sirvira para los efectos de sonido
+        sonidoE.setFile(i);
+        sonidoE.play();
 
     }
 }

@@ -7,7 +7,11 @@ import java.awt.event.KeyListener;
 public class Inputs implements KeyListener {
     //Atributos
 public boolean upPressed,downPressed,leftPressed,rightPressed;
+    GamePanel gamePanel;
+    public Inputs(GamePanel gamePanel){
+        this.gamePanel=gamePanel;
 
+    }
 
     @Override
     public void keyTyped(KeyEvent e) {
@@ -32,6 +36,15 @@ public boolean upPressed,downPressed,leftPressed,rightPressed;
         }
         if(code==KeyEvent.VK_D){
             rightPressed=true;
+
+        }
+        if(code==KeyEvent.VK_ENTER){
+            if(gamePanel.gameState==gamePanel.playState){
+                gamePanel.gameState=gamePanel.pauseState;
+            } else if (gamePanel.gameState==gamePanel.pauseState) {
+                gamePanel.gameState=gamePanel.playState;
+
+            }
 
         }
     }
