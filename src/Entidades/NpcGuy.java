@@ -48,19 +48,19 @@ public class NpcGuy extends Entidad {
         try{
             rightFrames = new BufferedImage[3];
             for (int i = 0; i < rightFrames.length; i++) {
-                rightFrames[i] = ImageIO.read(getClass().getResourceAsStream("/Entrenador1/Der" + (i + 1) + ".png"));
+                rightFrames[i] = ImageIO.read(getClass().getResourceAsStream("/NPCs/Niño/DerNiño" + (i + 1) + ".png"));
             }
             upFrames = new BufferedImage[3];
             for (int i = 0; i < upFrames.length; i++) {
-                upFrames[i] = ImageIO.read(getClass().getResourceAsStream("/Entrenador1/Arriba" + (i + 1) + ".png"));
+                upFrames[i] = ImageIO.read(getClass().getResourceAsStream("/NPCs/Niño/ArribaNiño" + (i + 1) + ".png"));
             }
             downFrames = new BufferedImage[3];
             for (int i = 0; i < downFrames.length; i++) {
-                downFrames[i] = ImageIO.read(getClass().getResourceAsStream("/Entrenador1/Abajo" + (i + 1) + ".png"));
+                downFrames[i] = ImageIO.read(getClass().getResourceAsStream("/NPCs/Niño/AbajoNiño" + (i + 1) + ".png"));
             }
             leftFrames = new BufferedImage[3];
             for (int i = 0; i < leftFrames.length; i++) {
-                leftFrames[i] = ImageIO.read(getClass().getResourceAsStream("/Entrenador1/Izq" + (i + 1) + ".png"));
+                leftFrames[i] = ImageIO.read(getClass().getResourceAsStream("/NPCs/Niño/IzqNiño" + (i + 1) + ".png"));
             }
 //Si solo es un frame cuando esta en reposo, okay
             idleFrames = new BufferedImage[1];
