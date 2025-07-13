@@ -65,7 +65,7 @@ public class NpcGuy extends Entidad {
 //Si solo es un frame cuando esta en reposo, okay
             idleFrames = new BufferedImage[1];
             for (int i = 0; i < idleFrames.length; i++) {
-                idleFrames[i] = ImageIO.read(getClass().getResourceAsStream("/Entrenador1/Abajo" + (2) + ".png"));
+                idleFrames[i] = ImageIO.read(getClass().getResourceAsStream("/NPCs/Niño/AbajoNiño" + (2) + ".png"));
             }
 
 

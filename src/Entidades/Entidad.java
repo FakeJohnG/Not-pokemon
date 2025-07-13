@@ -34,6 +34,8 @@ public class Entidad {
  public void update(){
   setComportamiento();
   //Sistema de collision
+  collisionOn=false;
+  gamePanel.managerC.checkTile(this);
   if(collisionOn==false){
    switch(direction){
     case"up":worldY -=speed;break;
