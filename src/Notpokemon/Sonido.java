@@ -15,6 +15,7 @@ public class Sonido {
         sonidoURL[3]=getClass().getResource("/musica/bigShot.wav");
         sonidoURL[4]=getClass().getResource("/musica/cambioMapa.wav");
         sonidoURL[5]=getClass().getResource("/musica/soulBattle.wav");
+        sonidoURL[6]=getClass().getResource("/musica/secret.wav");
 
     }
     public void setFile(int i){

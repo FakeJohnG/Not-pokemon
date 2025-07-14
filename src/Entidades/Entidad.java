@@ -36,6 +36,7 @@ public class Entidad {
   //Sistema de collision
   collisionOn=false;
   gamePanel.managerC.checkTile(this);
+  gamePanel.managerC.checkPlayer(this);
   if(collisionOn==false){
    switch(direction){
     case"up":worldY -=speed;break;

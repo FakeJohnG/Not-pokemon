@@ -41,14 +41,23 @@ public boolean upPressed,downPressed,leftPressed,rightPressed;
         if(code==KeyEvent.VK_ENTER){
             if(gamePanel.gameState==gamePanel.playState){
                 gamePanel.gameState=gamePanel.pauseState;
+                gamePanel.sonido.stop();
+
                 gamePanel.sonidoE.setFile(1);
                 gamePanel.sonidoE.play();
+
+                gamePanel.sonidoE.setFile(6);
+                gamePanel.sonidoE.play();
+
             } else if (gamePanel.gameState==gamePanel.pauseState) {
+                gamePanel.sonidoE.stop();
+                gamePanel.sonido.stop();
                 gamePanel.sonidoE.setFile(1);
                 gamePanel.sonidoE.play();
                 gamePanel.gameState=gamePanel.playState;
 
             }
+
 
         }
 

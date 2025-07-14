@@ -8,7 +8,7 @@ import java.awt.image.BufferedImage;
 public class ObjetoMadre {
     public BufferedImage imagen;
     public String nombre;
-    public boolean collision=false;
+    public boolean collisionOn =false;
     public int worldX, worldY;
     public Rectangle solidArea = new Rectangle(0,0,48,48);
     public int areaSolidaDefaultX=0;

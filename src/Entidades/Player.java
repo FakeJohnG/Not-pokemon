@@ -90,8 +90,12 @@ public class Player extends Entidad {
         //Verificar collision
         collisionOn=false;
         gamePanel.managerC.checkTile(this);
+        //Collision con objetos
         int objIndex= gamePanel.managerC.checkObjeto(this,true);
         recogerObjeto(objIndex);
+        //Collision con npcs
+        int npcIndex=gamePanel.managerC.checkEntidad(this,gamePanel.npc);
+        collisionNpc(npcIndex);
 
         if(collisionOn==false){
             switch(direction){
@@ -111,6 +115,11 @@ public class Player extends Entidad {
             frameIndex=0;
         }
     }
+    public void collisionNpc(int i){
+        if(i!=999){
+            System.out.println("Collision con npc");
+        }
+    }
     public void recogerObjeto(int i){
         if(i!=999){
             String nombreObj=gamePanel.obj[gamePanel.mapaActual][i].nombre;
@@ -119,7 +128,7 @@ public class Player extends Entidad {
                 gamePanel.playEfectosSonido(2);
                 cantMcguffin++;
                 gamePanel.obj[gamePanel.mapaActual][i]=null;
-                System.out.print(cantMcguffin);
+                System.out.print("Mcguffin get!"+cantMcguffin);
 
             }
         }

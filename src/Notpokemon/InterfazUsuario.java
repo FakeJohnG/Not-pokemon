@@ -26,6 +26,11 @@ public class InterfazUsuario {
 
 
         }
+        if(gamePanel.gameState==gamePanel.pauseState){
+            g2.setFont(arial_40);
+            g2.setColor(Color.black);
+            g2.drawString("===Pausa===",320,250);
+        }
 
 
     }
