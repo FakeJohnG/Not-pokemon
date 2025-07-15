@@ -25,7 +25,7 @@ public class GamePanel extends JPanel implements Runnable {
     public final int mapaMax=10;
     public  int mapaActual=0;
 
-    Inputs input= new Inputs(this);
+    public Inputs input= new Inputs(this);
     Sonido sonido= new Sonido();
     Sonido sonidoE= new Sonido();
     Thread gameThread;
@@ -34,6 +34,7 @@ public class GamePanel extends JPanel implements Runnable {
     public Player player=new Player(this,input);
     public ObjetoMadre obj[][]=new ObjetoMadre[mapaMax][10];
     public Entidad npc[][]=new Entidad[mapaMax][10];
+    public int npcId;
     TileManager tileM=new TileManager(this);
     public InterfazUsuario ui=new InterfazUsuario(this);
     public AdministradorEventos eventos=new AdministradorEventos(this);
@@ -42,6 +43,7 @@ public class GamePanel extends JPanel implements Runnable {
     public final int playState=1;
     public final int pauseState=2;
     public final int tituloState=3;
+    public final int yapperState=4;
     public int objetivoStatus=0;
 
 

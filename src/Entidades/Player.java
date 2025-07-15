@@ -95,7 +95,7 @@ public class Player extends Entidad {
         recogerObjeto(objIndex);
         //Collision con npcs
         int npcIndex=gamePanel.managerC.checkEntidad(this,gamePanel.npc);
-        collisionNpc(npcIndex);
+        interracionNpc(npcIndex);
 
         if(collisionOn==false){
             switch(direction){
@@ -115,10 +115,17 @@ public class Player extends Entidad {
             frameIndex=0;
         }
     }
-    public void collisionNpc(int i){
+    public void interracionNpc(int i){
         if(i!=999){
-            System.out.println("Collision con npc");
+            if(gamePanel.input.ePressed==true){
+                gamePanel.gameState=gamePanel.yapperState;
+                gamePanel.npc[gamePanel.mapaActual][i].speak();
+
+            }
+
         }
+        gamePanel.input.ePressed=false;
+
     }
     public void recogerObjeto(int i){
         if(i!=999){

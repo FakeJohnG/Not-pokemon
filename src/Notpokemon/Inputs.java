@@ -6,7 +6,7 @@ import java.awt.event.KeyListener;
 //Ps. talves implemente soporte para control pero eso ya seria un requisito no funcional. J
 public class Inputs implements KeyListener {
     //Atributos
-public boolean upPressed,downPressed,leftPressed,rightPressed;
+public boolean upPressed,downPressed,leftPressed,rightPressed,ePressed;
     GamePanel gamePanel;
     public Inputs(GamePanel gamePanel){
         this.gamePanel=gamePanel;
@@ -38,6 +38,10 @@ public boolean upPressed,downPressed,leftPressed,rightPressed;
             rightPressed=true;
 
         }
+        if(code==KeyEvent.VK_E){
+            ePressed=true;
+
+        }
         if(code==KeyEvent.VK_ENTER){
             if(gamePanel.gameState==gamePanel.playState){
                 gamePanel.gameState=gamePanel.pauseState;
@@ -59,6 +63,11 @@ public boolean upPressed,downPressed,leftPressed,rightPressed;
             }
 
 
+        }
+        if(gamePanel.gameState== gamePanel.yapperState){
+            if(code==KeyEvent.VK_E){
+                gamePanel.gameState= gamePanel.playState;
+            }
         }
 
     }

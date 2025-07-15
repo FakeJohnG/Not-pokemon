@@ -17,6 +17,7 @@ public class Entidad {
  public int areaSolidaDefaultX, areaSolidaDefaultY;
  public boolean collisionOn=false;
  public int contAccion=0;
+ int dialogoIndex=0;
 
  public BufferedImage[] idleFrames;
  public BufferedImage[] upFrames;
@@ -24,11 +25,16 @@ public class Entidad {
  public BufferedImage[] leftFrames;
  public BufferedImage[] rightFrames;
 
+ String dialogosNpc[]= new String[30];
+
  public Entidad(GamePanel gamePanel){
   this.gamePanel=gamePanel;
 
  }
  public void setComportamiento(){
+
+ }
+ public void speak(){
 
  }
  public void update(){

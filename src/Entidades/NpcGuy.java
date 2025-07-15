@@ -15,6 +15,7 @@ public class NpcGuy extends Entidad {
         direction = "idle";
         speed = 2;
         getNpcImage();
+        setDialogos();
     }
     public void setComportamiento(){
         contAccion++;
@@ -42,6 +43,12 @@ public class NpcGuy extends Entidad {
         }
 
 
+    }
+    public void setDialogos(){
+        dialogosNpc[0]="Freefire es mejor que eso pokemones";
+        dialogosNpc[1]="WOW! PUEDO HABLAR!";
+        dialogosNpc[2]="PUDEDO DECIR PALABROTAS";
+        dialogosNpc[3]="ok no";
     }
 
     public void getNpcImage(){
@@ -73,5 +80,28 @@ public class NpcGuy extends Entidad {
         }catch(IOException e){
             e.printStackTrace();
         }
+    }
+    public void speak(){
+        if(dialogosNpc[dialogoIndex]==null){
+            dialogoIndex=0;
+        }
+        gamePanel.ui.dialogoActual=dialogosNpc[dialogoIndex];
+        dialogoIndex++;
+
+        switch(gamePanel.player.direction){
+            case "up":
+                direction="down";
+                break;
+            case "down":
+                direction="up";
+                break;
+            case "left":
+                direction="right";
+                break;
+            case "right":
+                direction="left";
+                break;
+        }
+
     }
 }
