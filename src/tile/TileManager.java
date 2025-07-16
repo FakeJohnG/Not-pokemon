@@ -19,7 +19,7 @@ public class TileManager {
     public TileManager(GamePanel gamePanel){
         this.gamePanel=gamePanel;
         //Aqui se indica cuantos tiles unicos tenemos,si se añade más incrementar numero.
-        textura = new Textura[25];
+        textura = new Textura[26];
         mapaTexNum = new int[gamePanel.mapaMax][gamePanel.maxWorldCol][gamePanel.maxWorldFila];
         getTileImage();
         loadMapData("/maps/testMapDataXL.txt",0);
@@ -72,7 +72,6 @@ public class TileManager {
             textura[10].image= ImageIO.read(getClass().getResourceAsStream("/tiles/water2.png"));
             textura[10].collision=true;
 
-
             //partes del puente
             textura[11]=new Textura();
             textura[11].image= ImageIO.read(getClass().getResourceAsStream("/tiles/puente2.png"));
@@ -124,10 +123,9 @@ public class TileManager {
             textura[24]=new Textura();
             textura[24].image= ImageIO.read(getClass().getResourceAsStream("/tiles/road1.png"));
 
-
-
-
-
+            textura[25]=new Textura();
+            textura[25].image= ImageIO.read(getClass().getResourceAsStream("/tiles/grass9.png"));
+            textura[25].collision=true;
 
         }catch(IOException e){
             e.printStackTrace();
