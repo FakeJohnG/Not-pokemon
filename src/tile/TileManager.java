@@ -107,6 +107,7 @@ public class TileManager {
 
             textura[20]=new Textura();
             textura[20].image= ImageIO.read(getClass().getResourceAsStream("/tiles/tienda5.png"));
+            textura[20].collision=true;
 
             textura[21]=new Textura();
             textura[21].image= ImageIO.read(getClass().getResourceAsStream("/tiles/tienda6.png"));
@@ -129,27 +130,35 @@ public class TileManager {
 
             textura[26]=new Textura();
             textura[26].image= ImageIO.read(getClass().getResourceAsStream("/tiles/tiendatecho1.png"));
+            textura[26].collision=true;
 
             textura[27]=new Textura();
             textura[27].image= ImageIO.read(getClass().getResourceAsStream("/tiles/tiendatecho2.png"));
+            textura[27].collision=true;
 
             textura[28]=new Textura();
             textura[28].image= ImageIO.read(getClass().getResourceAsStream("/tiles/tiendatecho3.png"));
+            textura[28].collision=true;
 
             textura[29]=new Textura();
             textura[29].image= ImageIO.read(getClass().getResourceAsStream("/tiles/tiendatecho4.png"));
+            textura[29].collision=true;
 
             textura[30]=new Textura();
             textura[30].image= ImageIO.read(getClass().getResourceAsStream("/tiles/tiendatecho5.png"));
+            textura[30].collision=true;
 
             textura[31]=new Textura();
             textura[31].image= ImageIO.read(getClass().getResourceAsStream("/tiles/tiendatecho6.png"));
+            textura[31].collision=true;
 
             textura[32]=new Textura();
             textura[32].image= ImageIO.read(getClass().getResourceAsStream("/tiles/tiendatecho7.png"));
+            textura[32].collision=true;
 
             textura[33]=new Textura();
             textura[33].image= ImageIO.read(getClass().getResourceAsStream("/tiles/tiendatecho8.png"));
+            textura[33].collision=true;
 
         }catch(IOException e){
             e.printStackTrace();

@@ -44,7 +44,7 @@ public class AdministradorEventos {
         if (eventoActivo == true) {
             //fila
 
-            if (hit(0, 19, 33, "any")) {
+            if (hit(0, 31, 21, "any")) {
                 System.out.println("loading spamton...");
                 gamePanel.sonidoE.setFile(4);
                 gamePanel.sonidoE.play();
@@ -55,7 +55,7 @@ public class AdministradorEventos {
                 System.out.println("Bye bye spamton");
                 gamePanel.sonidoE.setFile(4);
                 gamePanel.sonidoE.play();
-                teleport(0, 19, 34);
+                teleport(0, 31, 22);
 
             } else if (hit(0, 21, 12, "any")) {
                 System.out.println("encuentro salvaje?");
