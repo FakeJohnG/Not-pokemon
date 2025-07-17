@@ -19,7 +19,7 @@ public class TileManager {
     public TileManager(GamePanel gamePanel){
         this.gamePanel=gamePanel;
         //Aqui se indica cuantos tiles unicos tenemos,si se añade más incrementar numero.
-        textura = new Textura[26];
+        textura = new Textura[34];
         mapaTexNum = new int[gamePanel.mapaMax][gamePanel.maxWorldCol][gamePanel.maxWorldFila];
         getTileImage();
         loadMapData("/maps/testMapDataXL.txt",0);
@@ -126,6 +126,30 @@ public class TileManager {
             textura[25]=new Textura();
             textura[25].image= ImageIO.read(getClass().getResourceAsStream("/tiles/grass9.png"));
             textura[25].collision=true;
+
+            textura[26]=new Textura();
+            textura[26].image= ImageIO.read(getClass().getResourceAsStream("/tiles/tiendatecho1.png"));
+
+            textura[27]=new Textura();
+            textura[27].image= ImageIO.read(getClass().getResourceAsStream("/tiles/tiendatecho2.png"));
+
+            textura[28]=new Textura();
+            textura[28].image= ImageIO.read(getClass().getResourceAsStream("/tiles/tiendatecho3.png"));
+
+            textura[29]=new Textura();
+            textura[29].image= ImageIO.read(getClass().getResourceAsStream("/tiles/tiendatecho4.png"));
+
+            textura[30]=new Textura();
+            textura[30].image= ImageIO.read(getClass().getResourceAsStream("/tiles/tiendatecho5.png"));
+
+            textura[31]=new Textura();
+            textura[31].image= ImageIO.read(getClass().getResourceAsStream("/tiles/tiendatecho6.png"));
+
+            textura[32]=new Textura();
+            textura[32].image= ImageIO.read(getClass().getResourceAsStream("/tiles/tiendatecho7.png"));
+
+            textura[33]=new Textura();
+            textura[33].image= ImageIO.read(getClass().getResourceAsStream("/tiles/tiendatecho8.png"));
 
         }catch(IOException e){
             e.printStackTrace();
