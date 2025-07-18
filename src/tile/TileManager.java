@@ -19,7 +19,7 @@ public class TileManager {
     public TileManager(GamePanel gamePanel){
         this.gamePanel=gamePanel;
         //Aqui se indica cuantos tiles unicos tenemos,si se añade más incrementar numero.
-        textura = new Textura[34];
+        textura = new Textura[45];
         mapaTexNum = new int[gamePanel.mapaMax][gamePanel.maxWorldCol][gamePanel.maxWorldFila];
         getTileImage();
         loadMapData("/maps/testMapDataXL.txt",0);
@@ -159,6 +159,49 @@ public class TileManager {
             textura[33]=new Textura();
             textura[33].image= ImageIO.read(getClass().getResourceAsStream("/tiles/tiendatecho8.png"));
             textura[33].collision=true;
+
+            textura[34]=new Textura();
+            textura[34].image= ImageIO.read(getClass().getResourceAsStream("/tiles/casa1.png"));
+            textura[34].collision=true;
+
+            textura[35]=new Textura();
+            textura[35].image= ImageIO.read(getClass().getResourceAsStream("/tiles/casa234.png"));
+            textura[35].collision=true;
+
+            textura[36]=new Textura();
+            textura[36].image= ImageIO.read(getClass().getResourceAsStream("/tiles/casa5.png"));
+            textura[36].collision=true;
+
+            textura[37]=new Textura();
+            textura[37].image= ImageIO.read(getClass().getResourceAsStream("/tiles/casa6.png"));
+            textura[37].collision=true;
+
+            textura[38]=new Textura();
+            textura[38].image= ImageIO.read(getClass().getResourceAsStream("/tiles/casa789.png"));
+            textura[38].collision=true;
+
+            textura[39]=new Textura();
+            textura[39].image= ImageIO.read(getClass().getResourceAsStream("/tiles/casa10.png"));
+            textura[39].collision=true;
+
+            textura[40]=new Textura();
+            textura[40].image= ImageIO.read(getClass().getResourceAsStream("/tiles/casa11.png"));
+            textura[40].collision=true;
+
+            textura[41]=new Textura();
+            textura[41].image= ImageIO.read(getClass().getResourceAsStream("/tiles/casa12.png"));
+            textura[41].collision=true;
+
+            textura[42]=new Textura();
+            textura[42].image= ImageIO.read(getClass().getResourceAsStream("/tiles/casa13.png"));
+            textura[42].collision=true;
+
+            textura[43]=new Textura();
+            textura[43].image= ImageIO.read(getClass().getResourceAsStream("/tiles/casa14.png"));
+
+            textura[44]=new Textura();
+            textura[44].image= ImageIO.read(getClass().getResourceAsStream("/tiles/casa15.png"));
+            textura[44].collision=true;
 
         }catch(IOException e){
             e.printStackTrace();
