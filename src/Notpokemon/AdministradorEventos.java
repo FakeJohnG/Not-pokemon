@@ -5,6 +5,7 @@ public class AdministradorEventos {
     EventRect eventRect[][][];
     int eventoAnteriorX, eventoAnteriorY;
     boolean eventoActivo=true;
+    int contadorEncuentro;
 
     public AdministradorEventos(GamePanel gamePanel) {
         this.gamePanel = gamePanel;
@@ -128,17 +129,30 @@ public class AdministradorEventos {
 
     }
     public void encuentroSalvaje() {
-        //Esto sirvira para los encuentros salvajes, aun estoy viendo las probabilidades but its a start.
-        int probEncuento = (int) (Math.random() * 225) + 1;
-        System.out.println(probEncuento);
-        if (probEncuento < 65) {
-            System.out.println("Encuentro Salvaje!");
-            eventoActivo=false;
-            gamePanel.sonido.stop();
-            gamePanel.sonido.setFile(5);
-            gamePanel.sonido.play();
-
-
+        if(contadorEncuentro!=0){
+            System.out.println("cooldown..."+contadorEncuentro);
+            contadorEncuentro--;
         }
+        else{
+            int probEncuento = (int) (Math.random() * 225) + 1;
+            System.out.println(probEncuento);
+            if(probEncuento>65){
+                System.out.println("Nop fallo");
+                contadorEncuentro=30;
+
+            }
+            if (probEncuento < 65) {
+                contadorEncuentro = 75;
+                System.out.println("Encuentro Salvaje!");
+                gamePanel.gameState= gamePanel.combateState;
+                eventoActivo=false;
+                gamePanel.sonido.stop();
+                gamePanel.sonido.setFile(5);
+                gamePanel.sonido.play();
+
+
+            }
+        }
+
     }
 }
