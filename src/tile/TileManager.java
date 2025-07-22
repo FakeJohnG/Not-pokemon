@@ -74,7 +74,7 @@ public class TileManager {
 
             //partes del puente
             textura[11]=new Textura();
-            textura[11].image= ImageIO.read(getClass().getResourceAsStream("/tiles/puente2.png"));
+            textura[11].image= ImageIO.read(getClass().getResourceAsStream("/tiles/colisioncamino.png"));
 
             textura[12]=new Textura();
             textura[12].image= ImageIO.read(getClass().getResourceAsStream("/tiles/road2.png"));
