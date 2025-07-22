@@ -2,21 +2,43 @@ package Notpokemon;
 
 import Objetos.Gema;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.io.InputStream;
 
 public class InterfazUsuario {
     GamePanel gamePanel;
     Graphics2D g2;
-    Font arial_40;
+    Font arial_40, spamton;
     public String dialogoActual;
     BufferedImage imagenGema;
+    BufferedImage fondoCombate;
+    BufferedImage textBoxCombate;
 
     public InterfazUsuario(GamePanel gamePanel){
         this.gamePanel=gamePanel;
         this.arial_40=new Font("Arial",Font.BOLD,20);
+        InputStream is = getClass().getResourceAsStream("/font/spamton.ttf");
+
+
+        try {
+            fondoCombate= ImageIO.read(getClass().getResourceAsStream("/otros/fondo de combate.png"));
+            textBoxCombate= ImageIO.read(getClass().getResourceAsStream("/otros/textBoxCombate.png"));
+            spamton = Font.createFont(Font.TRUETYPE_FONT, is);
+            spamton = spamton.deriveFont(Font.PLAIN, 14f);
+
+
+        } catch (FontFormatException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         Gema gema=new Gema();
         imagenGema= gema.imagen;
+
     }
     public void draw(Graphics2D g2){
         this.g2=g2;
@@ -37,7 +59,35 @@ public class InterfazUsuario {
         if(gamePanel.gameState== gamePanel.yapperState){
             drawCajaDialogo();
         }
+        //Estado de combate
+        if(gamePanel.gameState==gamePanel.combateState){
+            drawCombate();
+        }
+        //Estado de titulo
+        if(gamePanel.gameState==gamePanel.tituloState){
+            drawPantallaTitulo();
+        }
 
+
+
+
+    }
+    public void drawCombate(){
+        g2.drawImage(fondoCombate,0,0,gamePanel.screenWidth,gamePanel.screenHeight,null);
+        g2.drawImage(textBoxCombate,100,350,500,100,null);
+
+
+    }
+    public void drawPantallaTitulo(){
+        g2.setFont(arial_40);
+        String texto="Pokemon't";
+        int x=gamePanel.tileSize*3;
+        int y=gamePanel.tileSize*3;
+        g2.setColor(Color.white);
+        g2.drawString(texto,x,y);
+        int x2=gamePanel.tileSize*3;
+        int y2=gamePanel.tileSize*4;
+        g2.drawString("APRETA ENTER!",x2+10,y2);
 
     }
     public void drawCajaDialogo(){

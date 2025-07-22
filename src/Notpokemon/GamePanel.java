@@ -26,8 +26,8 @@ public class GamePanel extends JPanel implements Runnable {
     public  int mapaActual=0;
 
     public Inputs input= new Inputs(this);
-    Sonido sonido= new Sonido();
-    Sonido sonidoE= new Sonido();
+   public Sonido sonido= new Sonido();
+    public Sonido sonidoE= new Sonido();
     Thread gameThread;
     public CollisionManager managerC =new CollisionManager(this);
     public AssetSetter aSetter = new AssetSetter(this);
@@ -44,6 +44,7 @@ public class GamePanel extends JPanel implements Runnable {
     public final int pauseState=2;
     public final int tituloState=3;
     public final int yapperState=4;
+    public final int combateState=5;
     public int objetivoStatus=0;
 
 
@@ -61,9 +62,9 @@ public class GamePanel extends JPanel implements Runnable {
     public void setup(){
         aSetter.setObjecto();
         aSetter.setNpc();
-        playMusic(0);
+        playMusic(8);
         //stopMusic(); //para mutear la musica escribir eso
-        gameState=playState;
+        gameState=tituloState;
     }
     //Estas lineas de abajo se encargan de manejar el gameloop, mejor no las toquen.
     public void startGameThread(){
@@ -116,22 +117,34 @@ public class GamePanel extends JPanel implements Runnable {
         super.paintComponent(g);
 
         Graphics2D g2=(Graphics2D)g;
-        //OJO, Tile manager debe ir primero sino, el personje se dibujara debajo de las tiles.
-        tileM.draw(g2);
-        for(int i=0;i<obj[1].length;i++){
-            if(obj[mapaActual][i]!=null){
-                obj[mapaActual][i].draw(g2,this);
-            }
-        }
-        //Dibujo de npc
-        for(int i=0;i<npc[1].length;i++){
-            if(npc[mapaActual][i]!=null){
-                npc[mapaActual][i].draw(g2);
-            }
-        }
-        player.draw(g2);
+        if(gameState==tituloState){
+            ui.draw(g2);
 
-        ui.draw(g2);
+        }
+        else{
+            //OJO, Tile manager debe ir primero sino, el personje se dibujara debajo de las tiles.
+            tileM.draw(g2);
+            //Dibujo de objetos
+            for(int i=0;i<obj[1].length;i++){
+                if(obj[mapaActual][i]!=null){
+                    obj[mapaActual][i].draw(g2,this);
+                }
+            }
+            //Dibujo de npc
+            for(int i=0;i<npc[1].length;i++){
+                if(npc[mapaActual][i]!=null){
+                    npc[mapaActual][i].draw(g2);
+                }
+            }
+
+            //Dibujo del jugador
+            player.draw(g2);
+
+            ui.draw(g2);
+
+        }
+
+
 
 
         g2.dispose();

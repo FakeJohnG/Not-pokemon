@@ -82,6 +82,8 @@ public class NpcGuy extends Entidad {
         }
     }
     public void speak(){
+        gamePanel.sonidoE.setFile(7);
+        gamePanel.sonidoE.play();
         if(dialogosNpc[dialogoIndex]==null){
             dialogoIndex=0;
         }

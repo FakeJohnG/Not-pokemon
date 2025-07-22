@@ -60,11 +60,26 @@ public boolean upPressed,downPressed,leftPressed,rightPressed,ePressed;
                 gamePanel.sonidoE.play();
                 gamePanel.gameState=gamePanel.playState;
 
+            }else if (gamePanel.gameState== gamePanel.tituloState) {
+                gamePanel.sonidoE.setFile(7);
+                gamePanel.sonidoE.play();
+                gamePanel.gameState= gamePanel.playState;
+                gamePanel.sonido.stop();
+                gamePanel.sonido.setFile(0);
+                gamePanel.sonido.play();
+            } else if (gamePanel.gameState== gamePanel.combateState) {
+                gamePanel.gameState= gamePanel.playState;
+                gamePanel.sonido.stop();
+                gamePanel.sonido.setFile(0);
+                gamePanel.sonido.play();
+
             }
 
 
         }
         if(gamePanel.gameState== gamePanel.yapperState){
+            gamePanel.sonidoE.setFile(7);
+            gamePanel.sonidoE.play();
             if(code==KeyEvent.VK_E){
                 gamePanel.gameState= gamePanel.playState;
             }
