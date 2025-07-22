@@ -19,7 +19,7 @@ public class TileManager {
     public TileManager(GamePanel gamePanel){
         this.gamePanel=gamePanel;
         //Aqui se indica cuantos tiles unicos tenemos,si se añade más incrementar numero.
-        textura = new Textura[74];
+        textura = new Textura[82];
         mapaTexNum = new int[gamePanel.mapaMax][gamePanel.maxWorldCol][gamePanel.maxWorldFila];
         getTileImage();
         loadMapData("/maps/testMapDataXL.txt",0);
@@ -75,6 +75,7 @@ public class TileManager {
             //partes del puente
             textura[11]=new Textura();
             textura[11].image= ImageIO.read(getClass().getResourceAsStream("/tiles/colisioncamino.png"));
+            textura[11].collision=true;
 
             textura[12]=new Textura();
             textura[12].image= ImageIO.read(getClass().getResourceAsStream("/tiles/road2.png"));
@@ -319,6 +320,30 @@ public class TileManager {
             textura[73]=new Textura();
             textura[73].image= ImageIO.read(getClass().getResourceAsStream("/tiles/decoracion2.png"));
             textura[73].collision=true;
+
+            textura[74]=new Textura();
+            textura[74].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Camino1.png"));
+
+            textura[75]=new Textura();
+            textura[75].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Camino2.png"));
+
+            textura[76]=new Textura();
+            textura[76].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Camino3.png"));
+
+            textura[77]=new Textura();
+            textura[77].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Camino4.png"));
+
+            textura[78]=new Textura();
+            textura[78].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Camino5.png"));
+
+            textura[79]=new Textura();
+            textura[79].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Camino6.png"));
+
+            textura[80]=new Textura();
+            textura[80].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Camino7.png"));
+
+            textura[81]=new Textura();
+            textura[81].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Camino8.png"));
 
         }catch(IOException e){
             e.printStackTrace();
