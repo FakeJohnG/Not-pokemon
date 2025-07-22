@@ -19,7 +19,7 @@ public class TileManager {
     public TileManager(GamePanel gamePanel){
         this.gamePanel=gamePanel;
         //Aqui se indica cuantos tiles unicos tenemos,si se añade más incrementar numero.
-        textura = new Textura[91];
+        textura = new Textura[104];
         mapaTexNum = new int[gamePanel.mapaMax][gamePanel.maxWorldCol][gamePanel.maxWorldFila];
         getTileImage();
         loadMapData("/maps/testMapDataXL.txt",0);
@@ -380,6 +380,46 @@ public class TileManager {
             textura[90]=new Textura();
             textura[90].image= ImageIO.read(getClass().getResourceAsStream("/tiles/agua5.png"));
             textura[90].collision=true;
+
+            textura[91]=new Textura();
+            textura[91].image= ImageIO.read(getClass().getResourceAsStream("/tiles/muelle1.png"));
+
+            textura[92]=new Textura();
+            textura[92].image= ImageIO.read(getClass().getResourceAsStream("/tiles/muelle2.png"));
+
+            textura[93]=new Textura();
+            textura[93].image= ImageIO.read(getClass().getResourceAsStream("/tiles/muelle3.png"));
+
+            textura[94]=new Textura();
+            textura[94].image= ImageIO.read(getClass().getResourceAsStream("/tiles/muelle4.png"));
+            textura[94].collision=true;
+
+            textura[95]=new Textura();
+            textura[95].image= ImageIO.read(getClass().getResourceAsStream("/tiles/charco1.png"));
+
+            textura[96]=new Textura();
+            textura[96].image= ImageIO.read(getClass().getResourceAsStream("/tiles/charco2.png"));
+
+            textura[97]=new Textura();
+            textura[97].image= ImageIO.read(getClass().getResourceAsStream("/tiles/charco3.png"));
+
+            textura[98]=new Textura();
+            textura[98].image= ImageIO.read(getClass().getResourceAsStream("/tiles/charco4.png"));
+
+            textura[99]=new Textura();
+            textura[99].image= ImageIO.read(getClass().getResourceAsStream("/tiles/charco5.png"));
+
+            textura[100]=new Textura();
+            textura[100].image= ImageIO.read(getClass().getResourceAsStream("/tiles/charco6.png"));
+
+            textura[101]=new Textura();
+            textura[101].image= ImageIO.read(getClass().getResourceAsStream("/tiles/charco7.png"));
+
+            textura[102]=new Textura();
+            textura[102].image= ImageIO.read(getClass().getResourceAsStream("/tiles/charco8.png"));
+
+            textura[103]=new Textura();
+            textura[103].image= ImageIO.read(getClass().getResourceAsStream("/tiles/charco9.png"));
 
 
         }catch(IOException e){
