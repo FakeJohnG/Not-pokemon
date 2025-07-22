@@ -19,7 +19,7 @@ public class TileManager {
     public TileManager(GamePanel gamePanel){
         this.gamePanel=gamePanel;
         //Aqui se indica cuantos tiles unicos tenemos,si se añade más incrementar numero.
-        textura = new Textura[69];
+        textura = new Textura[74];
         mapaTexNum = new int[gamePanel.mapaMax][gamePanel.maxWorldCol][gamePanel.maxWorldFila];
         getTileImage();
         loadMapData("/maps/testMapDataXL.txt",0);
@@ -275,7 +275,6 @@ public class TileManager {
 
             textura[62]=new Textura();
             textura[62].image= ImageIO.read(getClass().getResourceAsStream("/tiles/lab18.png"));
-            textura[62].collision=true;
 
             textura[63]=new Textura();
             textura[63].image= ImageIO.read(getClass().getResourceAsStream("/tiles/lab19.png"));
@@ -300,6 +299,26 @@ public class TileManager {
             textura[68]=new Textura();
             textura[68].image= ImageIO.read(getClass().getResourceAsStream("/tiles/lab24.png"));
             textura[68].collision=true;
+
+            textura[69]=new Textura();
+            textura[69].image= ImageIO.read(getClass().getResourceAsStream("/tiles/arbusto1.png"));
+            textura[69].collision=true;
+
+            textura[70]=new Textura();
+            textura[70].image= ImageIO.read(getClass().getResourceAsStream("/tiles/arbusto2.png"));
+            textura[70].collision=true;
+
+            textura[71]=new Textura();
+            textura[71].image= ImageIO.read(getClass().getResourceAsStream("/tiles/arbusto3.png"));
+            textura[71].collision=true;
+
+            textura[72]=new Textura();
+            textura[72].image= ImageIO.read(getClass().getResourceAsStream("/tiles/decoracion1.png"));
+            textura[72].collision=true;
+
+            textura[73]=new Textura();
+            textura[73].image= ImageIO.read(getClass().getResourceAsStream("/tiles/decoracion2.png"));
+            textura[73].collision=true;
 
         }catch(IOException e){
             e.printStackTrace();
