@@ -136,7 +136,24 @@ public class GamePanel extends JPanel implements Runnable {
                     npc[mapaActual][i].draw(g2);
                 }
             }
+//debug de teleport
+           if (mapaActual == 0) {
+                //cambia este valor
+                int col = 39;
+                int fila = 20;
 
+                int worldX = col * tileSize;
+                int worldY = fila * tileSize;
+
+                int screenX = worldX - player.worldX + player.screenX;
+                int screenY = worldY - player.worldY + player.screenY;
+
+                g2.setColor(new Color(255, 0, 0, 100)); //
+                g2.fillRect(screenX, screenY, tileSize, tileSize);
+
+                g2.setColor(Color.RED);
+                g2.drawRect(screenX, screenY, tileSize, tileSize);
+            }
             //Dibujo del jugador
             player.draw(g2);
 

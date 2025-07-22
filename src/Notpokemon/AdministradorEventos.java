@@ -65,8 +65,21 @@ public class AdministradorEventos {
             }else if (hit(0, 20, 12, "any")) {
                 System.out.println("encuentro salvaje?");
                 encuentroSalvaje();
-
             }
+            else if (hit(0, 39, 20, "any")) {
+                System.out.println("Bienvenido al laboratorio...");
+                gamePanel.sonidoE.setFile(4);
+                gamePanel.sonidoE.play();
+                teleport(2, 6, 6);
+                gamePanel.objetivoStatus=1;
+            }
+            else if (hit(2, 6, 6, "any")) {
+                System.out.println("chaito...");
+                gamePanel.sonidoE.setFile(4);
+                gamePanel.sonidoE.play();
+                teleport(0, 39, 20);
+            }
+
 
 
 
