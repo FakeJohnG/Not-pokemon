@@ -50,6 +50,10 @@ public class InterfazUsuario {
 
 
         }
+        //Estado de titulo
+        if(gamePanel.gameState==gamePanel.tituloState){
+            drawPantallaTitulo();
+        }
         if(gamePanel.gameState==gamePanel.pauseState){
             g2.setFont(arial_40);
             g2.setColor(Color.black);
@@ -63,10 +67,7 @@ public class InterfazUsuario {
         if(gamePanel.gameState==gamePanel.combateState){
             drawCombate();
         }
-        //Estado de titulo
-        if(gamePanel.gameState==gamePanel.tituloState){
-            drawPantallaTitulo();
-        }
+
 
 
 
