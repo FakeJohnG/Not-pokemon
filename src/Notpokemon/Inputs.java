@@ -22,6 +22,25 @@ public boolean upPressed,downPressed,leftPressed,rightPressed,ePressed;
     public void keyPressed(KeyEvent e) {
 
         int code= e.getKeyCode();
+        //Inputs en combate
+        if(gamePanel.gameState==gamePanel.combateState){
+            if(code==KeyEvent.VK_A){
+                gamePanel.sonidoE.setFile(7);
+                gamePanel.sonidoE.play();
+                gamePanel.ui.numCommando--;
+                if(gamePanel.ui.numCommando <0){
+                    gamePanel.ui.numCommando=3;
+                }
+            }
+            if(code==KeyEvent.VK_D){
+                gamePanel.sonidoE.setFile(7);
+                gamePanel.sonidoE.play();
+                gamePanel.ui.numCommando++;
+                if(gamePanel.ui.numCommando >3){
+                    gamePanel.ui.numCommando=0;
+                }
+            }
+        }
         if(code==KeyEvent.VK_W){
             upPressed=true;
 
@@ -40,6 +59,15 @@ public boolean upPressed,downPressed,leftPressed,rightPressed,ePressed;
         }
         if(code==KeyEvent.VK_E){
             ePressed=true;
+            //Esto solamente es debug
+            if (gamePanel.gameState== gamePanel.combateState) {
+                gamePanel.gameState= gamePanel.playState;
+                gamePanel.ui.uiState=0;
+                gamePanel.sonido.stop();
+                gamePanel.sonido.setFile(0);
+                gamePanel.sonido.play();
+
+            }
 
         }
         if(code==KeyEvent.VK_ENTER){
@@ -67,11 +95,24 @@ public boolean upPressed,downPressed,leftPressed,rightPressed,ePressed;
                 gamePanel.sonido.stop();
                 gamePanel.sonido.setFile(0);
                 gamePanel.sonido.play();
-            } else if (gamePanel.gameState== gamePanel.combateState) {
-                gamePanel.gameState= gamePanel.playState;
-                gamePanel.sonido.stop();
-                gamePanel.sonido.setFile(0);
-                gamePanel.sonido.play();
+            }  else if (gamePanel.gameState== gamePanel.combateState) {
+                if(gamePanel.ui.uiState==0){
+                    if(gamePanel.ui.numCommando==0){
+                        gamePanel.sonidoE.setFile(7);
+                        gamePanel.sonidoE.play();
+                        gamePanel.ui.uiState=1;
+                    }
+                    if(gamePanel.ui.numCommando==3){
+                        gamePanel.sonidoE.setFile(9);
+                        gamePanel.sonidoE.play();
+                        gamePanel.gameState=gamePanel.playState;
+                        gamePanel.sonido.stop();
+                        gamePanel.sonido.setFile(0);
+                        gamePanel.sonido.play();
+                        gamePanel.ui.uiState=0;
+                    }
+
+                }
 
             }
 
