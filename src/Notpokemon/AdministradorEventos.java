@@ -35,8 +35,8 @@ public class AdministradorEventos {
         }
     }
     public void checkEvento() {
-        int xDistance = Math.abs(gamePanel.player.worldX - eventoAnteriorX);
-        int yDistance = Math.abs(gamePanel.player.worldY - eventoAnteriorY);
+        int xDistance = Math.abs(gamePanel.jugador.worldX - eventoAnteriorX);
+        int yDistance = Math.abs(gamePanel.jugador.worldY - eventoAnteriorY);
         int distancia = Math.max(xDistance, yDistance);
         if (distancia > gamePanel.tileSize) {
             eventoActivo = true;
@@ -77,23 +77,23 @@ public class AdministradorEventos {
         boolean hit=false;
 
         if(map==gamePanel.mapaActual){
-            gamePanel.player.solidBox.x=gamePanel.player.worldX+gamePanel.player.solidBox.x;
-            gamePanel.player.solidBox.y=gamePanel.player.worldY+gamePanel.player.solidBox.y;
+            gamePanel.jugador.solidBox.x=gamePanel.jugador.worldX+gamePanel.jugador.solidBox.x;
+            gamePanel.jugador.solidBox.y=gamePanel.jugador.worldY+gamePanel.jugador.solidBox.y;
             eventRect[map][col][fila].x=col*gamePanel.tileSize+eventRect[map][col][fila].x;
             eventRect[map][col][fila].y=fila*gamePanel.tileSize+eventRect[map][col][fila].y;
 
-            if(gamePanel.player.solidBox.intersects(eventRect[map][col][fila])&& eventRect[map][col][fila].eventoFini==false){
-                if(gamePanel.player.direction.contentEquals(direction)|| direction.contentEquals("any")){
+            if(gamePanel.jugador.solidBox.intersects(eventRect[map][col][fila])&& eventRect[map][col][fila].eventoFini==false){
+                if(gamePanel.jugador.direction.contentEquals(direction)|| direction.contentEquals("any")){
                     hit=true;
-                    eventoAnteriorX=gamePanel.player.worldX;
-                    eventoAnteriorY=gamePanel.player.worldY;
+                    eventoAnteriorX=gamePanel.jugador.worldX;
+                    eventoAnteriorY=gamePanel.jugador.worldY;
                     System.out.print("Evento!");
 
                 }
 
             }
-            gamePanel.player.solidBox.x=gamePanel.player.areaSolidaDefaultX;
-            gamePanel.player.solidBox.y=gamePanel.player.areaSolidaDefaultY;
+            gamePanel.jugador.solidBox.x=gamePanel.jugador.areaSolidaDefaultX;
+            gamePanel.jugador.solidBox.y=gamePanel.jugador.areaSolidaDefaultY;
             eventRect[map][col][fila].x=eventRect[map][col][fila].eventRectDefaultX;
             eventRect[map][col][fila].y=eventRect[map][col][fila].eventRectDefaultY;
 
@@ -106,10 +106,10 @@ public class AdministradorEventos {
     public void teleport(int map,int col,int fila){
 
         gamePanel.mapaActual=map;
-        gamePanel.player.worldX=gamePanel.tileSize*col;
-        gamePanel.player.worldY=gamePanel.tileSize*fila;
-        eventoAnteriorX=gamePanel.player.worldX;
-        eventoAnteriorY=gamePanel.player.worldY;
+        gamePanel.jugador.worldX=gamePanel.tileSize*col;
+        gamePanel.jugador.worldY=gamePanel.tileSize*fila;
+        eventoAnteriorX=gamePanel.jugador.worldX;
+        eventoAnteriorY=gamePanel.jugador.worldY;
         eventoActivo=false;
 
         if(gamePanel.mapaActual==1){

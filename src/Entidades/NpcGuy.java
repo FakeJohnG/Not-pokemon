@@ -90,7 +90,7 @@ public class NpcGuy extends Entidad {
         gamePanel.ui.dialogoActual=dialogosNpc[dialogoIndex];
         dialogoIndex++;
 
-        switch(gamePanel.player.direction){
+        switch(gamePanel.jugador.direction){
             case "up":
                 direction="down";
                 break;

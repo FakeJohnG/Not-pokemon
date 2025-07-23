@@ -205,13 +205,13 @@ public class CollisionManager {
         entidad.solidBox.x= entidad.worldX+entidad.solidBox.x;
         entidad.solidBox.y= entidad.worldY+entidad.solidBox.y;
         //Conseguir la posicion del jugador
-        gamePanel.player.solidBox.x=gamePanel.player.worldX+gamePanel.player.solidBox.x;
-        gamePanel.player.solidBox.y=gamePanel.player.worldY+gamePanel.player.solidBox.y;
+        gamePanel.jugador.solidBox.x=gamePanel.jugador.worldX+gamePanel.jugador.solidBox.x;
+        gamePanel.jugador.solidBox.y=gamePanel.jugador.worldY+gamePanel.jugador.solidBox.y;
 
         switch(entidad.direction){
             case "up":
                 entidad.solidBox.y-=entidad.speed;
-                if(entidad.solidBox.intersects(gamePanel.player.solidBox)){
+                if(entidad.solidBox.intersects(gamePanel.jugador.solidBox)){
 
                     entidad.collisionOn = true;
 
@@ -219,7 +219,7 @@ public class CollisionManager {
                 break;
             case "down":
                 entidad.solidBox.y+=entidad.speed;
-                if(entidad.solidBox.intersects(gamePanel.player.solidBox)){
+                if(entidad.solidBox.intersects(gamePanel.jugador.solidBox)){
 
                     entidad.collisionOn = true;
 
@@ -229,7 +229,7 @@ public class CollisionManager {
                 break;
             case "left":
                 entidad.solidBox.x-=entidad.speed;
-                if(entidad.solidBox.intersects(gamePanel.player.solidBox)){
+                if(entidad.solidBox.intersects(gamePanel.jugador.solidBox)){
                     entidad.collisionOn = true;
 
 
@@ -237,7 +237,7 @@ public class CollisionManager {
                 break;
             case "right":
                 entidad.solidBox.x+=entidad.speed;
-                if(entidad.solidBox.intersects(gamePanel.player.solidBox)){
+                if(entidad.solidBox.intersects(gamePanel.jugador.solidBox)){
                     entidad.collisionOn = true;
 
 
@@ -248,8 +248,8 @@ public class CollisionManager {
 
         entidad.solidBox.x=entidad.areaSolidaDefaultX;
         entidad.solidBox.y=entidad.areaSolidaDefaultY;
-        gamePanel.player.solidBox.x=gamePanel.player.areaSolidaDefaultX;
-        gamePanel.player.solidBox.y=gamePanel.player.areaSolidaDefaultY;
+        gamePanel.jugador.solidBox.x=gamePanel.jugador.areaSolidaDefaultX;
+        gamePanel.jugador.solidBox.y=gamePanel.jugador.areaSolidaDefaultY;
     }
 }
 

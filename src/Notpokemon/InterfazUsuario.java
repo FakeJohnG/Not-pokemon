@@ -57,7 +57,7 @@ public class InterfazUsuario {
             g2.setFont(arial_40);
             g2.setColor(Color.black);
             g2.drawImage(imagenGema,gamePanel.tileSize/2,gamePanel.tileSize/2,gamePanel.tileSize,gamePanel.tileSize,null);
-            g2.drawString("Gemas X "+gamePanel.player.cantMcguffin,50,50);
+            g2.drawString("Gemas X "+gamePanel.jugador.cantMcguffin,50,50);
 
 
         }
