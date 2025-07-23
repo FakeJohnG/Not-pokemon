@@ -19,7 +19,7 @@ public class TileManager {
     public TileManager(GamePanel gamePanel){
         this.gamePanel=gamePanel;
         //Aqui se indica cuantos tiles unicos tenemos,si se añade más incrementar numero.
-        textura = new Textura[106];
+        textura = new Textura[123];
         mapaTexNum = new int[gamePanel.mapaMax][gamePanel.maxWorldCol][gamePanel.maxWorldFila];
         getTileImage();
         loadMapData("/maps/testMapDataXL.txt",0);
@@ -431,6 +431,65 @@ public class TileManager {
             textura[105]=new Textura();
             textura[105].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Lapras.png"));
             textura[105].collision=true;
+
+            textura[106]=new Textura();
+            textura[106].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Roca1.png"));
+            textura[106].collision=true;
+
+            textura[107]=new Textura();
+            textura[107].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Roca2.png"));
+            textura[107].collision=true;
+
+            textura[108]=new Textura();
+            textura[108].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Roca3.png"));
+            textura[108].collision=true;
+
+            textura[109]=new Textura();
+            textura[109].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Roca4.png"));
+            textura[109].collision=true;
+
+            textura[110]=new Textura();
+            textura[110].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Roca5.png"));
+            textura[110].collision=true;
+
+            textura[111]=new Textura();
+            textura[111].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Roca6.png"));
+            textura[111].collision=true;
+
+            textura[112]=new Textura();
+            textura[112].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Roca7.png"));
+            textura[112].collision=true;
+
+            textura[113]=new Textura();
+            textura[113].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Tierra1.png"));
+
+            textura[114]=new Textura();
+            textura[114].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Tierra2.png"));
+
+            textura[115]=new Textura();
+            textura[115].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Tierra3.png"));
+
+            textura[116]=new Textura();
+            textura[116].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Tierra4.png"));
+
+            textura[117]=new Textura();
+            textura[117].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Tierra5.png"));
+
+            textura[118]=new Textura();
+            textura[118].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Tierra6.png"));
+
+            textura[119]=new Textura();
+            textura[119].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Tierra7.png"));
+
+            textura[120]=new Textura();
+            textura[120].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Tierra8.png"));
+
+            textura[121]=new Textura();
+            textura[121].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Tierra9.png"));
+
+            textura[122]=new Textura();
+            textura[122].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Piedra.png"));
+            textura[122].collision=true;
 
         }catch(IOException e){
             e.printStackTrace();
