@@ -8,7 +8,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
-public class Player extends Entidad {
+public class Jugador extends Entidad {
     GamePanel gamePanel;
     Inputs input;
     public final int screenX;
@@ -17,7 +17,7 @@ public class Player extends Entidad {
     //Le puse Mcguffin porque no si hacerlos gemas o otra cosa so yea
 
 
-    public Player(GamePanel gamePanel,Inputs input){
+    public Jugador(GamePanel gamePanel, Inputs input){
         super(gamePanel);
         this.gamePanel=gamePanel;
         this.input=input;

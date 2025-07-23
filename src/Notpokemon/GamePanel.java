@@ -1,6 +1,6 @@
 package Notpokemon;
 import Entidades.Entidad;
-import Entidades.Player;
+import Entidades.Jugador;
 import Objetos.ObjetoMadre;
 import Pokes.Poke;
 import tile.TileManager;
@@ -32,7 +32,7 @@ public class GamePanel extends JPanel implements Runnable {
     Thread gameThread;
     public CollisionManager managerC =new CollisionManager(this);
     public AssetSetter aSetter = new AssetSetter(this);
-    public Player player=new Player(this,input);
+    public Jugador player=new Jugador(this,input);
     public ObjetoMadre obj[][]=new ObjetoMadre[mapaMax][10];
     public Entidad npc[][]=new Entidad[mapaMax][10];
     public int npcId;
