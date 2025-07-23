@@ -1,6 +1,7 @@
 package Notpokemon;
 
 import Objetos.Gema;
+import Pokes.Pikachu;
 import Pokes.Scorbunny;
 
 import javax.imageio.ImageIO;
@@ -12,21 +13,25 @@ import java.io.InputStream;
 public class InterfazUsuario {
     GamePanel gamePanel;
     Graphics2D g2;
-    Font arial_40, spamton;
+    Font arial_40, spamton,pokemon;
     public String dialogoActual;
     BufferedImage imagenGema;
     BufferedImage fondoCombate;
     BufferedImage textBoxCombate;
     BufferedImage textBoxOpcion;
+    BufferedImage statusBox;
+    BufferedImage statusBoxJ;
     BufferedImage flechitaS;
     BufferedImage moveBox;
     public int numCommando=0;
     public int uiState=0;
+    public int movUsado,movUsadoE;
 
     public InterfazUsuario(GamePanel gamePanel){
         this.gamePanel=gamePanel;
         this.arial_40=new Font("Arial",Font.BOLD,20);
         InputStream is = getClass().getResourceAsStream("/font/spamton.ttf");
+        InputStream is2= getClass().getResourceAsStream("/font/pokemon_fire_red.ttf");
 
 
         try {
@@ -34,11 +39,16 @@ public class InterfazUsuario {
             textBoxCombate= ImageIO.read(getClass().getResourceAsStream("/otros/textBoxCombate.png"));
             textBoxOpcion= ImageIO.read(getClass().getResourceAsStream("/otros/TextBoxOpcion.png"));
             flechitaS= ImageIO.read(getClass().getResourceAsStream("/otros/flechitaS.png"));
-            moveBox=ImageIO.read(getClass().getResourceAsStream("/otros/spamton1.png"));
+            moveBox=ImageIO.read(getClass().getResourceAsStream("/otros/moveBox.png"));
+            statusBox=ImageIO.read(getClass().getResourceAsStream("/otros/statusBox.png"));
+            statusBoxJ=ImageIO.read(getClass().getResourceAsStream("/otros/statusBoxJ.png"));
 
 
             spamton = Font.createFont(Font.TRUETYPE_FONT, is);
             spamton = spamton.deriveFont(Font.PLAIN, 14f);
+
+            pokemon=Font.createFont(Font.TRUETYPE_FONT, is2);
+            pokemon = pokemon.deriveFont(Font.PLAIN, 35f);
 
 
         } catch (FontFormatException e) {
@@ -85,18 +95,27 @@ public class InterfazUsuario {
 
     }
     public void drawCombate(){
-//Pikachu tambien esta disponible, solo debes cambiar Scorbunny por Pikachu abajo
+
+
         if (gamePanel.pokeJugador == null) {
-            gamePanel.pokeJugador = new Scorbunny(gamePanel);
+            gamePanel.pokeJugador = new Pikachu(gamePanel);
         }
-        g2.setFont(arial_40);
-        g2.setColor(Color.white);
+        if(gamePanel.pokeEnemigo==null){
+            gamePanel.pokeEnemigo=gamePanel.combate.generarPokeSalvaje();
+        }
+        g2.setFont(pokemon);
+        g2.setColor(Color.BLACK);
         g2.drawImage(fondoCombate,0,-120,gamePanel.screenWidth,gamePanel.screenHeight,null);
         g2.drawImage(gamePanel.pokeJugador.Pokeimagen, 125, 270, 196, 196, null);
+        g2.drawImage(gamePanel.pokeEnemigo.Pokeimagen2, 500, 30, 196, 196, null);
+        g2.drawImage(statusBox,100,20,300,100, null);
+        g2.drawImage(statusBoxJ,500,350,250,100, null);
+        g2.drawString(gamePanel.pokeJugador.name,550,390);
         if(uiState==0){
-            g2.drawImage(textBoxCombate,0,450,850,135,null);
+            g2.setColor(Color.white);
+            g2.drawImage(textBoxCombate,0,450,775,135,null);
             g2.drawImage(textBoxOpcion,530,460,240,120,null);
-            g2.drawString("Que debería hacer "+gamePanel.pokeJugador.name+" ?",120,520);
+            g2.drawString("Que debe hacer "+gamePanel.pokeJugador.name+" ?",120,520);
             if(numCommando==0){
                 g2.drawImage(flechitaS,530,485,30,30,null);
             }
@@ -113,9 +132,46 @@ public class InterfazUsuario {
 
         }
         if(uiState==1){
-            g2.drawImage(moveBox,0,450,850,135,null);
-            g2.drawString(gamePanel.pokeJugador.movimientos[0].nombre, 100, 100);
-            g2.drawImage(gamePanel.pokeJugador.movimientos[0].tipoImagen,120,100,30,30,null);
+            g2.setColor(Color.black);
+            g2.drawImage(moveBox,0,450,770,135,null);
+            g2.drawString(""+gamePanel.pokeJugador.ppMax,580,510);
+            g2.drawString(gamePanel.pokeJugador.movimientos[0].nombre, 85, 500);
+            g2.drawString(gamePanel.pokeJugador.movimientos[1].nombre, 85, 547);
+            g2.drawString(gamePanel.pokeJugador.movimientos[2].nombre, 300, 500);
+            g2.drawString(gamePanel.pokeJugador.movimientos[3].nombre, 300, 547);
+
+
+            if(numCommando==0){
+                g2.drawImage(flechitaS,50,475,30,30,null);
+                g2.drawImage(gamePanel.pokeJugador.movimientos[0].tipoImagen,620,525,100,30,null);
+            }
+            if(numCommando==1){
+                g2.drawImage(flechitaS,50,525,30,30,null);
+                g2.drawImage(gamePanel.pokeJugador.movimientos[1].tipoImagen,620,525,100,30,null);
+            }
+            if(numCommando==2){
+                g2.drawImage(flechitaS,270,475,30,30,null);
+                g2.drawImage(gamePanel.pokeJugador.movimientos[2].tipoImagen,620,525,100,30,null);
+
+            }
+            if(numCommando==3){
+                g2.drawImage(flechitaS,270,525,30,30,null);
+                g2.drawImage(gamePanel.pokeJugador.movimientos[3].tipoImagen,620,525,100,30,null);
+            }
+        }
+
+        if(uiState==2){
+            g2.setColor(Color.white);
+            g2.drawImage(textBoxCombate,0,450,775,135,null);
+            g2.drawString(gamePanel.pokeJugador.name+" usa "+gamePanel.pokeJugador.movimientos[movUsado].nombre,120,520);
+
+        }
+        if(uiState==3){
+            g2.setColor(Color.white);
+            g2.drawImage(textBoxCombate,0,450,775,135,null);
+            g2.drawString(gamePanel.pokeEnemigo.name+" usa "+gamePanel.pokeEnemigo.movimientos[movUsadoE].nombre,120,520);
+
+
         }
 
 

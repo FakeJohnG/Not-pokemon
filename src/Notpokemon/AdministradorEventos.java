@@ -1,15 +1,20 @@
 package Notpokemon;
 
+import java.awt.*;
+import java.util.ArrayList;
+
 public class AdministradorEventos {
     GamePanel gamePanel;
     EventRect eventRect[][][];
     int eventoAnteriorX, eventoAnteriorY;
     boolean eventoActivo=true;
     int contadorEncuentro;
+    ArrayList<ZonaEncuentro> zonasSalvajes = new ArrayList<>();
 
     public AdministradorEventos(GamePanel gamePanel) {
         this.gamePanel = gamePanel;
         eventRect=new EventRect[gamePanel.mapaMax][gamePanel.maxWorldCol][gamePanel.maxWorldFila];
+        zonasSalvajes.add(new ZonaEncuentro(0, 20, 12, 21, 12, gamePanel.tileSize));
         int map=0;
         int col=0;
         int fila=0;
@@ -32,6 +37,22 @@ public class AdministradorEventos {
                 map++;
             }
 
+        }
+    }
+    public void checkZonasSalvajes() {
+        for (ZonaEncuentro zona : zonasSalvajes) {
+            if (zona.mapa == gamePanel.mapaActual && zona.activa) {
+                Rectangle playerArea = new Rectangle(
+                        gamePanel.jugador.worldX + gamePanel.jugador.solidBox.x,
+                        gamePanel.jugador.worldY + gamePanel.jugador.solidBox.y,
+                        gamePanel.jugador.solidBox.width,
+                        gamePanel.jugador.solidBox.height
+                );
+                if (playerArea.intersects(zona.area)) {
+                    encuentroSalvaje();
+                    break;
+                }
+            }
         }
     }
     public void checkEvento() {
@@ -58,19 +79,13 @@ public class AdministradorEventos {
                 gamePanel.sonidoE.play();
                 teleport(0, 31, 22);
 
-            } else if (hit(0, 20, 14, "any")) {
-                System.out.println("encuentro salvaje 1?");
-                encuentroSalvaje();
-
-            }else if (hit(0, 20, 12, "any")) {
-                System.out.println("encuentro salvaje 2?");
-                encuentroSalvaje();
-
             }
 
 
 
+
         }
+        checkZonasSalvajes();
     }
 
     public boolean hit(int map,int col,int fila,String direction){
