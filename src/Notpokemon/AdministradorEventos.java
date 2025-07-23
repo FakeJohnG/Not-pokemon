@@ -58,12 +58,12 @@ public class AdministradorEventos {
                 gamePanel.sonidoE.play();
                 teleport(0, 31, 22);
 
-            } else if (hit(0, 21, 12, "any")) {
-                System.out.println("encuentro salvaje?");
+            } else if (hit(0, 20, 14, "any")) {
+                System.out.println("encuentro salvaje 1?");
                 encuentroSalvaje();
 
             }else if (hit(0, 20, 12, "any")) {
-                System.out.println("encuentro salvaje?");
+                System.out.println("encuentro salvaje 2?");
                 encuentroSalvaje();
 
             }
