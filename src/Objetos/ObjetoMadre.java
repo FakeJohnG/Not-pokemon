@@ -15,13 +15,13 @@ public class ObjetoMadre {
     public int areaSolidaDefaultY=0;
 
     public void draw(Graphics2D g2, GamePanel gamePanel){
-        int screenX =worldX-gamePanel.player.worldX + gamePanel.player.screenX;
-        int screenY=worldY-gamePanel.player.worldY + gamePanel.player.screenY;
+        int screenX =worldX-gamePanel.jugador.worldX + gamePanel.jugador.screenX;
+        int screenY=worldY-gamePanel.jugador.worldY + gamePanel.jugador.screenY;
         //Mejora de rendimiento?
-        if(worldX + gamePanel.tileSize>gamePanel.player.worldX-gamePanel.player.screenX &&
-                worldX- gamePanel.tileSize <gamePanel.player.worldX+gamePanel.player.screenX &&
-                worldY + gamePanel.tileSize>gamePanel.player.worldY- gamePanel.player.screenY &&
-                worldY - gamePanel.tileSize<gamePanel.player.worldY+ gamePanel.player.screenY){
+        if(worldX + gamePanel.tileSize>gamePanel.jugador.worldX-gamePanel.jugador.screenX &&
+                worldX- gamePanel.tileSize <gamePanel.jugador.worldX+gamePanel.jugador.screenX &&
+                worldY + gamePanel.tileSize>gamePanel.jugador.worldY- gamePanel.jugador.screenY &&
+                worldY - gamePanel.tileSize<gamePanel.jugador.worldY+ gamePanel.jugador.screenY){
             g2.drawImage(imagen,screenX,screenY, gamePanel.tileSize, gamePanel.tileSize, null);
         }
     }

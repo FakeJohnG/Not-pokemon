@@ -32,7 +32,9 @@ public class GamePanel extends JPanel implements Runnable {
     Thread gameThread;
     public CollisionManager managerC =new CollisionManager(this);
     public AssetSetter aSetter = new AssetSetter(this);
-    public Jugador player=new Jugador(this,input);
+    
+    public Jugador jugador =new Jugador(this,input);
+
     public ObjetoMadre obj[][]=new ObjetoMadre[mapaMax][10];
     public Entidad npc[][]=new Entidad[mapaMax][10];
     public int npcId;
@@ -101,7 +103,7 @@ public class GamePanel extends JPanel implements Runnable {
     }
     public void update(){
         if(gameState==playState){
-            player.update();
+            jugador.update();
             //npc
             for(int i=0;i< npc[1].length;i++){
                 if(npc[mapaActual][i]!=null){
@@ -140,7 +142,7 @@ public class GamePanel extends JPanel implements Runnable {
             }
 
             //Dibujo del jugador
-            player.draw(g2);
+            jugador.draw(g2);
 
             ui.draw(g2);
 

@@ -19,7 +19,7 @@ public class TileManager {
     public TileManager(GamePanel gamePanel){
         this.gamePanel=gamePanel;
         //Aqui se indica cuantos tiles unicos tenemos,si se añade más incrementar numero.
-        textura = new Textura[91];
+        textura = new Textura[123];
         mapaTexNum = new int[gamePanel.mapaMax][gamePanel.maxWorldCol][gamePanel.maxWorldFila];
         getTileImage();
         loadMapData("/maps/testMapDataXL.txt",0);
@@ -45,6 +45,7 @@ public class TileManager {
             textura[3]= new Textura();
             textura[3].image= ImageIO.read(getClass().getResourceAsStream("/tiles/grass4.png"));
 
+            //Arbol
             textura[4]= new Textura();
             textura[4].image= ImageIO.read(getClass().getResourceAsStream("/tiles/grass4.png"));
             textura[4].collision=true;
@@ -58,7 +59,7 @@ public class TileManager {
 
 
             textura[7]=new Textura();
-            textura[7].image= ImageIO.read(getClass().getResourceAsStream("/tiles/grass7.png"));
+            textura[7].image= ImageIO.read(getClass().getResourceAsStream("/tiles/letrero.png"));
             textura[7].collision=true;
 
             textura[8]=new Textura();
@@ -131,6 +132,8 @@ public class TileManager {
             textura[25].image= ImageIO.read(getClass().getResourceAsStream("/tiles/grass9.png"));
             textura[25].collision=true;
 
+
+            //EDIFICIOS
             textura[26]=new Textura();
             textura[26].image= ImageIO.read(getClass().getResourceAsStream("/tiles/tiendatecho1.png"));
             textura[26].collision=true;
@@ -381,6 +384,112 @@ public class TileManager {
             textura[90].image= ImageIO.read(getClass().getResourceAsStream("/tiles/agua5.png"));
             textura[90].collision=true;
 
+            textura[91]=new Textura();
+            textura[91].image= ImageIO.read(getClass().getResourceAsStream("/tiles/muelle1.png"));
+
+            textura[92]=new Textura();
+            textura[92].image= ImageIO.read(getClass().getResourceAsStream("/tiles/muelle2.png"));
+
+            textura[93]=new Textura();
+            textura[93].image= ImageIO.read(getClass().getResourceAsStream("/tiles/muelle3.png"));
+
+            textura[94]=new Textura();
+            textura[94].image= ImageIO.read(getClass().getResourceAsStream("/tiles/muelle4.png"));
+            textura[94].collision=true;
+
+            textura[95]=new Textura();
+            textura[95].image= ImageIO.read(getClass().getResourceAsStream("/tiles/charco1.png"));
+
+            textura[96]=new Textura();
+            textura[96].image= ImageIO.read(getClass().getResourceAsStream("/tiles/charco2.png"));
+
+            textura[97]=new Textura();
+            textura[97].image= ImageIO.read(getClass().getResourceAsStream("/tiles/charco3.png"));
+
+            textura[98]=new Textura();
+            textura[98].image= ImageIO.read(getClass().getResourceAsStream("/tiles/charco4.png"));
+
+            textura[99]=new Textura();
+            textura[99].image= ImageIO.read(getClass().getResourceAsStream("/tiles/charco5.png"));
+
+            textura[100]=new Textura();
+            textura[100].image= ImageIO.read(getClass().getResourceAsStream("/tiles/charco6.png"));
+
+            textura[101]=new Textura();
+            textura[101].image= ImageIO.read(getClass().getResourceAsStream("/tiles/charco7.png"));
+
+            textura[102]=new Textura();
+            textura[102].image= ImageIO.read(getClass().getResourceAsStream("/tiles/charco8.png"));
+
+            textura[103]=new Textura();
+            textura[103].image= ImageIO.read(getClass().getResourceAsStream("/tiles/charco9.png"));
+
+            textura[104]=new Textura();
+            textura[104].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Pidgey.png"));
+            textura[104].collision=true;
+
+            textura[105]=new Textura();
+            textura[105].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Lapras.png"));
+            textura[105].collision=true;
+
+            textura[106]=new Textura();
+            textura[106].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Roca1.png"));
+            textura[106].collision=true;
+
+            textura[107]=new Textura();
+            textura[107].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Roca2.png"));
+            textura[107].collision=true;
+
+            textura[108]=new Textura();
+            textura[108].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Roca3.png"));
+            textura[108].collision=true;
+
+            textura[109]=new Textura();
+            textura[109].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Roca4.png"));
+            textura[109].collision=true;
+
+            textura[110]=new Textura();
+            textura[110].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Roca5.png"));
+            textura[110].collision=true;
+
+            textura[111]=new Textura();
+            textura[111].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Roca6.png"));
+            textura[111].collision=true;
+
+            textura[112]=new Textura();
+            textura[112].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Roca7.png"));
+            textura[112].collision=true;
+
+            textura[113]=new Textura();
+            textura[113].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Tierra1.png"));
+
+            textura[114]=new Textura();
+            textura[114].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Tierra2.png"));
+
+            textura[115]=new Textura();
+            textura[115].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Tierra3.png"));
+
+            textura[116]=new Textura();
+            textura[116].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Tierra4.png"));
+
+            textura[117]=new Textura();
+            textura[117].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Tierra5.png"));
+
+            textura[118]=new Textura();
+            textura[118].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Tierra6.png"));
+
+            textura[119]=new Textura();
+            textura[119].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Tierra7.png"));
+
+            textura[120]=new Textura();
+            textura[120].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Tierra8.png"));
+
+            textura[121]=new Textura();
+            textura[121].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Tierra9.png"));
+
+            textura[122]=new Textura();
+            textura[122].image= ImageIO.read(getClass().getResourceAsStream("/tiles/Piedra.png"));
+            textura[122].collision=true;
 
         }catch(IOException e){
             e.printStackTrace();
@@ -419,13 +528,13 @@ public class TileManager {
             int tileNum = mapaTexNum[gamePanel.mapaActual][worldCol][worldRow];
             int worldX=worldCol*gamePanel.tileSize;
             int worldY=worldRow* gamePanel.tileSize;
-            int screenX =worldX-gamePanel.player.worldX + gamePanel.player.screenX;
-            int screenY=worldY-gamePanel.player.worldY + gamePanel.player.screenY;
+            int screenX =worldX-gamePanel.jugador.worldX + gamePanel.jugador.screenX;
+            int screenY=worldY-gamePanel.jugador.worldY + gamePanel.jugador.screenY;
             //Mejora de rendimiento?
-            if(worldX + gamePanel.tileSize>gamePanel.player.worldX-gamePanel.player.screenX &&
-                    worldX- gamePanel.tileSize <gamePanel.player.worldX+gamePanel.player.screenX &&
-                    worldY + gamePanel.tileSize>gamePanel.player.worldY- gamePanel.player.screenY &&
-                    worldY - gamePanel.tileSize<gamePanel.player.worldY+ gamePanel.player.screenY){
+            if(worldX + gamePanel.tileSize>gamePanel.jugador.worldX-gamePanel.jugador.screenX &&
+                    worldX- gamePanel.tileSize <gamePanel.jugador.worldX+gamePanel.jugador.screenX &&
+                    worldY + gamePanel.tileSize>gamePanel.jugador.worldY- gamePanel.jugador.screenY &&
+                    worldY - gamePanel.tileSize<gamePanel.jugador.worldY+ gamePanel.jugador.screenY){
                 g2.drawImage(textura[tileNum].image,screenX,screenY, gamePanel.tileSize, gamePanel.tileSize, null);
             }
 
