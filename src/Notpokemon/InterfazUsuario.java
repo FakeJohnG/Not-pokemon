@@ -1,6 +1,7 @@
 package Notpokemon;
 
 import Objetos.Gema;
+import Pokes.Scorbunny;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -16,6 +17,11 @@ public class InterfazUsuario {
     BufferedImage imagenGema;
     BufferedImage fondoCombate;
     BufferedImage textBoxCombate;
+    BufferedImage textBoxOpcion;
+    BufferedImage flechitaS;
+    BufferedImage moveBox;
+    public int numCommando=0;
+    public int uiState=0;
 
     public InterfazUsuario(GamePanel gamePanel){
         this.gamePanel=gamePanel;
@@ -26,6 +32,11 @@ public class InterfazUsuario {
         try {
             fondoCombate= ImageIO.read(getClass().getResourceAsStream("/otros/fondo de combate.png"));
             textBoxCombate= ImageIO.read(getClass().getResourceAsStream("/otros/textBoxCombate.png"));
+            textBoxOpcion= ImageIO.read(getClass().getResourceAsStream("/otros/TextBoxOpcion.png"));
+            flechitaS= ImageIO.read(getClass().getResourceAsStream("/otros/flechitaS.png"));
+            moveBox=ImageIO.read(getClass().getResourceAsStream("/otros/spamton1.png"));
+
+
             spamton = Font.createFont(Font.TRUETYPE_FONT, is);
             spamton = spamton.deriveFont(Font.PLAIN, 14f);
 
@@ -74,8 +85,39 @@ public class InterfazUsuario {
 
     }
     public void drawCombate(){
-        g2.drawImage(fondoCombate,0,0,gamePanel.screenWidth,gamePanel.screenHeight,null);
-        g2.drawImage(textBoxCombate,100,350,500,100,null);
+//Pikachu tambien esta disponible, solo debes cambiar Scorbunny por Pikachu abajo
+        if (gamePanel.pokeJugador == null) {
+            gamePanel.pokeJugador = new Scorbunny(gamePanel);
+        }
+        g2.setFont(arial_40);
+        g2.setColor(Color.white);
+        g2.drawImage(fondoCombate,0,-120,gamePanel.screenWidth,gamePanel.screenHeight,null);
+        g2.drawImage(gamePanel.pokeJugador.Pokeimagen, 125, 270, 196, 196, null);
+        if(uiState==0){
+            g2.drawImage(textBoxCombate,0,450,850,135,null);
+            g2.drawImage(textBoxOpcion,530,460,240,120,null);
+            g2.drawString("Que debería hacer "+gamePanel.pokeJugador.name+" ?",120,520);
+            if(numCommando==0){
+                g2.drawImage(flechitaS,530,485,30,30,null);
+            }
+            if(numCommando==1){
+                g2.drawImage(flechitaS,640,485,30,30,null);
+            }
+            if(numCommando==2){
+                g2.drawImage(flechitaS,530,530,30,30,null);
+            }
+            if(numCommando==3){
+                g2.drawImage(flechitaS,640,530,30,30,null);
+
+            }
+
+        }
+        if(uiState==1){
+            g2.drawImage(moveBox,0,450,850,135,null);
+            g2.drawString(gamePanel.pokeJugador.movimientos[0].nombre, 100, 100);
+            g2.drawImage(gamePanel.pokeJugador.movimientos[0].tipoImagen,120,100,30,30,null);
+        }
+
 
 
     }

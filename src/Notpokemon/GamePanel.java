@@ -2,6 +2,7 @@ package Notpokemon;
 import Entidades.Entidad;
 import Entidades.Player;
 import Objetos.ObjetoMadre;
+import Pokes.Poke;
 import tile.TileManager;
 
 import javax.swing.JPanel;
@@ -35,6 +36,7 @@ public class GamePanel extends JPanel implements Runnable {
     public ObjetoMadre obj[][]=new ObjetoMadre[mapaMax][10];
     public Entidad npc[][]=new Entidad[mapaMax][10];
     public int npcId;
+    public Poke pokeJugador = null;
     TileManager tileM=new TileManager(this);
     public InterfazUsuario ui=new InterfazUsuario(this);
     public AdministradorEventos eventos=new AdministradorEventos(this);
@@ -42,9 +44,9 @@ public class GamePanel extends JPanel implements Runnable {
     public int gameState;
     public final int playState=1;
     public final int pauseState=2;
-    public final int tituloState=3;
+    public final int tituloState=0;
     public final int yapperState=4;
-    public final int combateState=5;
+    public final int combateState=3;
     public int objetivoStatus=0;
 
 
