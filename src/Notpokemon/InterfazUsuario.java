@@ -169,7 +169,7 @@ public class InterfazUsuario {
         if(uiState==3){
             g2.setColor(Color.white);
             g2.drawImage(textBoxCombate,0,450,775,135,null);
-            g2.drawString(gamePanel.pokeEnemigo.name+" usa "+gamePanel.pokeEnemigo.movimientos[movUsadoE].nombre,120,520);
+            g2.drawString("El "+gamePanel.pokeEnemigo.name+" enemigo usa "+gamePanel.pokeEnemigo.movimientos[movUsadoE].nombre,120,520);
 
 
         }
