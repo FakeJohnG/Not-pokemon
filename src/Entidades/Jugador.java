@@ -117,14 +117,14 @@ public class Jugador extends Entidad {
     }
     public void interracionNpc(int i){
         if(i!=999){
-            if(gamePanel.input.ePressed==true){
+            if(gamePanel.input.EPressed==true){
                 gamePanel.gameState=gamePanel.yapperState;
                 gamePanel.npc[gamePanel.mapaActual][i].speak();
 
             }
 
         }
-        gamePanel.input.ePressed=false;
+        gamePanel.input.EPressed=false;
 
     }
     public void recogerObjeto(int i){

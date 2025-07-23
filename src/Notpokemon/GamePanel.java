@@ -39,6 +39,8 @@ public class GamePanel extends JPanel implements Runnable {
     public Entidad npc[][]=new Entidad[mapaMax][10];
     public int npcId;
     public Poke pokeJugador = null;
+    public Poke pokeEnemigo=null;
+    public Combates combate= new Combates(this,pokeJugador);
     TileManager tileM=new TileManager(this);
     public InterfazUsuario ui=new InterfazUsuario(this);
     public AdministradorEventos eventos=new AdministradorEventos(this);
@@ -144,7 +146,28 @@ public class GamePanel extends JPanel implements Runnable {
             //Dibujo del jugador
             jugador.draw(g2);
 
+
             ui.draw(g2);
+            // DEBUG mostrar las areas de encuentros salvajes,esto lo borrare cuando ya todos los arbustos
+            //esten listos
+            for (ZonaEncuentro zona : eventos.zonasSalvajes) {
+                if (zona.mapa == mapaActual) {
+                    int worldX = zona.area.x;
+                    int worldY = zona.area.y;
+
+                    // Convertir coordenadas del mundo a pantalla según la posición del jugador
+                    int screenX = worldX - jugador.worldX + jugador.screenX;
+                    int screenY = worldY - jugador.worldY + jugador.screenY;
+
+                    // Dibujo del rectángulo semitransparente
+                    g2.setColor(new Color(0, 255, 0, 100)); // Verde semitransparente
+                    g2.fillRect(screenX, screenY, zona.area.width, zona.area.height);
+
+                    // Dibujo del borde para mayor visibilidad
+                    g2.setColor(Color.GREEN);
+                    g2.drawRect(screenX, screenY, zona.area.width, zona.area.height);
+                }
+            }
 
         }
 

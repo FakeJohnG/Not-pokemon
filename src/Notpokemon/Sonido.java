@@ -19,6 +19,8 @@ public class Sonido {
         sonidoURL[7]=getClass().getResource("/musica/startButton.wav");
         sonidoURL[8]=getClass().getResource("/musica/phantom.wav");
         sonidoURL[9]=getClass().getResource("/musica/bruhMoment.wav");
+        sonidoURL[10]=getClass().getResource("/musica/cancel.wav");
+
 
     }
     public void setFile(int i){
@@ -41,7 +43,7 @@ public class Sonido {
     }
     public void stop(){
         clip.stop();
-        clip.close();
+        //clip.close();
 
     }
 
