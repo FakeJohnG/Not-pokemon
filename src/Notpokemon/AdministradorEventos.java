@@ -13,20 +13,37 @@ public class AdministradorEventos {
 
     public AdministradorEventos(GamePanel gamePanel) {
         this.gamePanel = gamePanel;
-        //Lado isquierdo
+
         eventRect=new EventRect[gamePanel.mapaMax][gamePanel.maxWorldCol][gamePanel.maxWorldFila];
+
+        //LADO IZQUIERDO SUPERIOR
+
         zonasSalvajes.add(new ZonaEncuentro(0, 18, 14, 20, 14, gamePanel.tileSize));
         zonasSalvajes.add(new ZonaEncuentro(0, 17, 15, 21, 15, gamePanel.tileSize));
         zonasSalvajes.add(new ZonaEncuentro(0, 15, 16, 19, 16, gamePanel.tileSize));
-        zonasSalvajes.add(new ZonaEncuentro(0, 29, 10, 29, 15, gamePanel.tileSize));
+
+        //Arbol Derecho
         zonasSalvajes.add(new ZonaEncuentro(0, 16, 5, 21, 5, gamePanel.tileSize));
         zonasSalvajes.add(new ZonaEncuentro(0, 21, 6, 21, 8, gamePanel.tileSize));
         zonasSalvajes.add(new ZonaEncuentro(0, 19, 9, 20, 9, gamePanel.tileSize));
         zonasSalvajes.add(new ZonaEncuentro(0, 15, 9, 15, 11, gamePanel.tileSize));
+
+        //Arbol Centro
         zonasSalvajes.add(new ZonaEncuentro(0, 18, 6, 18, 8, gamePanel.tileSize));
         zonasSalvajes.add(new ZonaEncuentro(0, 14, 8, 14, 12, gamePanel.tileSize));
+        zonasSalvajes.add(new ZonaEncuentro(0, 12, 7, 13, 8, gamePanel.tileSize));
+        zonasSalvajes.add(new ZonaEncuentro(0, 12, 12, 13, 13, gamePanel.tileSize));
+        zonasSalvajes.add(new ZonaEncuentro(0, 11, 8, 11, 12, gamePanel.tileSize));
+        zonasSalvajes.add(new ZonaEncuentro(0, 10, 9, 10, 11, gamePanel.tileSize));
 
-        //Lado derecho
+        //Arbol Izquierdo
+        zonasSalvajes.add(new ZonaEncuentro(0, 5, 5, 5, 9, gamePanel.tileSize));
+        zonasSalvajes.add(new ZonaEncuentro(0, 4, 6, 4, 7, gamePanel.tileSize));
+
+        //LADO DERECHO SUPERIOR
+
+        //Arbol Izquierdo
+        zonasSalvajes.add(new ZonaEncuentro(0, 29, 10, 29, 15, gamePanel.tileSize));
         zonasSalvajes.add(new ZonaEncuentro(0, 30, 12, 31, 12, gamePanel.tileSize));
         zonasSalvajes.add(new ZonaEncuentro(0, 30, 16, 31, 16, gamePanel.tileSize));
         zonasSalvajes.add(new ZonaEncuentro(0, 32, 13, 32, 15, gamePanel.tileSize));
