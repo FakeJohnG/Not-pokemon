@@ -109,24 +109,24 @@ public class InterfazUsuario {
         g2.drawImage(gamePanel.pokeJugador.Pokeimagen, 125, 270, 196, 196, null);
         g2.drawImage(gamePanel.pokeEnemigo.Pokeimagen2, 500, 30, 196, 196, null);
         g2.drawImage(statusBox,100,20,300,100, null);
-        g2.drawImage(statusBoxJ,500,350,250,100, null);
-        g2.drawString(gamePanel.pokeJugador.name,550,390);
+        g2.drawImage(statusBoxJ,450,351,300,100, null);
+        g2.drawString(gamePanel.pokeJugador.name,475,390);
         if(uiState==0){
             g2.setColor(Color.white);
-            g2.drawImage(textBoxCombate,0,450,775,135,null);
-            g2.drawImage(textBoxOpcion,530,460,240,120,null);
-            g2.drawString("Que debe hacer "+gamePanel.pokeJugador.name+" ?",120,520);
+            g2.drawImage(textBoxCombate,0,450,775,130,null);
+            g2.drawImage(textBoxOpcion,425,450,350,130,null);
+            g2.drawString("Que deberia hacer "+gamePanel.pokeJugador.name+" ?",60,522);
             if(numCommando==0){
-                g2.drawImage(flechitaS,530,485,30,30,null);
+                g2.drawImage(flechitaS,440,482,30,30,null);
             }
             if(numCommando==1){
-                g2.drawImage(flechitaS,640,485,30,30,null);
+                g2.drawImage(flechitaS,600,482,30,30,null);
             }
             if(numCommando==2){
-                g2.drawImage(flechitaS,530,530,30,30,null);
+                g2.drawImage(flechitaS,440,528,30,30,null);
             }
             if(numCommando==3){
-                g2.drawImage(flechitaS,640,530,30,30,null);
+                g2.drawImage(flechitaS,600,528,30,30,null);
 
             }
 
@@ -135,27 +135,27 @@ public class InterfazUsuario {
             g2.setColor(Color.black);
             g2.drawImage(moveBox,0,450,770,135,null);
             g2.drawString(""+gamePanel.pokeJugador.ppMax,580,510);
-            g2.drawString(gamePanel.pokeJugador.movimientos[0].nombre, 85, 500);
-            g2.drawString(gamePanel.pokeJugador.movimientos[1].nombre, 85, 547);
+            g2.drawString(gamePanel.pokeJugador.movimientos[0].nombre, 75, 500);
+            g2.drawString(gamePanel.pokeJugador.movimientos[1].nombre, 75, 547);
             g2.drawString(gamePanel.pokeJugador.movimientos[2].nombre, 300, 500);
             g2.drawString(gamePanel.pokeJugador.movimientos[3].nombre, 300, 547);
 
 
             if(numCommando==0){
-                g2.drawImage(flechitaS,50,475,30,30,null);
+                g2.drawImage(flechitaS,40,475,30,30,null);
                 g2.drawImage(gamePanel.pokeJugador.movimientos[0].tipoImagen,620,525,100,30,null);
             }
             if(numCommando==1){
-                g2.drawImage(flechitaS,50,525,30,30,null);
-                g2.drawImage(gamePanel.pokeJugador.movimientos[1].tipoImagen,620,525,100,30,null);
-            }
-            if(numCommando==2){
-                g2.drawImage(flechitaS,270,475,30,30,null);
+                g2.drawImage(flechitaS,267,475,30,30,null);
                 g2.drawImage(gamePanel.pokeJugador.movimientos[2].tipoImagen,620,525,100,30,null);
 
             }
+            if(numCommando==2){
+                g2.drawImage(flechitaS,40,525,30,30,null);
+                g2.drawImage(gamePanel.pokeJugador.movimientos[1].tipoImagen,620,525,100,30,null);
+            }
             if(numCommando==3){
-                g2.drawImage(flechitaS,270,525,30,30,null);
+                g2.drawImage(flechitaS,267,525,30,30,null);
                 g2.drawImage(gamePanel.pokeJugador.movimientos[3].tipoImagen,620,525,100,30,null);
             }
         }
@@ -163,13 +163,13 @@ public class InterfazUsuario {
         if(uiState==2){
             g2.setColor(Color.white);
             g2.drawImage(textBoxCombate,0,450,775,135,null);
-            g2.drawString(gamePanel.pokeJugador.name+" usa "+gamePanel.pokeJugador.movimientos[movUsado].nombre,120,520);
+            g2.drawString(gamePanel.pokeJugador.name+" usa "+gamePanel.pokeJugador.movimientos[movUsado].nombre,60,520);
 
         }
         if(uiState==3){
             g2.setColor(Color.white);
             g2.drawImage(textBoxCombate,0,450,775,135,null);
-            g2.drawString("El "+gamePanel.pokeEnemigo.name+" enemigo usa "+gamePanel.pokeEnemigo.movimientos[movUsadoE].nombre,120,520);
+            g2.drawString("El "+gamePanel.pokeEnemigo.name+" enemigo usa "+gamePanel.pokeEnemigo.movimientos[movUsadoE].nombre,60,520);
 
 
         }
@@ -212,12 +212,12 @@ public class InterfazUsuario {
     }
     public void drawSubCaja(int x,int y,int ancho,int alto){
         //Fondo de la caja
-        Color c=new Color(225,0,0);
+        Color c=new Color(149, 63, 63);
         g2.setColor(c);
         g2.fillRoundRect(x,y,ancho,alto,35,35);
 
         //linea de la caja
-        c=new Color(255,255,255);
+        c=new Color(53, 2, 2);
         g2.setColor(c);
         g2.setStroke(new BasicStroke(5));
         g2.drawRoundRect(x+5,y+5,ancho-10,alto-10,25,25);
