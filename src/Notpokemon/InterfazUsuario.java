@@ -169,7 +169,7 @@ public class InterfazUsuario {
         if(uiState==3){
             g2.setColor(Color.white);
             g2.drawImage(textBoxCombate,0,450,775,135,null);
-            g2.drawString(gamePanel.pokeEnemigo.name+" usa "+gamePanel.pokeEnemigo.movimientos[movUsadoE].nombre,120,520);
+            g2.drawString("El "+gamePanel.pokeEnemigo.name+" enemigo usa "+gamePanel.pokeEnemigo.movimientos[movUsadoE].nombre,120,520);
 
 
         }
@@ -186,7 +186,7 @@ public class InterfazUsuario {
         g2.drawString(texto,x,y);
         int x2=gamePanel.tileSize*3;
         int y2=gamePanel.tileSize*4;
-        g2.drawString("¡Presiona Enter!",x2+20,y2);
+        g2.drawString("APRETA ENTER!",x2+10,y2);
 
     }
     public void drawCajaDialogo(){
