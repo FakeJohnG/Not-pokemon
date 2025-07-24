@@ -13,8 +13,28 @@ public class AdministradorEventos {
 
     public AdministradorEventos(GamePanel gamePanel) {
         this.gamePanel = gamePanel;
+        //Lado isquierdo
         eventRect=new EventRect[gamePanel.mapaMax][gamePanel.maxWorldCol][gamePanel.maxWorldFila];
-        zonasSalvajes.add(new ZonaEncuentro(0, 20, 12, 21, 12, gamePanel.tileSize));
+        zonasSalvajes.add(new ZonaEncuentro(0, 18, 14, 20, 14, gamePanel.tileSize));
+        zonasSalvajes.add(new ZonaEncuentro(0, 17, 15, 21, 15, gamePanel.tileSize));
+        zonasSalvajes.add(new ZonaEncuentro(0, 15, 16, 19, 16, gamePanel.tileSize));
+        zonasSalvajes.add(new ZonaEncuentro(0, 29, 10, 29, 15, gamePanel.tileSize));
+        zonasSalvajes.add(new ZonaEncuentro(0, 16, 5, 21, 5, gamePanel.tileSize));
+        zonasSalvajes.add(new ZonaEncuentro(0, 21, 6, 21, 8, gamePanel.tileSize));
+        zonasSalvajes.add(new ZonaEncuentro(0, 19, 9, 20, 9, gamePanel.tileSize));
+        zonasSalvajes.add(new ZonaEncuentro(0, 15, 9, 15, 11, gamePanel.tileSize));
+        zonasSalvajes.add(new ZonaEncuentro(0, 18, 6, 18, 8, gamePanel.tileSize));
+        zonasSalvajes.add(new ZonaEncuentro(0, 14, 8, 14, 12, gamePanel.tileSize));
+
+        //Lado derecho
+        zonasSalvajes.add(new ZonaEncuentro(0, 30, 12, 31, 12, gamePanel.tileSize));
+        zonasSalvajes.add(new ZonaEncuentro(0, 30, 16, 31, 16, gamePanel.tileSize));
+        zonasSalvajes.add(new ZonaEncuentro(0, 32, 13, 32, 15, gamePanel.tileSize));
+        zonasSalvajes.add(new ZonaEncuentro(0, 33, 15, 34, 15, gamePanel.tileSize));
+
+
+
+
         int map=0;
         int col=0;
         int fila=0;
