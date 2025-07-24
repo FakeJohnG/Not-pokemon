@@ -16,17 +16,23 @@ public class AdministradorEventos {
 
         eventRect=new EventRect[gamePanel.mapaMax][gamePanel.maxWorldCol][gamePanel.maxWorldFila];
 
-        //LADO IZQUIERDO SUPERIOR
+        //======LADO IZQUIERDO SUPERIOR=====
 
         zonasSalvajes.add(new ZonaEncuentro(0, 18, 14, 20, 14, gamePanel.tileSize));
         zonasSalvajes.add(new ZonaEncuentro(0, 17, 15, 21, 15, gamePanel.tileSize));
         zonasSalvajes.add(new ZonaEncuentro(0, 15, 16, 19, 16, gamePanel.tileSize));
+
+        zonasSalvajes.add(new ZonaEncuentro(0, 5, 15, 10, 15, gamePanel.tileSize));
+        zonasSalvajes.add(new ZonaEncuentro(0, 4, 14, 7, 14, gamePanel.tileSize));
+        zonasSalvajes.add(new ZonaEncuentro(0, 4, 13, 5, 13, gamePanel.tileSize));
+        zonasSalvajes.add(new ZonaEncuentro(0, 4, 12, 4, 12, gamePanel.tileSize));
 
         //Arbol Derecho
         zonasSalvajes.add(new ZonaEncuentro(0, 16, 5, 21, 5, gamePanel.tileSize));
         zonasSalvajes.add(new ZonaEncuentro(0, 21, 6, 21, 8, gamePanel.tileSize));
         zonasSalvajes.add(new ZonaEncuentro(0, 19, 9, 20, 9, gamePanel.tileSize));
         zonasSalvajes.add(new ZonaEncuentro(0, 15, 9, 15, 11, gamePanel.tileSize));
+        zonasSalvajes.add(new ZonaEncuentro(0, 17, 6, 17, 6, gamePanel.tileSize));
 
         //Arbol Centro
         zonasSalvajes.add(new ZonaEncuentro(0, 18, 6, 18, 8, gamePanel.tileSize));
@@ -37,10 +43,24 @@ public class AdministradorEventos {
         zonasSalvajes.add(new ZonaEncuentro(0, 10, 9, 10, 11, gamePanel.tileSize));
 
         //Arbol Izquierdo
+        zonasSalvajes.add(new ZonaEncuentro(0, 6, 5, 9, 5, gamePanel.tileSize));
         zonasSalvajes.add(new ZonaEncuentro(0, 5, 5, 5, 9, gamePanel.tileSize));
         zonasSalvajes.add(new ZonaEncuentro(0, 4, 6, 4, 7, gamePanel.tileSize));
+        zonasSalvajes.add(new ZonaEncuentro(0, 8, 6, 8, 6, gamePanel.tileSize));
 
-        //LADO DERECHO SUPERIOR
+
+        //======LADO DERECHO SUPERIOR========
+        zonasSalvajes.add(new ZonaEncuentro(0, 29, 5, 31, 5, gamePanel.tileSize));
+        zonasSalvajes.add(new ZonaEncuentro(0, 29, 6, 29, 6, gamePanel.tileSize));
+
+        zonasSalvajes.add(new ZonaEncuentro(0, 43, 5, 44, 5, gamePanel.tileSize));
+        zonasSalvajes.add(new ZonaEncuentro(0, 44, 6, 44, 6, gamePanel.tileSize));
+
+        zonasSalvajes.add(new ZonaEncuentro(0, 32, 10, 33, 10, gamePanel.tileSize));
+        zonasSalvajes.add(new ZonaEncuentro(0, 33, 11, 34, 11, gamePanel.tileSize));
+
+        zonasSalvajes.add(new ZonaEncuentro(0, 40, 10, 41, 10, gamePanel.tileSize));
+        zonasSalvajes.add(new ZonaEncuentro(0, 39, 11, 40, 11, gamePanel.tileSize));
 
         //Arbol Izquierdo
         zonasSalvajes.add(new ZonaEncuentro(0, 29, 10, 29, 15, gamePanel.tileSize));
@@ -48,9 +68,21 @@ public class AdministradorEventos {
         zonasSalvajes.add(new ZonaEncuentro(0, 30, 16, 31, 16, gamePanel.tileSize));
         zonasSalvajes.add(new ZonaEncuentro(0, 32, 13, 32, 15, gamePanel.tileSize));
         zonasSalvajes.add(new ZonaEncuentro(0, 33, 15, 34, 15, gamePanel.tileSize));
+        zonasSalvajes.add(new ZonaEncuentro(0, 33, 14, 33, 14, gamePanel.tileSize));
+        zonasSalvajes.add(new ZonaEncuentro(0, 30, 11, 30, 11, gamePanel.tileSize));
 
+        //Arbol Centro
+        zonasSalvajes.add(new ZonaEncuentro(0, 34, 5, 40, 5, gamePanel.tileSize));
+        zonasSalvajes.add(new ZonaEncuentro(0, 34, 6, 39, 6, gamePanel.tileSize));
+        zonasSalvajes.add(new ZonaEncuentro(0, 35, 7, 38, 7, gamePanel.tileSize));
 
-
+        //Arbol Derecha
+        zonasSalvajes.add(new ZonaEncuentro(0, 39, 15, 44, 15, gamePanel.tileSize));
+        zonasSalvajes.add(new ZonaEncuentro(0, 40, 14, 44, 14, gamePanel.tileSize));
+        zonasSalvajes.add(new ZonaEncuentro(0, 41, 13, 44, 13, gamePanel.tileSize));
+        zonasSalvajes.add(new ZonaEncuentro(0, 42, 12, 44, 12, gamePanel.tileSize));
+        zonasSalvajes.add(new ZonaEncuentro(0, 43, 11, 44, 11, gamePanel.tileSize));
+        zonasSalvajes.add(new ZonaEncuentro(0, 44, 10, 44, 10, gamePanel.tileSize));
 
         int map=0;
         int col=0;
