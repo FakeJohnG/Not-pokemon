@@ -2,6 +2,7 @@ package Notpokemon;
 
 import Objetos.Gema;
 import Pokes.Pikachu;
+import Pokes.Porygon;
 import Pokes.Scorbunny;
 
 import javax.imageio.ImageIO;
@@ -26,6 +27,7 @@ public class InterfazUsuario {
     public int numCommando=0;
     public int uiState=0;
     public int movUsado,movUsadoE;
+    public int dañoCausado;
 
     public InterfazUsuario(GamePanel gamePanel){
         this.gamePanel=gamePanel;
@@ -98,7 +100,7 @@ public class InterfazUsuario {
 
 
         if (gamePanel.pokeJugador == null) {
-            gamePanel.pokeJugador = new Pikachu(gamePanel);
+            gamePanel.pokeJugador = new Porygon(gamePanel);
         }
         if(gamePanel.pokeEnemigo==null){
             gamePanel.pokeEnemigo=gamePanel.combate.generarPokeSalvaje();
@@ -106,11 +108,20 @@ public class InterfazUsuario {
         g2.setFont(pokemon);
         g2.setColor(Color.BLACK);
         g2.drawImage(fondoCombate,0,-120,gamePanel.screenWidth,gamePanel.screenHeight,null);
-        g2.drawImage(gamePanel.pokeJugador.Pokeimagen, 125, 270, 196, 196, null);
-        g2.drawImage(gamePanel.pokeEnemigo.Pokeimagen2, 500, 30, 196, 196, null);
+        if(uiState!=5){
+            g2.drawImage(gamePanel.pokeJugador.Pokeimagen, 125, 270, 196, 196, null);
+        }
+
+        if(uiState!=4){
+            g2.drawImage(gamePanel.pokeEnemigo.Pokeimagen2, 500, 30, 196, 196, null);
+        }
         g2.drawImage(statusBox,100,20,300,100, null);
         g2.drawImage(statusBoxJ,500,350,250,100, null);
         g2.drawString(gamePanel.pokeJugador.name,550,390);
+        g2.drawString(gamePanel.pokeEnemigo.name,300,200);
+        g2.drawString("pv"+gamePanel.pokeJugador.pv,570,350);
+        g2.drawString("pv"+gamePanel.pokeEnemigo.pv,300,100);
+
         if(uiState==0){
             g2.setColor(Color.white);
             g2.drawImage(textBoxCombate,0,450,775,135,null);
@@ -164,14 +175,24 @@ public class InterfazUsuario {
             g2.setColor(Color.white);
             g2.drawImage(textBoxCombate,0,450,775,135,null);
             g2.drawString(gamePanel.pokeJugador.name+" usa "+gamePanel.pokeJugador.movimientos[movUsado].nombre,120,520);
+            g2.drawString("Causo "+dañoCausado+"puntos de dano!",120,550);
 
         }
         if(uiState==3){
             g2.setColor(Color.white);
             g2.drawImage(textBoxCombate,0,450,775,135,null);
-            g2.drawString("El "+gamePanel.pokeEnemigo.name+" enemigo usa "+gamePanel.pokeEnemigo.movimientos[movUsadoE].nombre,120,520);
+            g2.drawString(gamePanel.pokeEnemigo.name+" usa "+gamePanel.pokeEnemigo.movimientos[movUsadoE].nombre,120,520);
+            g2.drawString(gamePanel.pokeJugador.name+"recibio"+dañoCausado+"puntos de dano!",120,550);
 
+        }
+        if(uiState==4){
+            g2.drawImage(textBoxCombate,0,450,775,135,null);
+            g2.drawString("El "+gamePanel.pokeEnemigo.name+"fue derrotado!",120,550);
 
+        }
+        if(uiState==5){
+            g2.drawImage(textBoxCombate,0,450,775,135,null);
+            g2.drawString(gamePanel.pokeJugador.name+"fue derrotado! CORRE!",120,550);
         }
 
 

@@ -24,4 +24,7 @@ public class Movimientos {
             e.printStackTrace();
         }
     }
+    public int getPoder() {
+        return poder;
+    }
 }

@@ -137,11 +137,9 @@ public Inputs(GamePanel gamePanel){
                             gamePanel.ui.uiState=2;
                             gamePanel.combate.procesarTurno(gamePanel.pokeJugador,gamePanel.pokeEnemigo,gamePanel.pokeJugador.movimientos[1]);
                             gamePanel.ui.movUsado=0;
-                            gamePanel.ui.numCommando=0;
-                            int i = (int)(Math.random() * 4); // Movimiento aleatorio del enemigo
-                            Movimientos movimientoEnemigo = gamePanel.pokeEnemigo.movimientos[i];
-                            gamePanel.combate.procesarTurno(gamePanel.pokeEnemigo, gamePanel.pokeJugador, movimientoEnemigo);
-                            gamePanel.ui.movUsadoE=i;
+
+
+
                         }
                         if(gamePanel.ui.numCommando==1){
                             gamePanel.sonidoE.setFile(7);
@@ -149,11 +147,7 @@ public Inputs(GamePanel gamePanel){
                             gamePanel.ui.uiState=2;
                             gamePanel.combate.procesarTurno(gamePanel.pokeJugador,gamePanel.pokeEnemigo,gamePanel.pokeJugador.movimientos[1]);
                             gamePanel.ui.movUsado=1;
-                            gamePanel.ui.numCommando=0;
-                            int i = (int)(Math.random() * 4); // Movimiento aleatorio del enemigo
-                            Movimientos movimientoEnemigo = gamePanel.pokeEnemigo.movimientos[i];
-                            gamePanel.combate.procesarTurno(gamePanel.pokeEnemigo, gamePanel.pokeJugador, movimientoEnemigo);
-                            gamePanel.ui.movUsadoE=i;
+
                         }
                         if(gamePanel.ui.numCommando==2){
                             gamePanel.sonidoE.setFile(7);
@@ -161,11 +155,7 @@ public Inputs(GamePanel gamePanel){
                             gamePanel.ui.uiState=2;
                             gamePanel.combate.procesarTurno(gamePanel.pokeJugador,gamePanel.pokeEnemigo,gamePanel.pokeJugador.movimientos[1]);
                             gamePanel.ui.movUsado=2;
-                            gamePanel.ui.numCommando=0;
-                            int i = (int)(Math.random() * 4); // Movimiento aleatorio del enemigo
-                            Movimientos movimientoEnemigo = gamePanel.pokeEnemigo.movimientos[i];
-                            gamePanel.combate.procesarTurno(gamePanel.pokeEnemigo, gamePanel.pokeJugador, movimientoEnemigo);
-                            gamePanel.ui.movUsadoE=i;
+
                         }
                         if(gamePanel.ui.numCommando==3){
                             gamePanel.sonidoE.setFile(7);
@@ -173,18 +163,41 @@ public Inputs(GamePanel gamePanel){
                             gamePanel.ui.uiState=2;
                             gamePanel.combate.procesarTurno(gamePanel.pokeJugador,gamePanel.pokeEnemigo,gamePanel.pokeJugador.movimientos[1]);
                             gamePanel.ui.movUsado=3;
-                            gamePanel.ui.numCommando=0;
-                            int i = (int)(Math.random() * 4); // Movimiento aleatorio del enemigo
-                            Movimientos movimientoEnemigo = gamePanel.pokeEnemigo.movimientos[i];
-                            gamePanel.combate.procesarTurno(gamePanel.pokeEnemigo, gamePanel.pokeJugador, movimientoEnemigo);
-                            gamePanel.ui.movUsadoE=i;
+
+
                         }
                     }
                     else if(gamePanel.ui.uiState==2){
                         gamePanel.ui.uiState=3;
+                        int i = (int)(Math.random() * 4); // Movimiento aleatorio del enemigo
+                        Movimientos movimientoEnemigo = gamePanel.pokeEnemigo.movimientos[i];
+                        gamePanel.combate.procesarTurno(gamePanel.pokeEnemigo, gamePanel.pokeJugador, movimientoEnemigo);
+                        gamePanel.ui.movUsadoE=i;
                     }
                     else if(gamePanel.ui.uiState==3){
                         gamePanel.ui.uiState=0;
+                    } else if (gamePanel.ui.uiState==4) {
+                        gamePanel.pokeJugador.pv=gamePanel.pokeJugador.maxPV;
+                        gamePanel.pokeEnemigo.pv=gamePanel.pokeEnemigo.maxPV;
+                        gamePanel.gameState=gamePanel.playState;
+                        gamePanel.sonido.stop();
+                        gamePanel.sonido.setFile(0);
+                        gamePanel.sonido.play();
+                        gamePanel.ui.uiState=0;
+                        gamePanel.jugador.dinero=gamePanel.jugador.dinero+10;
+
+                    } else if (gamePanel.ui.uiState==5) {
+                        gamePanel.pokeJugador.pv=gamePanel.pokeJugador.maxPV;
+                        gamePanel.pokeEnemigo.pv=gamePanel.pokeEnemigo.maxPV;
+                        gamePanel.gameState=gamePanel.playState;
+                        gamePanel.sonidoE.setFile(9);
+                        gamePanel.sonidoE.play();
+                        gamePanel.sonido.stop();
+                        gamePanel.sonido.setFile(0);
+                        gamePanel.sonido.play();
+                        gamePanel.ui.uiState=0;
+
+
                     }
 
                 }
@@ -193,9 +206,10 @@ public Inputs(GamePanel gamePanel){
             }
             //Dialogo
             if(gamePanel.gameState== gamePanel.yapperState){
-                gamePanel.sonidoE.setFile(7);
-                gamePanel.sonidoE.play();
+
                 if(code==KeyEvent.VK_E){
+                    gamePanel.sonidoE.setFile(7);
+                    gamePanel.sonidoE.play();
             gamePanel.gameState= gamePanel.playState;
                 }
             }
