@@ -146,7 +146,7 @@ public Inputs(GamePanel gamePanel){
                             gamePanel.sonidoE.play();
                             gamePanel.ui.uiState=2;
                             gamePanel.combate.procesarTurno(gamePanel.pokeJugador,gamePanel.pokeEnemigo,gamePanel.pokeJugador.movimientos[1]);
-                            gamePanel.ui.movUsado=1;
+                            gamePanel.ui.movUsado=2;
 
                         }
                         if(gamePanel.ui.numCommando==2){
@@ -154,7 +154,7 @@ public Inputs(GamePanel gamePanel){
                             gamePanel.sonidoE.play();
                             gamePanel.ui.uiState=2;
                             gamePanel.combate.procesarTurno(gamePanel.pokeJugador,gamePanel.pokeEnemigo,gamePanel.pokeJugador.movimientos[1]);
-                            gamePanel.ui.movUsado=2;
+                            gamePanel.ui.movUsado=1;
 
                         }
                         if(gamePanel.ui.numCommando==3){
