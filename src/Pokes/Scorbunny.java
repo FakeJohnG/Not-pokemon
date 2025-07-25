@@ -10,12 +10,15 @@ public class Scorbunny extends Poke {
         super(gamepanel);
         name="Scorbunny";
         pv=110;
+        maxPV=100;
+        statAtaque=65;
+        statDefensa=50;
         movimientos[0] = new Movimientos("Ascuas", "Fuego", 40, 100, 30);
-        movimientos[1] = new Movimientos("Ataque Rapido", "Normal", 40, 100, 30);
+        movimientos[1] = new Movimientos("Ataque Rápido", "Normal", 40, 100, 30);
         movimientos[2] = new Movimientos("Patada doble", "Pelea", 0, 90, 20);
         movimientos[3] = new Movimientos("Lanzallamas", "Fuego", 100, 75, 15);
         tipo="Electrico";
-        nivel=10;
+        nivel=20;
         genero="Masculino";
         ppMax=100;
         try{

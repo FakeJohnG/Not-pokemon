@@ -14,6 +14,7 @@ public class Jugador extends Entidad {
     public final int screenX;
     public final int screenY;
     public int cantMcguffin=0;
+    public double dinero=100;
     //Le puse Mcguffin porque no si hacerlos gemas o otra cosa so yea
 
 
