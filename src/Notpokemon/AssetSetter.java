@@ -1,6 +1,7 @@
 package Notpokemon;
 
 import Entidades.NpcGuy;
+import Entidades.NpcTienda;
 import Objetos.Gema;
 
 public class AssetSetter {
@@ -25,6 +26,11 @@ public class AssetSetter {
         gamepanel.npc[mapNum][0]=new NpcGuy(gamepanel);
         gamepanel.npc[mapNum][0].worldX=gamepanel.tileSize*25;
         gamepanel.npc[mapNum][0].worldY=gamepanel.tileSize*24;
+
+        mapNum=1;
+        gamepanel.npc[mapNum][1]=new NpcTienda(gamepanel);
+        gamepanel.npc[mapNum][1].worldX=gamepanel.tileSize*7;
+        gamepanel.npc[mapNum][1].worldY=gamepanel.tileSize*6;
 
     }
 }

@@ -24,7 +24,13 @@ public class Movimientos {
             e.printStackTrace();
         }
     }
+    public String getNombre(){
+        return nombre;
+    }
     public int getPoder() {
         return poder;
+    }
+    public int getPrecision() {
+        return precision;
     }
 }

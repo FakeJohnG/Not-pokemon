@@ -26,6 +26,7 @@ public class Entidad {
  public BufferedImage[] rightFrames;
 
  String dialogosNpc[]= new String[30];
+ String dialogoEx[]=new String[60];
 
  public Entidad(GamePanel gamePanel){
   this.gamePanel=gamePanel;

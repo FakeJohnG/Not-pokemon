@@ -16,6 +16,7 @@ public class Poke {
     public int ppMax;
     public int statAtaque;
     public int statDefensa;
+    public int precio;
 
     public Poke(GamePanel gamepanel) {
         this.gamepanel = gamepanel;

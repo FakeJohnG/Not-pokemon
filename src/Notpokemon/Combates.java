@@ -16,13 +16,14 @@ public class Combates {
 
     }
     public Poke generarPokeSalvaje() {
-        int rand = (int)(Math.random() * 3); //
+        int rand = (int)(Math.random() * 4); // saca un numero entre 0 a 3
         System.out.println("spawneando pokemon"+rand);
-
+//Saca un numero alazar y el que salga sera el pokemon seleccionado
         switch(rand) {
             case 0: return new Porygon(gamePanel);
             case 1: return new Pikachu(gamePanel);
             case 2: return new Scorbunny(gamePanel);
+            case 3:return new Mudkip(gamePanel);
 
             default: return new Pikachu(gamePanel);
         }
@@ -37,14 +38,29 @@ public class Combates {
     }
 
     public int calcularDaño(Poke atacante,Poke defensivo,Movimientos movimiento){
-        int poder = movimiento.getPoder(); // poder del movimiento
+
+        int poder = movimiento.getPoder();// poder del movimiento
+        int precision=movimiento.getPrecision(); // precision del movimiento, osea si falla o no.
         int ataque = atacante.getStatAtaque(); // stat de atacante
         int defensa = defensivo.getStatDefensa(); // stat de defensa
+        // Tirada de precisión
+        System.out.println("presicion:"+precision);
+        int tirada = (int)(Math.random() * 100); // 0 a 99
+        System.out.println("tirada:"+tirada);
 
-        int dañoBase = (ataque * poder) / (defensa + 1);
-        int variación = (int)(Math.random() * 5); // daño adicional aleatorio [0-4]
+        if (tirada >= precision) {
+            // Falló el ataque
+            gamePanel.sonidoE.setFile(9);
+            gamePanel.sonidoE.play();
+            return 0 ;
+        }
 
-        return Math.max(1, dañoBase + variación);
+        else{
+            int dañoBase = (ataque * poder) / (defensa + 1);
+            int variación = (int)(Math.random() * 5); // daño adicional aleatorio [0-4]
+
+            return Math.max(1, dañoBase + variación);
+        }
 
     }
 

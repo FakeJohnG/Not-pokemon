@@ -1,6 +1,7 @@
 package Notpokemon;
 import Entidades.Entidad;
 import Entidades.Jugador;
+import Entidades.NpcTienda;
 import Objetos.ObjetoMadre;
 import Pokes.Poke;
 import tile.TileManager;
@@ -32,9 +33,8 @@ public class GamePanel extends JPanel implements Runnable {
     Thread gameThread;
     public CollisionManager managerC =new CollisionManager(this);
     public AssetSetter aSetter = new AssetSetter(this);
-    
     public Jugador jugador =new Jugador(this,input);
-
+    public NpcTienda spam=new NpcTienda(this);
     public ObjetoMadre obj[][]=new ObjetoMadre[mapaMax][10];
     public Entidad npc[][]=new Entidad[mapaMax][10];
     public int npcId;
@@ -51,6 +51,7 @@ public class GamePanel extends JPanel implements Runnable {
     public final int tituloState=0;
     public final int yapperState=4;
     public final int combateState=3;
+    public final int statusTienda=5;
     public int objetivoStatus=0;
 
 
@@ -148,26 +149,7 @@ public class GamePanel extends JPanel implements Runnable {
 
 
             ui.draw(g2);
-            // DEBUG mostrar las areas de encuentros salvajes,esto lo borrare cuando ya todos los arbustos
-            //esten listos
-            for (ZonaEncuentro zona : eventos.zonasSalvajes) {
-                if (zona.mapa == mapaActual) {
-                    int worldX = zona.area.x;
-                    int worldY = zona.area.y;
 
-                    // Convertir coordenadas del mundo a pantalla según la posición del jugador
-                    int screenX = worldX - jugador.worldX + jugador.screenX;
-                    int screenY = worldY - jugador.worldY + jugador.screenY;
-
-                    // Dibujo del rectángulo semitransparente
-                    g2.setColor(new Color(0, 255, 0, 100)); // Verde semitransparente
-                    g2.fillRect(screenX, screenY, zona.area.width, zona.area.height);
-
-                    // Dibujo del borde para mayor visibilidad
-                    g2.setColor(Color.GREEN);
-                    g2.drawRect(screenX, screenY, zona.area.width, zona.area.height);
-                }
-            }
 
         }
 

@@ -21,9 +21,11 @@ public class Scorbunny extends Poke {
         nivel=20;
         genero="Masculino";
         ppMax=100;
+        precio=100;
         try{
-            Pokeimagen = ImageIO.read(getClass().getResource("/otros/gema.png"));
+            Pokeimagen = ImageIO.read(getClass().getResource("/otros/spamton1.png"));
             Pokeimagen2= ImageIO.read(getClass().getResourceAsStream("/poken/scorbunny.png"));
+            Pokeshop= ImageIO.read(getClass().getResourceAsStream("/poken/scorbunny.png"));
         }catch (IOException e){
             e.printStackTrace();
         }
