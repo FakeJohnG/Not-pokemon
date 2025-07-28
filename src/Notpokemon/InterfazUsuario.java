@@ -186,28 +186,28 @@ public class InterfazUsuario {
             g2.drawImage(gamePanel.pokeEnemigo.Pokeimagen2, 500, 30, 196, 196, null);
         }
         g2.drawImage(statusBox,100,20,300,100, null);
-        g2.drawImage(statusBoxJ,500,350,250,100, null);
-        g2.drawString(gamePanel.pokeJugador.name,550,390);
+        g2.drawImage(statusBoxJ,450,351,300,100, null);
+        g2.drawString(gamePanel.pokeJugador.name,475,390);
         g2.drawString(gamePanel.pokeEnemigo.name,200,70);
         g2.drawString("pv"+gamePanel.pokeJugador.pv,620,415);
         g2.drawString("pv"+gamePanel.pokeEnemigo.pv,300,100);
 
         if(uiState==0){
             g2.setColor(Color.white);
-            g2.drawImage(textBoxCombate,0,450,775,135,null);
-            g2.drawImage(textBoxOpcion,530,460,240,120,null);
-            g2.drawString("Que debe hacer "+gamePanel.pokeJugador.name+" ?",120,520);
+            g2.drawImage(textBoxCombate,0,450,775,130,null);
+            g2.drawImage(textBoxOpcion,425,450,350,130,null);
+            g2.drawString("Que deberia hacer "+gamePanel.pokeJugador.name+" ?",120,520);
             if(numCommando==0){
-                g2.drawImage(flechitaS,530,485,30,30,null);
+                g2.drawImage(flechitaS,440,482,30,30,null);
             }
             if(numCommando==1){
-                g2.drawImage(flechitaS,640,485,30,30,null);
+                g2.drawImage(flechitaS,600,482,30,30,null);
             }
             if(numCommando==2){
-                g2.drawImage(flechitaS,530,530,30,30,null);
+                g2.drawImage(flechitaS,440,530,30,30,null);
             }
             if(numCommando==3){
-                g2.drawImage(flechitaS,640,530,30,30,null);
+                g2.drawImage(flechitaS,600,530,30,30,null);
 
             }
 
@@ -309,15 +309,15 @@ public class InterfazUsuario {
     }
     public void drawSubCaja(int x,int y,int ancho,int alto){
         //Fondo de la caja
-        Color c=new Color(149, 63, 63);
+        Color c=new Color(243, 252, 255);
         g2.setColor(c);
         g2.fillRoundRect(x,y,ancho,alto,35,35);
 
         //linea de la caja
-        c=new Color(53, 2, 2);
+        c=new Color(10, 43, 74);
         g2.setColor(c);
         g2.setStroke(new BasicStroke(5));
-        g2.drawRoundRect(x+5,y+5,ancho-10,alto-10,25,25);
+        g2.drawRoundRect(x,y,ancho,alto,25,25);
 
         if(gamePanel.npcId==1){
             c=new Color(0,0,0);
