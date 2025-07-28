@@ -4,17 +4,16 @@ import Entidades.Jugador;
 import Entidades.NpcTienda;
 import Objetos.ObjetoMadre;
 import Pokes.Poke;
-import tile.TileManager;
+import tile.AdministradorTexturas;
 
 import javax.swing.JPanel;
 import java.awt.*;
 
-//Esta clase sirve para darle atributos a la ventana.
+//Esta clase es el corazon del juego entero, y ya saben sin corazon estas muerto.
 public class GamePanel extends JPanel implements Runnable {
     //Atributos de la pantalla
     final int originalTileSize=16;
     final int scale=3;
-
     public final int tileSize= originalTileSize*scale;
     public final int maxScreenCol =16;
     public final int maxScreenRow =12;
@@ -26,12 +25,12 @@ public class GamePanel extends JPanel implements Runnable {
     public final int maxWorldFila =50;
     public final int mapaMax=10;
     public  int mapaActual=0;
-
+    //Para su uso en la demas clases del juego, aqui se instancian
     public Inputs input= new Inputs(this);
    public Sonido sonido= new Sonido();
     public Sonido sonidoE= new Sonido();
     Thread gameThread;
-    public CollisionManager managerC =new CollisionManager(this);
+    public AdministradorDeCollisiones adminC =new AdministradorDeCollisiones(this);
     public AssetSetter aSetter = new AssetSetter(this);
     public Jugador jugador =new Jugador(this,input);
     public NpcTienda spam=new NpcTienda(this);
@@ -41,9 +40,9 @@ public class GamePanel extends JPanel implements Runnable {
     public Poke pokeJugador = null;
     public Poke pokeEnemigo=null;
     public Combates combate= new Combates(this,pokeJugador);
-    TileManager tileM=new TileManager(this);
+    AdministradorTexturas adminTextura =new AdministradorTexturas(this);
     public InterfazUsuario ui=new InterfazUsuario(this);
-    public AdministradorEventos eventos=new AdministradorEventos(this);
+    public AdministradorDeEventos eventos=new AdministradorDeEventos(this);
     //Estado del juego
     public int gameState;
     public final int playState=1;
@@ -130,7 +129,7 @@ public class GamePanel extends JPanel implements Runnable {
         }
         else{
             //OJO, Tile manager debe ir primero sino, el personje se dibujara debajo de las tiles.
-            tileM.draw(g2);
+            adminTextura.draw(g2);
             //Dibujo de objetos
             for(int i=0;i<obj[1].length;i++){
                 if(obj[mapaActual][i]!=null){

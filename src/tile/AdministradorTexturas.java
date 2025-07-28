@@ -11,17 +11,18 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-public class TileManager {
+public class AdministradorTexturas {
     GamePanel gamePanel;
     public Textura[] textura;
     public int mapaTexNum[][][];
 
-    public TileManager(GamePanel gamePanel){
+    public AdministradorTexturas(GamePanel gamePanel){
         this.gamePanel=gamePanel;
         //Aqui se indica cuantos tiles unicos tenemos,si se añade más incrementar numero.
         textura = new Textura[143];
         mapaTexNum = new int[gamePanel.mapaMax][gamePanel.maxWorldCol][gamePanel.maxWorldFila];
         getTileImage();
+        //Mapas en el juego, se debe incluir el file path del archivo y un numero unico para el mapa
         loadMapData("/maps/testMapDataXL.txt",0);
         loadMapData("/maps/testMapData1.txt",1);
 
@@ -29,6 +30,8 @@ public class TileManager {
 
     }
     public void getTileImage(){
+        //Aqui se consigue de la carpeta res todas las texturas que el juego debe dibujar
+        //Añadiendo el atributo .collision=true se le dice al juego que tiene collision esa textura
         try{
 
             //pasto verde basico grass1

@@ -90,12 +90,12 @@ public class Jugador extends Entidad {
         }
         //Verificar collision
         collisionOn=false;
-        gamePanel.managerC.checkTile(this);
+        gamePanel.adminC.checkTile(this);
         //Collision con objetos
-        int objIndex= gamePanel.managerC.checkObjeto(this,true);
+        int objIndex= gamePanel.adminC.checkObjeto(this,true);
         recogerObjeto(objIndex);
         //Collision con npcs
-        int npcIndex=gamePanel.managerC.checkEntidad(this,gamePanel.npc);
+        int npcIndex=gamePanel.adminC.checkEntidad(this,gamePanel.npc);
         interracionNpc(npcIndex);
 
         if(collisionOn==false){

@@ -5,8 +5,8 @@ import Pokes.Poke;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-//Esta clase, maneja lo que son los inputs del teclado
-//Ps. talves implemente soporte para control pero eso ya seria un requisito no funcional. J
+//Esta clase, maneja lo que son las entradas del teclado
+
 
 public class Inputs implements KeyListener {
     //Atributos

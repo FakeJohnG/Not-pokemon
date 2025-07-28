@@ -7,6 +7,8 @@ import java.net.URL;
 public class Sonido {
     Clip clip;
     URL sonidoURL[]=new URL[30];
+    //Clase sonido, aqui cada cancion y efecto de sonido del juego se guardan en el arreglo sonidoUrl
+
 
     public Sonido(){
         sonidoURL[0]=getClass().getResource("/musica/townTest.wav");
@@ -27,6 +29,7 @@ public class Sonido {
 
     }
     public void setFile(int i){
+        //Metodo para que el programa sepe cual audio va a reproducir
         try{
             AudioInputStream ais= AudioSystem.getAudioInputStream(sonidoURL[i]);
             clip=AudioSystem.getClip();
@@ -37,14 +40,17 @@ public class Sonido {
 
     }
     public void play(){
+        //Reproduce el audio
         clip.start();
 
     }
     public void loop(){
+        //El audio es reproducido en bucle
         clip.loop(Clip.LOOP_CONTINUOUSLY);
 
     }
     public void stop(){
+        //Se detiene el audio
         clip.stop();
         //clip.close();
 

@@ -13,13 +13,18 @@ public class AssetSetter {
     public void setObjecto(){
         int mapNum=0;
         gamepanel.obj[mapNum][0]=new Gema();
-        gamepanel.obj[mapNum][0].worldX=gamepanel.tileSize*28;
-        gamepanel.obj[mapNum][0].worldY=gamepanel.tileSize*22;
+        gamepanel.obj[mapNum][0].worldX=gamepanel.tileSize*43;
+        gamepanel.obj[mapNum][0].worldY=gamepanel.tileSize*12;
 
-        mapNum=1;
         gamepanel.obj[mapNum][1]=new Gema();
-        gamepanel.obj[mapNum][1].worldX=gamepanel.tileSize*7;
-        gamepanel.obj[mapNum][1].worldY=gamepanel.tileSize*6;
+        gamepanel.obj[mapNum][1].worldX=gamepanel.tileSize*38;
+        gamepanel.obj[mapNum][1].worldY=gamepanel.tileSize*46;
+
+        gamepanel.obj[mapNum][2]=new Gema();
+        gamepanel.obj[mapNum][2].worldX=gamepanel.tileSize*14;
+        gamepanel.obj[mapNum][2].worldY=gamepanel.tileSize*11;
+
+
     }
     public void setNpc(){
         int mapNum=0;

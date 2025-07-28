@@ -1,11 +1,12 @@
 package Notpokemon;
 
 import Entidades.Entidad;
+//Esta clase maneja lo que es las collisiones en el juego
 
-public class CollisionManager {
+public class AdministradorDeCollisiones {
     GamePanel gamePanel;
 
-    public CollisionManager(GamePanel gamePanel){
+    public AdministradorDeCollisiones(GamePanel gamePanel){
 
         this.gamePanel=gamePanel;
     }
@@ -25,33 +26,33 @@ public class CollisionManager {
         switch(entidad.direction){
             case"up":
                 entityUpRow=(entityUpWorldY- entidad.speed)/gamePanel.tileSize;
-                tileNum1=gamePanel.tileM.mapaTexNum[gamePanel.mapaActual][entityLeftCol][entityUpRow];
-                tileNum2=gamePanel.tileM.mapaTexNum[gamePanel.mapaActual][entityRightCol][entityUpRow];
-                if(gamePanel.tileM.textura[tileNum1].collision==true|| gamePanel.tileM.textura[tileNum2].collision==true){
+                tileNum1=gamePanel.adminTextura.mapaTexNum[gamePanel.mapaActual][entityLeftCol][entityUpRow];
+                tileNum2=gamePanel.adminTextura.mapaTexNum[gamePanel.mapaActual][entityRightCol][entityUpRow];
+                if(gamePanel.adminTextura.textura[tileNum1].collision==true|| gamePanel.adminTextura.textura[tileNum2].collision==true){
                     entidad.collisionOn=true;
                 }
                 break;
             case"down":
                 entityDownRow=(entityDownWorldY+ entidad.speed)/gamePanel.tileSize;
-                tileNum1=gamePanel.tileM.mapaTexNum[gamePanel.mapaActual][entityLeftCol][entityDownRow];
-                tileNum2=gamePanel.tileM.mapaTexNum[gamePanel.mapaActual][entityRightCol][entityDownRow];
-                if(gamePanel.tileM.textura[tileNum1].collision==true|| gamePanel.tileM.textura[tileNum2].collision==true){
+                tileNum1=gamePanel.adminTextura.mapaTexNum[gamePanel.mapaActual][entityLeftCol][entityDownRow];
+                tileNum2=gamePanel.adminTextura.mapaTexNum[gamePanel.mapaActual][entityRightCol][entityDownRow];
+                if(gamePanel.adminTextura.textura[tileNum1].collision==true|| gamePanel.adminTextura.textura[tileNum2].collision==true){
                     entidad.collisionOn=true;
                 }
                 break;
             case"left":
                 entityLeftCol=(entityLeftWorldX- entidad.speed)/gamePanel.tileSize;
-                tileNum1=gamePanel.tileM.mapaTexNum[gamePanel.mapaActual][entityLeftCol][entityUpRow];
-                tileNum2=gamePanel.tileM.mapaTexNum[gamePanel.mapaActual][entityLeftCol][entityDownRow];
-                if(gamePanel.tileM.textura[tileNum1].collision==true|| gamePanel.tileM.textura[tileNum2].collision==true){
+                tileNum1=gamePanel.adminTextura.mapaTexNum[gamePanel.mapaActual][entityLeftCol][entityUpRow];
+                tileNum2=gamePanel.adminTextura.mapaTexNum[gamePanel.mapaActual][entityLeftCol][entityDownRow];
+                if(gamePanel.adminTextura.textura[tileNum1].collision==true|| gamePanel.adminTextura.textura[tileNum2].collision==true){
                     entidad.collisionOn=true;
                 }
                 break;
             case"right":
                 entityRightCol=(entityRightWorldX+ entidad.speed)/gamePanel.tileSize;
-                tileNum1=gamePanel.tileM.mapaTexNum[gamePanel.mapaActual][entityRightCol][entityUpRow];
-                tileNum2=gamePanel.tileM.mapaTexNum[gamePanel.mapaActual][entityRightCol][entityDownRow];
-                if(gamePanel.tileM.textura[tileNum1].collision==true|| gamePanel.tileM.textura[tileNum2].collision==true){
+                tileNum1=gamePanel.adminTextura.mapaTexNum[gamePanel.mapaActual][entityRightCol][entityUpRow];
+                tileNum2=gamePanel.adminTextura.mapaTexNum[gamePanel.mapaActual][entityRightCol][entityDownRow];
+                if(gamePanel.adminTextura.textura[tileNum1].collision==true|| gamePanel.adminTextura.textura[tileNum2].collision==true){
                     entidad.collisionOn=true;
                 }
                 break;

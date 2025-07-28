@@ -1,6 +1,7 @@
 package Notpokemon;
 import javax.swing.*;
 
+//El main solo esta para iniciar el juego
 public class Main {
     public static void main(String[] args) {
 //Todo este codigo para que namas salga una ventana nueva, loco verdad?

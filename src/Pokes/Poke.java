@@ -5,6 +5,7 @@ import Notpokemon.GamePanel;
 import java.awt.image.BufferedImage;
 
 public class Poke {
+    //Clase padre de cada mon del juego.
     GamePanel gamepanel;
     public String name;
     public BufferedImage Pokeimagen,Pokeimagen2,Pokeshop;

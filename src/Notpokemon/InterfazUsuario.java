@@ -12,6 +12,7 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
 
+//Dibuja los distintos elementos del juego
 public class InterfazUsuario {
     GamePanel gamePanel;
     Graphics2D g2;
@@ -41,6 +42,7 @@ public class InterfazUsuario {
 
 
         try {
+            //Aqui se sacan las fuentes de las imagenes para la interfaz de combate e otros
             fondoCombate= ImageIO.read(getClass().getResourceAsStream("/otros/fondo de combate.png"));
             textBoxCombate= ImageIO.read(getClass().getResourceAsStream("/otros/textBoxCombate.png"));
             textBoxOpcion= ImageIO.read(getClass().getResourceAsStream("/otros/TextBoxOpcion.png"));
@@ -70,6 +72,7 @@ public class InterfazUsuario {
 
     }
     public void draw(Graphics2D g2){
+        //Este metodo dibuja las diferentes partes de la interfaz, dependiendo del estado de juego
         this.g2=g2;
         if(gamePanel.objetivoStatus==1){
             g2.setFont(arial_40);
@@ -96,6 +99,7 @@ public class InterfazUsuario {
         if(gamePanel.gameState==gamePanel.combateState){
             drawCombate();
         }
+        //Estado de tienda
         if(gamePanel.gameState==gamePanel.statusTienda){
             drawTienda();
         }
@@ -125,7 +129,7 @@ public class InterfazUsuario {
                 g2.drawString("HEY YA LO TIENES! ",200,300);
             }
 
-            int x = 70;   // Posición X del primer pokemon
+            int x = 70;   //Posición X del primer pokemon
             int y = 70;   //Posición Y del primer pokemon
             int separacion = 130;//Espacio entre cada Pokémon
             int max = 5;//maxima cantidad de pokemon en cada fila

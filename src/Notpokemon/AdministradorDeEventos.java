@@ -3,7 +3,7 @@ package Notpokemon;
 import java.awt.*;
 import java.util.ArrayList;
 
-public class AdministradorEventos {
+public class AdministradorDeEventos {
     GamePanel gamePanel;
     EventRect eventRect[][][];
     int eventoAnteriorX, eventoAnteriorY;
@@ -11,7 +11,7 @@ public class AdministradorEventos {
     int contadorEncuentro;
     ArrayList<ZonaEncuentro> zonasSalvajes = new ArrayList<>();
 
-    public AdministradorEventos(GamePanel gamePanel) {
+    public AdministradorDeEventos(GamePanel gamePanel) {
         this.gamePanel = gamePanel;
 
         eventRect=new EventRect[gamePanel.mapaMax][gamePanel.maxWorldCol][gamePanel.maxWorldFila];
