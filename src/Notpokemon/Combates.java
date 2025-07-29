@@ -16,12 +16,12 @@ public class Combates {
 
     }
     public Poke generarPokeSalvaje() {
-        int rand = (int)(Math.random() * 4); // saca un numero entre 0 a 3
+        int rand = (int)(Math.random() * 4); // saca un numero entre 0 a 4
         System.out.println("spawneando pokemon"+rand);
 //Saca un numero alazar y el que salga sera el pokemon seleccionado
         switch(rand) {
-            case 0: return new Porygon(gamePanel);
-            case 1: return new Pikachu(gamePanel);
+            case 0: return new Gengar(gamePanel);
+            case 1: return new Eevee(gamePanel);
             case 2: return new Scorbunny(gamePanel);
             case 3:return new Mudkip(gamePanel);
 

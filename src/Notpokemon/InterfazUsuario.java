@@ -261,13 +261,15 @@ public class InterfazUsuario {
         }
         if(uiState==4){
             g2.drawImage(textBoxCombate,0,450,775,135,null);
+            g2.drawString(gamePanel.pokeJugador.name+" usa "+gamePanel.pokeJugador.movimientos[movUsado].nombre,120,520);
             g2.drawString("El "+gamePanel.pokeEnemigo.name+" fue derrotado!",120,550);
 
 
         }
         if(uiState==5){
             g2.drawImage(textBoxCombate,0,450,775,135,null);
-            g2.drawString(gamePanel.pokeJugador.name+" fue derrotado!,CORRE!",120,550);
+            g2.drawString(gamePanel.pokeEnemigo.name+" usa "+gamePanel.pokeEnemigo.movimientos[movUsado].nombre,120,520);
+            g2.drawString(gamePanel.pokeJugador.name+" fue derrotado! CORRE!",120,550);
 
         }
 

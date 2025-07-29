@@ -17,12 +17,12 @@ public class Eevee extends Poke {
         movimientos[1] = new Movimientos("Ataque Rapido", "Normal", 40, 100, 30);
         movimientos[2] = new Movimientos("Mordisco", "Eléctrico", 60, 100, 20);
         movimientos[3] = new Movimientos("arañazo", "Acero", 100, 89, 15);
-        tipo="Electrico";
+        tipo="Normal";
         nivel=15;
         genero="Masculino";
         ppMax=100;
         try{
-            Pokeimagen = ImageIO.read(getClass().getResource("/Poken/eeveeEspalda.png"));
+            Pokeimagen = ImageIO.read(getClass().getResource("/poken/eeveeEspalda.png"));
             Pokeimagen2= ImageIO.read(getClass().getResourceAsStream("/poken/eevee.png"));
             Pokeshop=ImageIO.read(getClass().getResourceAsStream("/poken/eevee.png"));
         }catch (IOException e){
