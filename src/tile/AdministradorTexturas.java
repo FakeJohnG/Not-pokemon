@@ -574,6 +574,154 @@ public class AdministradorTexturas {
             textura[142].image= ImageIO.read(getClass().getResourceAsStream("/tiles/CasaJugador19.png"));
             textura[142].collision=true;
 
+            //APARTADO DE TILES PARA TIENDA
+                //Pared-Objetos
+            textura[143]=new Textura();
+            textura[143].image= ImageIO.read(getClass().getResourceAsStream("/tiles/rellenoTienda.png"));
+            textura[143].collision=true;
+
+            textura[144]=new Textura();
+            textura[144].image= ImageIO.read(getClass().getResourceAsStream("/tiles/VentilacionTienda1.png"));
+            textura[144].collision=true;
+
+            textura[145]=new Textura();
+            textura[145].image= ImageIO.read(getClass().getResourceAsStream("/tiles/VentilacionTienda2.png"));
+            textura[145].collision=true;
+
+            textura[146]=new Textura();
+            textura[146].image= ImageIO.read(getClass().getResourceAsStream("/tiles/PuertaTienda1.png"));
+            textura[146].collision=true;
+
+            textura[147]=new Textura();
+            textura[147].image= ImageIO.read(getClass().getResourceAsStream("/tiles/PuertaTienda11.png"));
+            textura[147].collision=true;
+
+            textura[148]=new Textura();
+            textura[148].image= ImageIO.read(getClass().getResourceAsStream("/tiles/PuertaTienda12.png"));
+            textura[148].collision=true;
+
+            textura[149]=new Textura();
+            textura[149].image= ImageIO.read(getClass().getResourceAsStream("/tiles/PuertaTienda2.png"));
+            textura[149].collision=true;
+
+            textura[150]=new Textura();
+            textura[150].image= ImageIO.read(getClass().getResourceAsStream("/tiles/PuertaTienda21.png"));
+            textura[150].collision=true;
+
+            textura[151]=new Textura();
+            textura[151].image= ImageIO.read(getClass().getResourceAsStream("/tiles/PuertaTienda22.png"));
+            textura[151].collision=true;
+
+                //Pared-Pared
+            textura[152]=new Textura();
+            textura[152].image= ImageIO.read(getClass().getResourceAsStream("/tiles/ParedTienda1.png"));
+            textura[152].collision=true;
+
+            textura[153]=new Textura();
+            textura[153].image= ImageIO.read(getClass().getResourceAsStream("/tiles/ParedTienda11.png"));
+            textura[153].collision=true;
+
+            textura[154]=new Textura();
+            textura[154].image= ImageIO.read(getClass().getResourceAsStream("/tiles/ParedTienda12.png"));
+            textura[154].collision=true;
+
+            textura[155]=new Textura();
+            textura[155].image= ImageIO.read(getClass().getResourceAsStream("/tiles/ParedTienda2.png"));
+            textura[155].collision=true;
+
+            textura[156]=new Textura();
+            textura[156].image= ImageIO.read(getClass().getResourceAsStream("/tiles/ParedTienda21.png"));
+            textura[156].collision=true;
+
+            textura[157]=new Textura();
+            textura[157].image= ImageIO.read(getClass().getResourceAsStream("/tiles/ParedTienda22.png"));
+            textura[157].collision=true;
+
+            textura[158]=new Textura();
+            textura[158].image= ImageIO.read(getClass().getResourceAsStream("/tiles/ParedTienda3.png"));
+            textura[158].collision=true;
+
+            textura[159]=new Textura();
+            textura[159].image= ImageIO.read(getClass().getResourceAsStream("/tiles/ParedTienda31.png"));
+            textura[159].collision=true;
+
+            textura[160]=new Textura();
+            textura[160].image= ImageIO.read(getClass().getResourceAsStream("/tiles/ParedTienda32.png"));
+            textura[160].collision=true;
+
+            textura[161]=new Textura();
+            textura[161].image= ImageIO.read(getClass().getResourceAsStream("/tiles/ParedTienda4.png"));
+            textura[161].collision=true;
+
+            textura[162]=new Textura();
+            textura[162].image= ImageIO.read(getClass().getResourceAsStream("/tiles/ParedTienda41.png"));
+            textura[162].collision=true;
+
+            textura[163]=new Textura();
+            textura[163].image= ImageIO.read(getClass().getResourceAsStream("/tiles/ParedTienda42.png"));
+            textura[163].collision=true;
+
+            textura[164]=new Textura();
+            textura[164].image= ImageIO.read(getClass().getResourceAsStream("/tiles/ParedTienda5.png"));
+            textura[164].collision=true;
+
+            textura[165]=new Textura();
+            textura[165].image= ImageIO.read(getClass().getResourceAsStream("/tiles/ParedTienda51.png"));
+            textura[165].collision=true;
+
+            textura[166]=new Textura();
+            textura[166].image= ImageIO.read(getClass().getResourceAsStream("/tiles/ParedTienda52.png"));
+            textura[166].collision=true;
+
+            textura[167]=new Textura();
+            textura[167].image= ImageIO.read(getClass().getResourceAsStream("/tiles/ParedTienda6.png"));
+            textura[167].collision=true;
+
+            textura[168]=new Textura();
+            textura[168].image= ImageIO.read(getClass().getResourceAsStream("/tiles/ParedTienda61.png"));
+            textura[168].collision=true;
+
+            textura[169]=new Textura();
+            textura[169].image= ImageIO.read(getClass().getResourceAsStream("/tiles/ParedTienda62.png"));
+            textura[169].collision=true;
+
+                //Piso-Piso
+            textura[170]=new Textura();
+            textura[170].image= ImageIO.read(getClass().getResourceAsStream("/tiles/PisoTienda1.png"));
+
+            textura[171]=new Textura();
+            textura[171].image= ImageIO.read(getClass().getResourceAsStream("/tiles/PisoTienda11.png"));
+
+            textura[172]=new Textura();
+            textura[172].image= ImageIO.read(getClass().getResourceAsStream("/tiles/PisoTienda12.png"));
+
+            textura[173]=new Textura();
+            textura[173].image= ImageIO.read(getClass().getResourceAsStream("/tiles/PisoTienda2.png"));
+
+            textura[174]=new Textura();
+            textura[174].image= ImageIO.read(getClass().getResourceAsStream("/tiles/PisoTienda21.png"));
+
+            textura[175]=new Textura();
+            textura[175].image= ImageIO.read(getClass().getResourceAsStream("/tiles/PisoTienda22.png"));
+
+            textura[176]=new Textura();
+            textura[176].image= ImageIO.read(getClass().getResourceAsStream("/tiles/PisoTienda3.png"));
+
+            textura[177]=new Textura();
+            textura[177].image= ImageIO.read(getClass().getResourceAsStream("/tiles/PisoTienda31.png"));
+
+            textura[178]=new Textura();
+            textura[178].image= ImageIO.read(getClass().getResourceAsStream("/tiles/PisoTienda32.png"));
+
+                //Piso-Objetos
+            textura[179]=new Textura();
+            textura[179].image= ImageIO.read(getClass().getResourceAsStream("/tiles/CounterTienda1.png"));
+            textura[179].collision=true;
+
+            textura[180]=new Textura();
+            textura[180].image= ImageIO.read(getClass().getResourceAsStream("/tiles/CounterTienda2.png"));
+            textura[180].collision=true;
+
 
         }catch(IOException e){
             e.printStackTrace();
