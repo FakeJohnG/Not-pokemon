@@ -14,9 +14,9 @@ public class Mudkip extends Poke {
         statAtaque=40;
         statDefensa=75;
         movimientos[0] = new Movimientos("Hidropulso", "Agua", 60, 100, 30);
-        movimientos[1] = new Movimientos("Mordisco", "Normal", 60, 80, 30);
+        movimientos[1] = new Movimientos("Placaje", "Normal", 40, 80, 30);
         movimientos[2] = new Movimientos("Bofeton Lodo", "Tierra", 20, 90, 20);
-        movimientos[3] = new Movimientos("Hidro muerte", "Agua", 100000, 10, 15);
+        movimientos[3] = new Movimientos("Hidro Muerte", "Agua", 100000, 10, 15);
         tipo="Agua";
         nivel=20;
         genero="Masculino";

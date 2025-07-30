@@ -15,15 +15,15 @@ public class Pikachu extends Poke {
         statDefensa=50;
         movimientos[0] = new Movimientos("Impactrueno", "Eléctrico", 60,100, 30);
         movimientos[1] = new Movimientos("Ataque Rapido", "Normal", 40, 100, 30);
-        movimientos[2] = new Movimientos("Moflete Estatico", "Eléctrico", 10, 90, 20);
-        movimientos[3] = new Movimientos("Cola de Hierro", "Acero", 100, 89, 15);
+        movimientos[2] = new Movimientos("Moflete Estatico", "Eléctrico", 10, 100, 20);
+        movimientos[3] = new Movimientos("Cola de Hierro", "Acero", 85, 85, 15);
         tipo="Electrico";
         nivel=20;
         genero="Masculino";
         ppMax=100;
         try{
             Pokeimagen = ImageIO.read(getClass().getResource("/Poken/pikachuEspalda.png"));
-            Pokeimagen2= ImageIO.read(getClass().getResourceAsStream("/poken/pikachuFront.png"));
+            Pokeimagen2= ImageIO.read(getClass().getResourceAsStream("/poken/pikachu.png"));
             Pokeshop=ImageIO.read(getClass().getResourceAsStream("/poken/pikachu.png"));
         }catch (IOException e){
             e.printStackTrace();

@@ -187,20 +187,20 @@ public class InterfazUsuario {
         }
 
         if(uiState!=4){
-            g2.drawImage(gamePanel.pokeEnemigo.Pokeimagen2, 500, 30, 196, 196, null);
+            g2.drawImage(gamePanel.pokeEnemigo.Pokeimagen2, 460, 30, 216, 216, null);
         }
         g2.drawImage(statusBox,100,20,300,100, null);
         g2.drawImage(statusBoxJ,450,351,300,100, null);
         g2.drawString(gamePanel.pokeJugador.name,475,390);
-        g2.drawString(gamePanel.pokeEnemigo.name,200,70);
-        g2.drawString("pv"+gamePanel.pokeJugador.pv,620,415);
-        g2.drawString("pv"+gamePanel.pokeEnemigo.pv,300,100);
+        g2.drawString(gamePanel.pokeEnemigo.name,120,55);
+        g2.drawString("pv"+gamePanel.pokeJugador.pv,475,420);
+        g2.drawString("pv"+gamePanel.pokeEnemigo.pv,120,80);
 
         if(uiState==0){
             g2.setColor(Color.white);
             g2.drawImage(textBoxCombate,0,450,775,130,null);
             g2.drawImage(textBoxOpcion,425,450,350,130,null);
-            g2.drawString("Que deberia hacer "+gamePanel.pokeJugador.name+" ?",120,520);
+            g2.drawString("Que deberia hacer "+gamePanel.pokeJugador.name+" ?",50,510);
             if(numCommando==0){
                 g2.drawImage(flechitaS,440,482,30,30,null);
             }
@@ -248,28 +248,28 @@ public class InterfazUsuario {
         if(uiState==2){
             g2.setColor(Color.white);
             g2.drawImage(textBoxCombate,0,450,775,135,null);
-            g2.drawString(gamePanel.pokeJugador.name+" usa "+gamePanel.pokeJugador.movimientos[movUsado].nombre,120,520);
-            g2.drawString("Causo "+dañoCausado+" puntos de dano!",120,550);
+            g2.drawString(gamePanel.pokeJugador.name+" usa "+gamePanel.pokeJugador.movimientos[movUsado].nombre,50,510);
+            g2.drawString("Causo "+dañoCausado+" puntos de dano!",50,550);
 
         }
         if(uiState==3){
             g2.setColor(Color.white);
             g2.drawImage(textBoxCombate,0,450,775,135,null);
-            g2.drawString(gamePanel.pokeEnemigo.name+" usa "+gamePanel.pokeEnemigo.movimientos[movUsadoE].nombre,120,520);
-            g2.drawString(gamePanel.pokeJugador.name+" recibio "+dañoCausado+" puntos de dano!",120,550);
+            g2.drawString(gamePanel.pokeEnemigo.name+" usa "+gamePanel.pokeEnemigo.movimientos[movUsadoE].nombre,50,510);
+            g2.drawString(gamePanel.pokeJugador.name+" recibio "+dañoCausado+" puntos de dano!",50,550);
 
         }
         if(uiState==4){
             g2.drawImage(textBoxCombate,0,450,775,135,null);
-            g2.drawString(gamePanel.pokeJugador.name+" usa "+gamePanel.pokeJugador.movimientos[movUsado].nombre,120,520);
-            g2.drawString("El "+gamePanel.pokeEnemigo.name+" fue derrotado!",120,550);
+            g2.drawString(gamePanel.pokeJugador.name+" usa "+gamePanel.pokeJugador.movimientos[movUsado].nombre,50,510);
+            g2.drawString("El "+gamePanel.pokeEnemigo.name+" fue derrotado!",50,550);
 
 
         }
         if(uiState==5){
             g2.drawImage(textBoxCombate,0,450,775,135,null);
-            g2.drawString(gamePanel.pokeEnemigo.name+" usa "+gamePanel.pokeEnemigo.movimientos[movUsado].nombre,120,520);
-            g2.drawString(gamePanel.pokeJugador.name+" fue derrotado! CORRE!",120,550);
+            g2.drawString(gamePanel.pokeEnemigo.name+" usa "+gamePanel.pokeEnemigo.movimientos[movUsado].nombre,50,510);
+            g2.drawString(gamePanel.pokeJugador.name+" fue derrotado! CORRE!",50,550);
 
         }
 
@@ -285,7 +285,7 @@ public class InterfazUsuario {
         g2.drawString(texto,x,y);
         int x2=gamePanel.tileSize*3;
         int y2=gamePanel.tileSize*4;
-        g2.drawString("APRETA ENTER!",x2+10,y2);
+        g2.drawString("PRESIONA ENTER!",x2+10,y2);
 
     }
     public void drawCajaDialogo(){

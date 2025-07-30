@@ -18,8 +18,8 @@ public class NpcTienda extends Entidad{
         inventario.add(new Porygon(gamePanel));
         inventario.add(new Pikachu(gamePanel));
         inventario.add(new Snorlax(gamePanel));
-        inventario.add(new Gengar(gamePanel));
-        inventario.add(new Mudkip(gamePanel));
+        inventario.add(new Bulbasaur(gamePanel));
+        inventario.add(new Meowth(gamePanel));
         inventario.add(new Charmander(gamePanel));
 
         direction = "idle";

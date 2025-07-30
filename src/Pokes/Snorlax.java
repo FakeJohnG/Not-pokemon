@@ -14,9 +14,9 @@ public class Snorlax extends Poke {
         statAtaque=30;
         statDefensa=60;
         movimientos[0] = new Movimientos("Abocajaro", "Pelea", 85, 45, 15);
-        movimientos[1] = new Movimientos("Puno bala", "Normal", 40, 80, 30);
-        movimientos[2] = new Movimientos("Mano de hielo", "Hielo", 85, 75, 10);
-        movimientos[3] = new Movimientos("Velocidad extrema", "Normal", 65, 100, 15);
+        movimientos[1] = new Movimientos("Golpe Bala", "Normal", 40, 80, 30);
+        movimientos[2] = new Movimientos("Golpe Hielo", "Hielo", 85, 75, 10);
+        movimientos[3] = new Movimientos("Velocidad Extrema", "Normal", 65, 100, 15);
         tipo="Normal";
         nivel=20;
         genero="Ninguno";
