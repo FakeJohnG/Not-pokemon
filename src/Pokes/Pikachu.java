@@ -15,7 +15,7 @@ public class Pikachu extends Poke {
         statDefensa=50;
         movimientos[0] = new Movimientos("Impactrueno", "Eléctrico", 60,100, 30);
         movimientos[1] = new Movimientos("Ataque Rapido", "Normal", 40, 100, 30);
-        movimientos[2] = new Movimientos("Paralisis", "Eléctrico", 10, 90, 20);
+        movimientos[2] = new Movimientos("Moflete Estatico", "Eléctrico", 10, 90, 20);
         movimientos[3] = new Movimientos("Cola de Hierro", "Acero", 100, 89, 15);
         tipo="Electrico";
         nivel=20;
