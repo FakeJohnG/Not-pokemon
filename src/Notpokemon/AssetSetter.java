@@ -34,8 +34,8 @@ public class AssetSetter {
 
         mapNum=1;
         gamepanel.npc[mapNum][1]=new NpcTienda(gamepanel);
-        gamepanel.npc[mapNum][1].worldX=gamepanel.tileSize*7;
-        gamepanel.npc[mapNum][1].worldY=gamepanel.tileSize*6;
+        gamepanel.npc[mapNum][1].worldX=gamepanel.tileSize*24;
+        gamepanel.npc[mapNum][1].worldY=gamepanel.tileSize*22;
 
     }
 }

@@ -19,7 +19,7 @@ public class AdministradorTexturas {
     public AdministradorTexturas(GamePanel gamePanel){
         this.gamePanel=gamePanel;
         //Aqui se indica cuantos tiles unicos tenemos,si se añade más incrementar numero.
-        textura = new Textura[143];
+        textura = new Textura[900];
         mapaTexNum = new int[gamePanel.mapaMax][gamePanel.maxWorldCol][gamePanel.maxWorldFila];
         getTileImage();
         //Mapas en el juego, se debe incluir el file path del archivo y un numero unico para el mapa

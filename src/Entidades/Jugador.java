@@ -137,6 +137,7 @@ public class Jugador extends Entidad {
                 cantMcguffin++;
                 gamePanel.obj[gamePanel.mapaActual][i]=null;
                 System.out.print("Mcguffin get!"+cantMcguffin);
+                dinero=dinero+100;
 
             }
         }

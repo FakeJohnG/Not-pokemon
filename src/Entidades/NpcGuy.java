@@ -45,10 +45,10 @@ public class NpcGuy extends Entidad {
 
     }
     public void setDialogos(){
-        dialogosNpc[0]="Freefire es mejor que eso pokemones";
-        dialogosNpc[1]="WOW! PUEDO HABLAR!";
-        dialogosNpc[2]="PUDEDO DECIR PALABROTAS";
-        dialogosNpc[3]="ok no";
+        dialogosNpc[0]="Ten cuidado en la hierba alta";
+        dialogosNpc[1]="No creo que los pokes esten de buen humor hoy";
+        dialogosNpc[2]="Oye! as oido de este pequeño juego Llamado \n Dragon ball legends?";
+        dialogosNpc[3]="no lo jueges";
     }
 
     public void getNpcImage(){

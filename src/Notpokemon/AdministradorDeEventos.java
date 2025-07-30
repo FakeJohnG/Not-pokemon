@@ -139,10 +139,10 @@ public class AdministradorDeEventos {
                 System.out.println("loading spamton...");
                 gamePanel.sonidoE.setFile(4);
                 gamePanel.sonidoE.play();
-                teleport(1, 7, 7);
+                teleport(1, 26, 31);
                 gamePanel.objetivoStatus=1;
 
-            } else if (hit(1, 7, 7, "any")) {
+            } else if (hit(1, 26, 33, "any")) {
                 System.out.println("Bye bye spamton");
                 gamePanel.sonidoE.setFile(4);
                 gamePanel.sonidoE.play();
