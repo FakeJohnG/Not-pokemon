@@ -16,7 +16,7 @@ public class Eevee extends Poke {
         movimientos[0] = new Movimientos("Placaje", "Normal", 40,100, 30);
         movimientos[1] = new Movimientos("Ataque Rapido", "Normal", 40, 100, 30);
         movimientos[2] = new Movimientos("Mordisco", "Eléctrico", 60, 100, 20);
-        movimientos[3] = new Movimientos("arañazo", "Acero", 100, 89, 15);
+        movimientos[3] = new Movimientos("Arañazo", "Normal", 40, 100, 15);
         tipo="Normal";
         nivel=15;
         genero="Masculino";

@@ -13,7 +13,7 @@ public class Porygon extends Poke {
         maxPV=100;
         statAtaque=57;
         statDefensa=70;
-        movimientos[0] = new Movimientos("Bola sombra", "Fantasma", 85, 90, 15);
+        movimientos[0] = new Movimientos("Bola Sombra", "Fantasma", 85, 90, 15);
         movimientos[1] = new Movimientos("Ataque Rapido", "Normal", 40, 100, 30);
         movimientos[2] = new Movimientos("Rayo Hielo", "Hielo", 90, 80, 10);
         movimientos[3] = new Movimientos("Rayo", "Eléctrico", 90, 100, 15);

@@ -20,10 +20,10 @@ public class Combates {
         System.out.println("spawneando pokemon"+rand);
 //Saca un numero alazar y el que salga sera el pokemon seleccionado
         switch(rand) {
-            case 0: return new Gengar(gamePanel);
-            case 1: return new Eevee(gamePanel);
-            case 2: return new Scorbunny(gamePanel);
-            case 3:return new Mudkip(gamePanel);
+            case 0: return new Pikachu(gamePanel);
+            case 1: return new Pidgey(gamePanel);
+            case 2: return new Bulbasaur(gamePanel);
+            case 3:return new Meowth(gamePanel);
 
             default: return new Pikachu(gamePanel);
         }
