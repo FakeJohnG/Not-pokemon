@@ -25,6 +25,7 @@ public class AdministradorTexturas {
         //Mapas en el juego, se debe incluir el file path del archivo y un numero unico para el mapa
         loadMapData("/maps/testMapDataXL.txt",0);
         loadMapData("/maps/testMapData1.txt",1);
+        loadMapData("/maps/testMapData2.txt",2);
 
 
 
@@ -722,6 +723,526 @@ public class AdministradorTexturas {
             textura[180].image= ImageIO.read(getClass().getResourceAsStream("/tiles/CounterTienda2.png"));
             textura[180].collision=true;
 
+            //Interior de casa del protagonista
+            textura[181]=new Textura();
+            textura[181].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa01.png"));
+            textura[181].collision=true;
+
+            textura[182]=new Textura();
+            textura[182].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa02.png"));
+            textura[182].collision=true;
+
+            textura[183]=new Textura();
+            textura[183].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa03.png"));
+            textura[183].collision=true;
+
+            textura[184]=new Textura();
+            textura[184].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa04.png"));
+            textura[184].collision=true;
+
+            textura[185]=new Textura();
+            textura[185].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa05.png"));
+            textura[185].collision=true;
+
+            textura[186]=new Textura();
+            textura[186].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa06.png"));
+            textura[186].collision=true;
+
+            textura[187]=new Textura();
+            textura[187].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa07.png"));
+            textura[187].collision=true;
+
+            textura[188]=new Textura();
+            textura[188].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa08.png"));
+            textura[188].collision=true;
+
+            textura[189]=new Textura();
+            textura[189].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa09.png"));
+            textura[189].collision=true;
+
+            textura[190]=new Textura();
+            textura[190].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa10.png"));
+            textura[190].collision=true;
+
+            textura[191]=new Textura();
+            textura[191].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa11.png"));
+            textura[191].collision=true;
+
+            textura[192]=new Textura();
+            textura[192].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa12.png"));
+            textura[192].collision=true;
+
+            textura[193]=new Textura();
+            textura[193].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa13.png"));
+            textura[193].collision=true;
+
+            textura[194]=new Textura();
+            textura[194].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa14.png"));
+            textura[194].collision=true;
+
+            textura[195]=new Textura();
+            textura[195].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa15.png"));
+            textura[195].collision=true;
+
+            textura[196]=new Textura();
+            textura[196].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa16.png"));
+            textura[196].collision=true;
+
+            textura[197]=new Textura();
+            textura[197].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa17.png"));
+            textura[197].collision=true;
+
+            textura[198]=new Textura();
+            textura[198].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa18.png"));
+            textura[198].collision=true;
+
+            textura[199]=new Textura();
+            textura[199].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa19.png"));
+            textura[199].collision=true;
+
+            textura[200]=new Textura();
+            textura[200].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa20.png"));
+            textura[200].collision=true;
+
+            textura[201]=new Textura();
+            textura[201].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa21.png"));
+            textura[201].collision=true;
+
+            textura[202]=new Textura();
+            textura[202].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa22.png"));
+            textura[202].collision=true;
+
+            textura[203]=new Textura();
+            textura[203].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa23.png"));
+            textura[203].collision=true;
+
+            textura[204]=new Textura();
+            textura[204].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa24.png"));
+            textura[204].collision=true;
+
+            textura[205]=new Textura();
+            textura[205].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa25.png"));
+            textura[205].collision=true;
+
+            textura[206]=new Textura();
+            textura[206].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa26.png"));
+            textura[206].collision=true;
+
+            textura[207]=new Textura();
+            textura[207].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa27.png"));
+            textura[207].collision=true;
+
+            textura[208]=new Textura();
+            textura[208].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa28.png"));
+            textura[208].collision=true;
+
+            textura[209]=new Textura();
+            textura[209].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa29.png"));
+            textura[209].collision=true;
+
+            textura[210]=new Textura();
+            textura[210].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa30.png"));
+            textura[210].collision=true;
+
+            textura[211]=new Textura();
+            textura[211].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa31.png"));
+            textura[211].collision=true;
+
+            textura[212]=new Textura();
+            textura[212].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa32.png"));
+            textura[212].collision=true;
+
+            textura[213]=new Textura();
+            textura[213].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa33.png"));
+            textura[213].collision=true;
+
+            textura[214]=new Textura();
+            textura[214].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa34.png"));
+            textura[214].collision=true;
+
+            textura[215]=new Textura();
+            textura[215].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa35.png"));
+            textura[215].collision=true;
+
+            textura[216]=new Textura();
+            textura[216].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa36.png"));
+            textura[216].collision=true;
+
+            textura[217]=new Textura();
+            textura[217].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa37.png"));
+            textura[217].collision=true;
+
+            textura[218]=new Textura();
+            textura[218].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa38.png"));
+            textura[218].collision=true;
+
+            textura[219]=new Textura();
+            textura[219].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa39.png"));
+            textura[219].collision=true;
+
+            textura[220]=new Textura();
+            textura[220].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa40.png"));
+            textura[220].collision=true;
+
+            textura[221]=new Textura();
+            textura[221].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa41.png"));
+            textura[221].collision=true;
+
+            textura[222]=new Textura();
+            textura[222].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa42.png"));
+            textura[222].collision=true;
+
+            textura[223]=new Textura();
+            textura[223].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa43.png"));
+            textura[223].collision=true;
+
+            textura[224]=new Textura();
+            textura[224].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa44.png"));
+            textura[224].collision=true;
+
+            textura[225]=new Textura();
+            textura[225].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa45.png"));
+            textura[225].collision=true;
+
+            textura[226]=new Textura();
+            textura[226].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa46.png"));
+            textura[226].collision=true;
+
+            textura[227]=new Textura();
+            textura[227].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa47.png"));
+            textura[227].collision=true;
+
+            textura[228]=new Textura();
+            textura[228].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa48.png"));
+            textura[228].collision=true;
+
+            textura[229]=new Textura();
+            textura[229].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa49.png"));
+            textura[229].collision=true;
+
+            textura[230]=new Textura();
+            textura[230].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa50.png"));
+            textura[230].collision=true;
+
+            textura[231]=new Textura();
+            textura[231].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa51.png"));
+            textura[231].collision=true;
+
+            textura[232]=new Textura();
+            textura[232].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa52.png"));
+            textura[232].collision=true;
+
+            textura[233]=new Textura();
+            textura[233].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa53.png"));
+            textura[233].collision=true;
+
+            textura[234]=new Textura();
+            textura[234].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa54.png"));
+            textura[234].collision=true;
+
+            textura[235]=new Textura();
+            textura[235].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa55.png"));
+            textura[235].collision=true;
+
+            textura[236]=new Textura();
+            textura[236].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa56.png"));
+            textura[236].collision=true;
+
+            textura[237]=new Textura();
+            textura[237].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa57.png"));
+            textura[237].collision=true;
+
+            textura[238]=new Textura();
+            textura[238].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa58.png"));
+            textura[238].collision=true;
+
+            textura[239]=new Textura();
+            textura[239].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa59.png"));
+            textura[239].collision=true;
+
+            textura[240]=new Textura();
+            textura[240].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa60.png"));
+            textura[240].collision=true;
+
+            textura[241]=new Textura();
+            textura[241].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa61.png"));
+            textura[241].collision=true;
+
+            textura[242]=new Textura();
+            textura[242].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa62.png"));
+            textura[242].collision=true;
+
+            textura[243]=new Textura();
+            textura[243].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa63.png"));
+            textura[243].collision=true;
+
+            textura[244]=new Textura();
+            textura[244].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa64.png"));
+            textura[244].collision=true;
+
+            textura[245]=new Textura();
+            textura[245].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa65.png"));
+            textura[245].collision=true;
+
+            textura[246]=new Textura();
+            textura[246].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa66.png"));
+            textura[246].collision=true;
+
+            textura[247]=new Textura();
+            textura[247].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa67.png"));
+            textura[247].collision=true;
+
+            textura[248]=new Textura();
+            textura[248].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa68.png"));
+            textura[248].collision=true;
+
+            textura[249]=new Textura();
+            textura[249].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa69.png"));
+            textura[249].collision=true;
+
+            textura[250]=new Textura();
+            textura[250].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa70.png"));
+            textura[250].collision=true;
+
+            textura[251]=new Textura();
+            textura[251].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa71.png"));
+            textura[251].collision=true;
+
+            textura[252]=new Textura();
+            textura[252].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa72.png"));
+            textura[252].collision=true;
+
+            textura[253]=new Textura();
+            textura[253].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa73.png"));
+            textura[253].collision=true;
+
+            textura[254]=new Textura();
+            textura[254].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa74.png"));
+            textura[254].collision=true;
+
+            textura[255]=new Textura();
+            textura[255].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa75.png"));
+            textura[255].collision=true;
+
+            textura[256]=new Textura();
+            textura[256].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa76.png"));
+            textura[256].collision=true;
+
+            textura[257]=new Textura();
+            textura[257].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa77.png"));
+            textura[257].collision=true;
+
+            textura[258]=new Textura();
+            textura[258].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa78.png"));
+            textura[258].collision=true;
+
+            textura[259]=new Textura();
+            textura[259].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa79.png"));
+            textura[259].collision=true;
+
+            textura[260]=new Textura();
+            textura[260].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa80.png"));
+            textura[260].collision=true;
+
+            textura[261]=new Textura();
+            textura[261].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa81.png"));
+            textura[261].collision=true;
+
+            textura[262]=new Textura();
+            textura[262].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa82.png"));
+            textura[262].collision=true;
+
+            textura[263]=new Textura();
+            textura[263].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa83.png"));
+            textura[263].collision=true;
+
+            textura[264]=new Textura();
+            textura[264].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa84.png"));
+            textura[264].collision=true;
+
+            textura[265]=new Textura();
+            textura[265].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa85.png"));
+            textura[265].collision=true;
+
+            textura[266]=new Textura();
+            textura[266].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa86.png"));
+            textura[266].collision=true;
+
+            textura[267]=new Textura();
+            textura[267].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa87.png"));
+            textura[267].collision=true;
+
+            textura[268]=new Textura();
+            textura[268].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa88.png"));
+            textura[268].collision=true;
+
+            textura[269]=new Textura();
+            textura[269].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa89.png"));
+            textura[269].collision=true;
+
+            textura[270]=new Textura();
+            textura[270].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa90.png"));
+            textura[270].collision=true;
+
+            textura[271]=new Textura();
+            textura[271].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa91.png"));
+            textura[271].collision=true;
+
+            textura[272]=new Textura();
+            textura[272].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa92.png"));
+            textura[272].collision=true;
+
+            textura[273]=new Textura();
+            textura[273].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa93.png"));
+            textura[273].collision=true;
+
+            textura[274]=new Textura();
+            textura[274].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa94.png"));
+            textura[274].collision=true;
+
+            textura[275]=new Textura();
+            textura[275].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa95.png"));
+            textura[275].collision=true;
+
+            textura[276]=new Textura();
+            textura[276].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa96.png"));
+            textura[276].collision=true;
+
+            textura[277]=new Textura();
+            textura[277].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa97.png"));
+            textura[277].collision=true;
+
+            textura[278]=new Textura();
+            textura[278].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa98.png"));
+            textura[278].collision=true;
+
+            textura[279]=new Textura();
+            textura[279].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa99.png"));
+            textura[279].collision=true;
+
+            textura[280]=new Textura();
+            textura[280].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa100.png"));
+            textura[280].collision=true;
+
+            textura[281]=new Textura();
+            textura[281].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa101.png"));
+            textura[281].collision=true;
+
+            textura[282]=new Textura();
+            textura[282].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa102.png"));
+            textura[282].collision=true;
+
+            textura[283]=new Textura();
+            textura[283].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa103.png"));
+            textura[283].collision=true;
+
+            textura[284]=new Textura();
+            textura[284].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa104.png"));
+            textura[284].collision=true;
+
+            textura[285]=new Textura();
+            textura[285].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa105.png"));
+            textura[285].collision=true;
+
+            textura[286]=new Textura();
+            textura[286].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa106.png"));
+            textura[286].collision=true;
+
+            textura[287]=new Textura();
+            textura[287].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa107.png"));
+            textura[287].collision=true;
+
+            textura[288]=new Textura();
+            textura[288].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa108.png"));
+            textura[288].collision=true;
+
+            textura[289]=new Textura();
+            textura[289].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa109.png"));
+            textura[289].collision=true;
+
+            textura[290]=new Textura();
+            textura[290].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa110.png"));
+            textura[290].collision=true;
+
+            textura[291]=new Textura();
+            textura[291].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa111.png"));
+            textura[291].collision=true;
+
+            textura[292]=new Textura();
+            textura[292].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa112.png"));
+            textura[292].collision=true;
+
+            textura[293]=new Textura();
+            textura[293].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa113.png"));
+            textura[293].collision=true;
+
+            textura[294]=new Textura();
+            textura[294].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa114.png"));
+            textura[294].collision=true;
+
+            textura[295]=new Textura();
+            textura[295].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa115.png"));
+            textura[295].collision=true;
+
+            textura[296]=new Textura();
+            textura[296].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa116.png"));
+            textura[296].collision=true;
+
+            textura[297]=new Textura();
+            textura[297].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa117.png"));
+            textura[297].collision=true;
+
+            textura[298]=new Textura();
+            textura[298].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa118.png"));
+            textura[298].collision=true;
+
+            textura[299]=new Textura();
+            textura[299].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa119.png"));
+            textura[299].collision=true;
+
+            textura[300]=new Textura();
+            textura[300].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa120.png"));
+            textura[300].collision=true;
+
+            textura[301]=new Textura();
+            textura[301].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa121.png"));
+            textura[301].collision=true;
+
+            textura[302]=new Textura();
+            textura[302].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa122.png"));
+            textura[302].collision=true;
+
+            textura[303]=new Textura();
+            textura[303].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa123.png"));
+            textura[303].collision=true;
+
+            textura[304]=new Textura();
+            textura[304].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa124.png"));
+            textura[304].collision=true;
+
+            textura[305]=new Textura();
+            textura[305].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa125.png"));
+            textura[305].collision=true;
+
+            textura[306]=new Textura();
+            textura[306].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa126.png"));
+            textura[306].collision=true;
+
+            textura[307]=new Textura();
+            textura[307].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa127.png"));
+            textura[307].collision=true;
+
+            textura[308]=new Textura();
+            textura[308].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa128.png"));
+            textura[308].collision=true;
+
+            textura[309]=new Textura();
+            textura[309].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa129.png"));
+            textura[309].collision=true;
+
+            textura[310]=new Textura();
+            textura[310].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa130.png"));
+            textura[310].collision=true;
 
         }catch(IOException e){
             e.printStackTrace();

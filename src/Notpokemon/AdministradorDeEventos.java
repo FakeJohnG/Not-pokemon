@@ -148,6 +148,17 @@ public class AdministradorDeEventos {
                 gamePanel.sonidoE.play();
                 teleport(0, 31, 22);
 
+            } else if (hit(0,16,21,"any")){
+                System.out.println("loading smpamton...");
+                gamePanel.sonidoE.setFile(4);
+                gamePanel.sonidoE.play();
+                teleport(2,12,19);
+
+            } else if (hit(2, 12, 19, "any")) {
+                System.out.println("Bye bye spamton");
+                gamePanel.sonidoE.setFile(4);
+                gamePanel.sonidoE.play();
+                teleport(0, 16, 21);
             }
 
 

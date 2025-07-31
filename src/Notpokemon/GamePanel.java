@@ -68,8 +68,8 @@ public class GamePanel extends JPanel implements Runnable {
     public void setup(){
         aSetter.setObjecto();
         aSetter.setNpc();
-        playMusic(8);
-        //stopMusic(); //para mutear la musica escribir eso
+        playMusic(0);
+        stopMusic(); //para mutear la musica escribir eso
         gameState=tituloState;
     }
     //Estas lineas de abajo se encargan de manejar el gameloop, mejor no las toquen.
