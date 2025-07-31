@@ -37,8 +37,8 @@ public class Jugador extends Entidad {
         //Posicion default de jugador en mapa
         //Valores para mapXL: worldX =gamePanel.tileSize*23;,worldY =gamePanel.tileSize*21;
         //Valores para mapTest1: worldX =gamePanel.tileSize*7;,worldY =gamePanel.tileSize*7
-        worldX =gamePanel.tileSize*23;
-        worldY =gamePanel.tileSize*21;
+        worldX =gamePanel.tileSize*16;
+        worldY =gamePanel.tileSize*13;
         speed=6;
         direction="idle";
     }

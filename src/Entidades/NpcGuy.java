@@ -90,7 +90,6 @@ public class NpcGuy extends Entidad {
         }
     }
     public void speak(){
-        gamePanel.objetivoStatus=1;
         gamePanel.npcId = 0;
         if(kidMeet==0){
             gamePanel.ui.dialogoActual = dialogoEx[dialogoIndex];

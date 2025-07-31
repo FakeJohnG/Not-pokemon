@@ -24,7 +24,7 @@ public class GamePanel extends JPanel implements Runnable {
     public final int maxWorldCol=50;
     public final int maxWorldFila =50;
     public final int mapaMax=10;
-    public  int mapaActual=0;
+    public  int mapaActual=2;
     //Para su uso en la demas clases del juego, aqui se instancian
     public Inputs input= new Inputs(this);
    public Sonido sonido= new Sonido();
@@ -68,8 +68,8 @@ public class GamePanel extends JPanel implements Runnable {
     public void setup(){
         aSetter.setObjecto();
         aSetter.setNpc();
-        playMusic(0);
-        stopMusic(); //para mutear la musica escribir eso
+        playMusic(8);
+        //stopMusic(); //para mutear la musica escribir eso
         gameState=tituloState;
     }
     //Estas lineas de abajo se encargan de manejar el gameloop, mejor no las toquen.

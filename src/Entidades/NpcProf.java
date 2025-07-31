@@ -25,19 +25,20 @@ public class NpcProf extends Entidad {
     }
     public void setDialogos(){
         if(profMeet==0){
-            dialogoEx[0]="Ah muchacho llegaste!";
-            dialogoEx[1]="Justo a tiempo";
-            dialogoEx[2]="Escucha te tengo un trabajo para ti";
-            dialogoEx[3]="Osea una chamba,\n como los jovenes dicen hehe";
+            dialogoEx[0]="Ah! llegaste muchacho";
+            dialogoEx[1]="Justo a tiempo, eh?";
+            dialogoEx[2]="Bien te tengo un trabajo para ti.";
+            dialogoEx[3]="Osea una chamba,\n como los jovenes le dicen.";
             dialogoEx[4]="*AHEM* como decia...";
-            dialogoEx[5]="Anoche unas extrañas rocas calleron del cielo \n Al rededor de la aldea";
-            dialogoEx[6]="Necesito que las encuentres todas, pueden ser peligrosas. \n Y claro, te pagare";
-            dialogoEx[7]="Solo trata de no molestar a los pokemon del alrededor\n ¿ok?";
-            dialogoEx[8]="Buena suerte muchacho";
+            dialogoEx[5]="Anoche unas extrañas piedras descendieron del cielo \n al rededor de la aldea.";
+            dialogoEx[6]="Necesito que colectes todas, pueden ser peligrosas.";
+            dialogoEx[7]="Y por supuesto,te pagaré";
+            dialogoEx[8]="Recuerda tratar de no molestar a los pokémon'ts del\n alrededor ¿ok?";
+            dialogoEx[9]="Buena suerte muchacho";
 
         }
-        dialogosNpc[0]="Yo debo quedarme aqui a seguir con mis investigaciones";
-        dialogosNpc[1]="Esto para ti sera pan comido";
+        dialogosNpc[0]="Yo debo quedarme aqui a seguir con mis\n investigaciones la ciencia nunca para.";
+        dialogosNpc[1]="Esto para ti sera pan comido, lo se";
         dialogosNpc[2]="Oye sabes algo de la Sra Aaliyah?\n no la e visto en dias";
         dialogosNpc[3]="¿Porque no pasas por su tienda a ver si esta?";
     }
