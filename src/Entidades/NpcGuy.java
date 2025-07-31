@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.util.Random;
 
 public class NpcGuy extends Entidad {
+    int kidMeet=0;
 
     public NpcGuy(GamePanel gamePanel) {
         super(gamePanel);
@@ -45,8 +46,15 @@ public class NpcGuy extends Entidad {
 
     }
     public void setDialogos(){
-        dialogosNpc[0]="Ten cuidado en la hierba alta";
-        dialogosNpc[1]="No creo que los pokes esten de buen humor hoy";
+        if(kidMeet==0){
+            dialogoEx[0]="¿Eh? ¿Rodriguito que haces despierto a esta hora?";
+            dialogoEx[1]="No me digas, ¿otro trabajo aburido del profe?";
+            dialogoEx[2]="Se siente genial ser niño";
+            dialogoEx[3]="Ah si lo buscas esta en su laboratorio";
+            dialogoEx[4]="bueno bye bye";
+        }
+        dialogosNpc[0]="Otro bonito dia.";
+        dialogosNpc[1]="Porque la gente habla tanto de los vaporeons?\n no son nada especiales";
         dialogosNpc[2]="Oye! as oido de este pequeño juego Llamado \n Dragon ball legends?";
         dialogosNpc[3]="no lo jueges";
     }
@@ -82,14 +90,26 @@ public class NpcGuy extends Entidad {
         }
     }
     public void speak(){
-        gamePanel.sonidoE.setFile(7);
-        gamePanel.sonidoE.play();
-        gamePanel.npcId=0;
-        if(dialogosNpc[dialogoIndex]==null){
-            dialogoIndex=0;
+        gamePanel.objetivoStatus=1;
+        gamePanel.npcId = 0;
+        if(kidMeet==0){
+            gamePanel.ui.dialogoActual = dialogoEx[dialogoIndex];
+            dialogoIndex++;
+            // Si se acabaron, pasar a los normales
+            if (dialogoIndex >= dialogoEx.length || dialogoEx[dialogoIndex] == null) {
+                kidMeet = 1;
+                dialogoIndex = 0;
+            }
+        }else{
+            gamePanel.sonidoE.setFile(7);
+            gamePanel.sonidoE.play();
+            gamePanel.npcId = 0;
+            if(dialogosNpc[dialogoIndex]==null){
+                dialogoIndex=0;
+            }
+            gamePanel.ui.dialogoActual=dialogosNpc[dialogoIndex];
+            dialogoIndex++;
         }
-        gamePanel.ui.dialogoActual=dialogosNpc[dialogoIndex];
-        dialogoIndex++;
 
         switch(gamePanel.jugador.direction){
             case "up":

@@ -28,6 +28,8 @@ public class InterfazUsuario {
     BufferedImage moveBox;
     BufferedImage heartDelta;
     BufferedImage spamShop;
+    BufferedImage utp;
+    BufferedImage fiscLogo;
     public int numCommando=0;
     public int uiState=0;
     public int bigshotState=0;
@@ -52,6 +54,8 @@ public class InterfazUsuario {
             statusBoxJ=ImageIO.read(getClass().getResourceAsStream("/otros/statusBoxJ.png"));
             heartDelta=ImageIO.read(getClass().getResourceAsStream("/otros/heartdelta.png"));
             spamShop=ImageIO.read(getClass().getResourceAsStream("/otros/spamShop.jpg"));
+            utp=ImageIO.read(getClass().getResourceAsStream("/otros/utpLogo.png"));
+            fiscLogo=ImageIO.read(getClass().getResourceAsStream("/otros/fiscLogo.png"));
 
 
             spamton = Font.createFont(Font.TRUETYPE_FONT, is);
@@ -81,6 +85,11 @@ public class InterfazUsuario {
             g2.drawString("Gemas X "+gamePanel.jugador.cantMcguffin,50,50);
 
 
+        }
+        else if(gamePanel.objetivoStatus==0&& gamePanel.gameState!=gamePanel.tituloState){
+            g2.setFont(arial_40);
+            g2.setColor(Color.black);
+            g2.drawString("Habla con el profe!",50,50);
         }
         //Estado de titulo
         if(gamePanel.gameState==gamePanel.tituloState){
@@ -278,14 +287,21 @@ public class InterfazUsuario {
     }
     public void drawPantallaTitulo(){
         g2.setFont(arial_40);
+        g2.drawImage(utp,0,0,100,100,null);
+        g2.drawImage(fiscLogo,670,0,100,100,null);
         String texto="Pokemon't";
-        int x=gamePanel.tileSize*3;
-        int y=gamePanel.tileSize*3;
+        int x=gamePanel.tileSize*6;
+        int y=gamePanel.tileSize*5;
         g2.setColor(Color.white);
         g2.drawString(texto,x,y);
-        int x2=gamePanel.tileSize*3;
-        int y2=gamePanel.tileSize*4;
-        g2.drawString("PRESIONA ENTER!",x2+10,y2);
+        int x2=gamePanel.tileSize*5;
+        int y2=gamePanel.tileSize*7;
+        g2.drawString("APRETA ENTER!",x2+10,y2);
+        g2.drawString("Juan Delgado",600,500);
+        g2.drawString("Ian Vasques",470,500);
+        g2.drawString("Aaliyah Chase",330,500);
+        g2.drawString("Iveth Vega",210,500);
+        g2.drawString("Gabriela Suazo",50,500);
 
     }
     public void drawCajaDialogo(){
