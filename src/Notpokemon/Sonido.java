@@ -52,7 +52,7 @@ public class Sonido {
     public void stop(){
         //Se detiene el audio
         clip.stop();
-        //clip.close();
+        clip.close();
 
     }
 
