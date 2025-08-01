@@ -28,7 +28,7 @@ public class InterfazUsuario {
     BufferedImage moveBox;
     BufferedImage heartDelta;
     BufferedImage spamShop;
-    BufferedImage utp;
+    BufferedImage titulo;
     BufferedImage fiscLogo;
     public int numCommando=0;
     public int uiState=0;
@@ -54,7 +54,7 @@ public class InterfazUsuario {
             statusBoxJ=ImageIO.read(getClass().getResourceAsStream("/otros/statusBoxJ.png"));
             heartDelta=ImageIO.read(getClass().getResourceAsStream("/otros/heartdelta.png"));
             spamShop=ImageIO.read(getClass().getResourceAsStream("/otros/spamShop.jpg"));
-            utp=ImageIO.read(getClass().getResourceAsStream("/otros/utpLogo.png"));
+            titulo=ImageIO.read(getClass().getResourceAsStream("/otros/PantallaDeTitulo.png"));
             fiscLogo=ImageIO.read(getClass().getResourceAsStream("/otros/fiscLogo.png"));
 
 
@@ -287,21 +287,7 @@ public class InterfazUsuario {
     }
     public void drawPantallaTitulo(){
         g2.setFont(arial_40);
-        g2.drawImage(utp,90,40,100,100,null);
-        g2.drawImage(fiscLogo,570,40,100,100,null);
-        String texto="POKEMON'T";
-        int x=gamePanel.tileSize*6;
-        int y=gamePanel.tileSize*5;
-        g2.setColor(Color.white);
-        g2.drawString(texto,x,y);
-        int x2=gamePanel.tileSize*5;
-        int y2=gamePanel.tileSize*7;
-        g2.drawString("Presiona Enter!",x2+10,y2);
-        g2.drawString("Juan Delgado",600,500);
-        g2.drawString("Ian Vasquez",470,500);
-        g2.drawString("Aaliyah Chase",330,500);
-        g2.drawString("Iveth Vega",210,500);
-        g2.drawString("Gabriela Suazo",50,500);
+        g2.drawImage(titulo,0,0,775,570,null);
 
     }
     public void drawCajaDialogo(){
