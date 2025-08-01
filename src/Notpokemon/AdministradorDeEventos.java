@@ -162,6 +162,8 @@ public class AdministradorDeEventos {
             } else if (hit(0,39,20,"any")) {
                 teleport(3,11,17);
                 
+            }else if(hit(3,11,19,"any")){
+                teleport(0,39,20);
             }
 
 
@@ -217,6 +219,12 @@ public class AdministradorDeEventos {
         if(gamePanel.mapaActual==0){
             gamePanel.sonido.stop();
             gamePanel.sonido.setFile(0);
+            gamePanel.sonido.play();
+            gamePanel.sonido.loop();
+        }
+        if(gamePanel.mapaActual==3){
+            gamePanel.sonido.stop();
+            gamePanel.sonido.setFile(13);
             gamePanel.sonido.play();
             gamePanel.sonido.loop();
         }

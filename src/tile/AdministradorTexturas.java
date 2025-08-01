@@ -19,7 +19,7 @@ public class AdministradorTexturas {
     public AdministradorTexturas(GamePanel gamePanel){
         this.gamePanel=gamePanel;
         //Aqui se indica cuantos tiles unicos tenemos,si se añade más incrementar numero.
-        textura = new Textura[500];
+        textura = new Textura[332];
         mapaTexNum = new int[gamePanel.mapaMax][gamePanel.maxWorldCol][gamePanel.maxWorldFila];
         getTileImage();
         //Mapas en el juego, se debe incluir el file path del archivo y un numero unico para el mapa
@@ -1245,6 +1245,8 @@ public class AdministradorTexturas {
             textura[310].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa130.png"));
             textura[310].collision=true;
 
+            //Tiles de lab
+
             textura[311] = new Textura();
             textura[311].image = ImageIO.read(getClass().getResourceAsStream("/tiles/PisoLab.png"));
 
@@ -1264,20 +1266,24 @@ public class AdministradorTexturas {
             textura[315].collision=true;
 
             textura[316] = new Textura();
-            textura[316].image = ImageIO.read(getClass().getResourceAsStream("/tiles/libreria2.png"));
+            textura[316].image = ImageIO.read(getClass().getResourceAsStream("/tiles/Libreria2.png"));
             textura[316].collision=true;
+            //Libreria2
 
             textura[317] = new Textura();
-            textura[317].image = ImageIO.read(getClass().getResourceAsStream("/tiles/mesalab.png"));
+            textura[317].image = ImageIO.read(getClass().getResourceAsStream("/tiles/mesaLab.png"));
             textura[317].collision=true;
+            //mesalab
 
             textura[318] = new Textura();
-            textura[318].image = ImageIO.read(getClass().getResourceAsStream("/tiles/Maquinalab1.png"));
+            textura[318].image = ImageIO.read(getClass().getResourceAsStream("/tiles/MaquinaLab1.png"));
             textura[318].collision=true;
+            //Maquinalab1
 
             textura[319] = new Textura();
-            textura[319].image = ImageIO.read(getClass().getResourceAsStream("/tiles/Maquinalab2.png"));
+            textura[319].image = ImageIO.read(getClass().getResourceAsStream("/tiles/MaquinaLab2.png"));
             textura[319].collision=true;
+            //Maquinalab2
 
             textura[320] = new Textura();
             textura[320].image = ImageIO.read(getClass().getResourceAsStream("/tiles/PortaLab.png"));
@@ -1353,6 +1359,9 @@ public class AdministradorTexturas {
             int worldY=worldRow* gamePanel.tileSize;
             int screenX =worldX-gamePanel.jugador.worldX + gamePanel.jugador.screenX;
             int screenY=worldY-gamePanel.jugador.worldY + gamePanel.jugador.screenY;
+            if (tileNum < 0 || tileNum >= textura.length || textura[tileNum] == null) {
+                System.out.println("tileNum inválido o textura no cargada: " + tileNum);
+            }
             //Mejora de rendimiento?
             if(worldX + gamePanel.tileSize>gamePanel.jugador.worldX-gamePanel.jugador.screenX &&
                     worldX- gamePanel.tileSize <gamePanel.jugador.worldX+gamePanel.jugador.screenX &&
