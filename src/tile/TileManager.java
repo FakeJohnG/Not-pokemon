@@ -19,12 +19,12 @@ public class TileManager {
     public TileManager(GamePanel gamePanel){
         this.gamePanel=gamePanel;
         //Aqui se indica cuantos tiles unicos tenemos,si se añade más incrementar numero.
-        textura = new Textura[91];
+        textura = new Textura[94];
         mapaTexNum = new int[gamePanel.mapaMax][gamePanel.maxWorldCol][gamePanel.maxWorldFila];
         getTileImage();
         loadMapData("/maps/testMapDataXL.txt",0);
         loadMapData("/maps/testMapData1.txt",1);
-        loadMapData("/maps/testMapitaData2.txt",2);
+        loadMapData("/maps/testMapitaData2.txt",3);
 
 
 
@@ -382,6 +382,14 @@ public class TileManager {
             textura[90].image= ImageIO.read(getClass().getResourceAsStream("/tiles/agua5.png"));
             textura[90].collision=true;
 
+            textura[91] = new Textura();
+            textura[91].image = ImageIO.read(getClass().getResourceAsStream("/tiles/PisoLab.png"));
+
+            textura[92] = new Textura();
+            textura[92].image = ImageIO.read(getClass().getResourceAsStream("/tiles/paredLab.png"));
+
+            textura[93] = new Textura();
+            textura[93].image = ImageIO.read(getClass().getResourceAsStream("/tiles/fonditoBranco.png"));
 
         }catch(IOException e){
             e.printStackTrace();
@@ -409,7 +417,7 @@ public class TileManager {
             }
             reader.close();
         }catch(Exception e){
-
+            System.err.println("Error al cargar el mapa " + numero + ": " + e.getMessage());
         }
     }
     public void draw(Graphics2D g2){
@@ -438,6 +446,7 @@ public class TileManager {
                 worldRow++;
 
             }
+
         }
         //g2.drawImage(tile[0].image,0,0, gamePanel.tileSize, gamePanel.tileSize, null);
         //g2.drawImage(tile[1].image,100,100, gamePanel.tileSize, gamePanel.tileSize, null);

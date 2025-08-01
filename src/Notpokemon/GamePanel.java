@@ -154,6 +154,8 @@ public class GamePanel extends JPanel implements Runnable {
                 g2.setColor(Color.RED);
                 g2.drawRect(screenX, screenY, tileSize, tileSize);
             }
+
+
             //Dibujo del jugador
             player.draw(g2);
 
