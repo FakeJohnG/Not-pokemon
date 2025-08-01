@@ -19,7 +19,7 @@ public class Sonido {
         sonidoURL[5]=getClass().getResource("/musica/soulBattle.wav");
         sonidoURL[6]=getClass().getResource("/musica/secret.wav");
         sonidoURL[7]=getClass().getResource("/musica/startButton.wav");
-        sonidoURL[8]=getClass().getResource("/musica/phantom.wav");
+        sonidoURL[8]=getClass().getResource("/musica/titulo.wav");
         sonidoURL[9]=getClass().getResource("/musica/bruhMoment.wav");
         sonidoURL[10]=getClass().getResource("/musica/cancel.wav");
         sonidoURL[11]=getClass().getResource("/musica/buySpam.wav");
