@@ -149,19 +149,20 @@ public class AdministradorDeEventos {
                 teleport(0, 31, 22);
 
             } else if (hit(0,16,21,"any")){
-                System.out.println("loading smpamton...");
+                System.out.println("loading casa...");
                 gamePanel.sonidoE.setFile(4);
                 gamePanel.sonidoE.play();
                 teleport(2,11,17);
 
             } else if (hit(2, 11, 18, "any")) {
-                System.out.println("Bye bye spamton");
+                System.out.println("Bye bye casa");
                 gamePanel.sonidoE.setFile(4);
                 gamePanel.sonidoE.play();
                 teleport(0, 16, 21);
+            } else if (hit(0,39,20,"any")) {
+                teleport(3,11,17);
+                
             }
-
-
 
 
         }

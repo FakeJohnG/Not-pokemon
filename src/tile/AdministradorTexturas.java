@@ -26,6 +26,8 @@ public class AdministradorTexturas {
         loadMapData("/maps/testMapDataXL.txt",0);
         loadMapData("/maps/testMapData1.txt",1);
         loadMapData("/maps/testMapData2.txt",2);
+        loadMapData("/maps/testMapitaData3.txt",3);
+
 
 
 
@@ -1242,6 +1244,75 @@ public class AdministradorTexturas {
             textura[310]=new Textura();
             textura[310].image= ImageIO.read(getClass().getResourceAsStream("/tiles/InteriorCasa130.png"));
             textura[310].collision=true;
+
+            textura[311] = new Textura();
+            textura[311].image = ImageIO.read(getClass().getResourceAsStream("/tiles/PisoLab.png"));
+
+            textura[312]= new Textura();
+            textura[312].image = ImageIO.read(getClass().getResourceAsStream("/tiles/paredLab.png"));
+            textura[312].collision=true;
+
+            textura[313] = new Textura();
+            textura[313].image = ImageIO.read(getClass().getResourceAsStream("/tiles/fonditoBranco.png"));
+
+            textura[314] = new Textura();
+            textura[314].image = ImageIO.read(getClass().getResourceAsStream("/tiles/microondasLab.png"));
+            textura[314].collision=true;
+
+            textura[315] = new Textura();
+            textura[315].image = ImageIO.read(getClass().getResourceAsStream("/tiles/limiteLab.png"));
+            textura[315].collision=true;
+
+            textura[316] = new Textura();
+            textura[316].image = ImageIO.read(getClass().getResourceAsStream("/tiles/libreria2.png"));
+            textura[316].collision=true;
+
+            textura[317] = new Textura();
+            textura[317].image = ImageIO.read(getClass().getResourceAsStream("/tiles/mesalab.png"));
+            textura[317].collision=true;
+
+            textura[318] = new Textura();
+            textura[318].image = ImageIO.read(getClass().getResourceAsStream("/tiles/Maquinalab1.png"));
+            textura[318].collision=true;
+
+            textura[319] = new Textura();
+            textura[319].image = ImageIO.read(getClass().getResourceAsStream("/tiles/Maquinalab2.png"));
+            textura[319].collision=true;
+
+            textura[320] = new Textura();
+            textura[320].image = ImageIO.read(getClass().getResourceAsStream("/tiles/PortaLab.png"));
+
+            textura[321] = new Textura();
+            textura[321].image = ImageIO.read(getClass().getResourceAsStream("/tiles/AlfombritaLab.png"));
+
+            textura[322] = new Textura();
+            textura[322].image = ImageIO.read(getClass().getResourceAsStream("/tiles/cadeiraPokeLab1.png"));
+            textura[322].collision=true;
+
+            textura[323] = new Textura();
+            textura[323].image = ImageIO.read(getClass().getResourceAsStream("/tiles/cadeiraPokeLab2.png"));
+            textura[323].collision=true;
+
+            textura[324] = new Textura();
+            textura[324].image = ImageIO.read(getClass().getResourceAsStream("/tiles/carpetasLab.png"));
+            textura[324].collision=true;
+
+            textura[325] = new Textura();
+            textura[325].image = ImageIO.read(getClass().getResourceAsStream("/tiles/chichiLab.png"));
+            textura[325].collision=true;
+
+            textura[326] = new Textura();
+            textura[326].image = ImageIO.read(getClass().getResourceAsStream("/tiles/silloncitonLab.png"));
+            textura[326].collision=true;
+
+            textura[327] = new Textura();
+            textura[327].image = ImageIO.read(getClass().getResourceAsStream("/tiles/anaquelcitoLab.png"));
+            textura[327].collision=true;
+
+            textura[328] = new Textura();
+            textura[328].image = ImageIO.read(getClass().getResourceAsStream("/tiles/Estanteria2Lab.png"));
+            textura[328].collision=true;
+
 
         }catch(IOException e){
             e.printStackTrace();
