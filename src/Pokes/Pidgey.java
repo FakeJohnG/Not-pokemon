@@ -8,7 +8,7 @@ import java.io.IOException;
 public class Pidgey extends Poke {
     public Pidgey(GamePanel gamepanel) {
         super(gamepanel);
-        name="Pidgey";
+        name="Pidgent";
         pv=100;
         maxPV=100;
         statAtaque=40;

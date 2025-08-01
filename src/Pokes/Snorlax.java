@@ -8,7 +8,7 @@ import java.io.IOException;
 public class Snorlax extends Poke {
     public Snorlax(GamePanel gamepanel) {
         super(gamepanel);
-        name="Snorlax";
+        name="Snarlox";
         pv=400;
         maxPV=400;
         statAtaque=30;

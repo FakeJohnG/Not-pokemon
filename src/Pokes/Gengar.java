@@ -8,7 +8,7 @@ import java.io.IOException;
 public class Gengar extends Poke {
     public Gengar(GamePanel gamepanel) {
         super(gamepanel);
-        name="Gengar";
+        name="Ganger";
         pv=150;
         maxPV=150;
         statAtaque=85;

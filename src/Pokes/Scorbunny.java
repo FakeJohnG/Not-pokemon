@@ -8,7 +8,7 @@ import java.io.IOException;
 public class Scorbunny extends Poke {
     public Scorbunny(GamePanel gamepanel) {
         super(gamepanel);
-        name="Scorbunny";
+        name="Scorbunt";
         pv=110;
         maxPV=100;
         statAtaque=65;

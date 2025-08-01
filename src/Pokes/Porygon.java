@@ -8,7 +8,7 @@ import java.io.IOException;
 public class Porygon extends Poke {
     public Porygon(GamePanel gamepanel) {
         super(gamepanel);
-        name="Porygon-Z";
+        name="Porygont";
         pv=100;
         maxPV=100;
         statAtaque=57;

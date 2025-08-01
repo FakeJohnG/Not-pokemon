@@ -8,7 +8,7 @@ import java.io.IOException;
 public class Meowth extends Poke {
     public Meowth(GamePanel gamepanel) {
         super(gamepanel);
-        name="Meowth";
+        name="Meow";
         pv=100;
         maxPV=100;
         statAtaque=40;

@@ -8,7 +8,7 @@ import java.io.IOException;
 public class Pikachu extends Poke {
     public Pikachu(GamePanel gamepanel) {
         super(gamepanel);
-        name="Pikachu";
+        name="Pikachunt";
         pv=150;
         maxPV=150;
         statAtaque=75;

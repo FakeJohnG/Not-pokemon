@@ -8,7 +8,7 @@ import java.io.IOException;
 public class Charmander extends Poke {
     public Charmander(GamePanel gamepanel) {
         super(gamepanel);
-        name="Charmander";
+        name="Charmendar";
         pv=70;
         maxPV=70;
         statAtaque=65;

@@ -8,7 +8,7 @@ import java.io.IOException;
 public class Eevee extends Poke {
     public Eevee(GamePanel gamepanel) {
         super(gamepanel);
-        name="Eevee";
+        name="Eeveeunt";
         pv=150;
         maxPV=150;
         statAtaque=75;

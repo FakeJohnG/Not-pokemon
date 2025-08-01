@@ -8,7 +8,7 @@ import java.io.IOException;
 public class Lucario extends Poke {
     public Lucario(GamePanel gamepanel) {
         super(gamepanel);
-        name="Lucario";
+        name="Lucas";
         pv=200;
         maxPV=200;
         statAtaque=70;

@@ -8,7 +8,7 @@ import java.io.IOException;
 public class Mudkip extends Poke {
     public Mudkip(GamePanel gamepanel) {
         super(gamepanel);
-        name="Mudkip";
+        name="Mudkap";
         pv=100;
         maxPV=100;
         statAtaque=40;

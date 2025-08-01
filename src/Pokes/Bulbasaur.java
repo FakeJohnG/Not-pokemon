@@ -8,7 +8,7 @@ import java.io.IOException;
 public class Bulbasaur extends Poke {
     public Bulbasaur(GamePanel gamepanel) {
         super(gamepanel);
-        name="Bulbasaur";
+        name="Bulbadont";
         pv=150;
         maxPV=150;
         statAtaque=85;
